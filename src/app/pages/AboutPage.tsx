@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Download, Briefcase, Award, BookOpen } from 'lucide-react';
+import { Briefcase, Award, BookOpen } from 'lucide-react';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
-import { Button } from '../components/Button';
 import { Tag } from '../components/Tag';
 
 export function AboutPage() {
@@ -61,52 +60,58 @@ export function AboutPage() {
 
   return (
     <div className="pt-16 md:pt-20">
-      {/* Hero Section */}
-      <Section className="min-h-[60vh] flex items-center">
+      {/* Hero Section - Title Overlap with 2-Column Body/Image */}
+      <Section className="relative bg-[#fafafa] overflow-visible flex items-center justify-center">
         <Container size="narrow">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-accent font-medium mb-6"
+          <div className="relative pt-16 md:pt-0">
+            {/* Title - Positioned to Overlap Image */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl sm:text-6xl md:text-[80px] lg:text-[96px] font-bold text-foreground leading-tight mb-4 md:mb-8 relative z-20"
             >
-              About Me
-            </motion.p>
-            
-            <h1 className="mb-8">
-              Designer, problem solver, and lifelong learner
-            </h1>
-            
-            <div className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                I'm a UX Designer with over 6 years of experience creating digital products 
-                that balance user needs with business goals. My approach combines strategic 
-                thinking with hands-on design work, always guided by research and data.
-              </p>
-              <p>
-                I believe great design emerges from deep empathy with users, close collaboration 
-                with cross-functional teams, and a willingness to iterate based on feedback. 
-                Whether I'm conducting user interviews, sketching flows, or presenting to 
-                stakeholders, my focus is always on creating meaningful impact.
-              </p>
-              <p>
-                When I'm not designing, you'll find me exploring new cities, reading about 
-                behavioral psychology, or experimenting with film photography.
-              </p>
-            </div>
+              Johan Olesund
+            </motion.h1>
 
-            <div className="mt-8">
-              <Button variant="primary" size="large" showArrow>
-                <Download size={18} />
-                Download Resume
-              </Button>
+            {/* 2-Column Grid - Body Text (Left) and Image (Right) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
+              {/* Left Column - Body Text with Boids Pattern Behind */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                {/* Boids Pattern Background */}
+                <img
+                  src="/images/boids-flock.png"
+                  alt=""
+                  className="absolute inset-0 opacity-25 pointer-events-none -z-10"
+                />
+                <p className="text-base md:text-lg text-foreground leading-[1.6] text-justify max-w-[405px] relative z-10">
+                  Johan is a seasoned and business-minded UX Designer. He combines a strong foundation in user research and design with a sharp understanding of business strategy, ensuring that design decisions drive measurable value for both users and organizations. With his versatile experience across UX and product strategy, he can take on diverse design roles and delivering impact across the full design lifecycle. Johan is known for his drive, quick learning, collaborative nature, and positive energy, making him a valued and trusted member of the team.
+                </p>
+              </motion.div>
+
+              {/* Right Column - Image with Black Gradient Overlay */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative h-[350px] md:h-[400px] lg:h-[433px]"
+              >
+                <img
+                  src="/images/profil.png"
+                  alt="Johan Olesund"
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Gradient Overlay - Black */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </Container>
       </Section>
 
