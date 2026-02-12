@@ -1,0 +1,437 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { ArrowLeft, Calendar, Users, CheckCircle2 } from 'lucide-react';
+import { Container } from '../components/Container';
+import { Section } from '../components/Section';
+import { Button } from '../components/Button';
+import { Tag } from '../components/Tag';
+
+interface CaseStudyPageProps {
+  caseStudyId: string;
+  onNavigate: (page: string) => void;
+}
+
+export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
+  // Mock data - in a real app, this would be fetched based on caseStudyId
+  const caseStudyData = {
+    'fintech-app': {
+      title: 'FinTech Mobile Banking Experience',
+      subtitle: 'Redesigning digital banking to reduce support tickets and increase engagement',
+      tags: ['Mobile', 'FinTech', 'User Research', 'iOS', 'Android'],
+      heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
+      overview: {
+        role: 'Lead UX Designer',
+        timeline: '4 months',
+        team: '1 PM, 2 Engineers, 1 Designer',
+        year: '2025',
+      },
+      problem: 'The existing mobile banking app was receiving high volumes of customer support requests, particularly around money transfers and account management. Users reported confusion with navigation and found it difficult to complete common tasks.',
+      challenge: 'How might we redesign the mobile banking experience to reduce friction in core user flows while maintaining security and regulatory compliance?',
+      outcome: {
+        metrics: [
+          { label: 'Customer support tickets', value: '45% reduction' },
+          { label: 'Task completion rate', value: '32% increase' },
+          { label: 'User satisfaction score', value: '4.6/5.0' },
+          { label: 'Monthly active users', value: '28% growth' },
+        ],
+      },
+      process: [
+        {
+          title: 'Research & Discovery',
+          description: 'We conducted 24 user interviews and analyzed 3 months of support ticket data to identify pain points. We also performed competitive analysis of 8 banking apps and created user journey maps for key flows.',
+          insights: [
+            'Users struggled to find transfer options (buried 3 levels deep)',
+            'Security features felt obtrusive rather than protective',
+            'Lack of visual feedback during transactions caused anxiety',
+            'Users wanted quick access to recent transactions',
+          ],
+        },
+        {
+          title: 'Ideation & Design',
+          description: 'Based on our research, we sketched multiple solutions and created low-fidelity prototypes. We tested 3 navigation patterns with 15 users before converging on our final approach.',
+          insights: [
+            'Simplified navigation with bottom tab bar',
+            'Quick actions on home screen for common tasks',
+            'Clear visual feedback and progress indicators',
+            'Redesigned security flow that felt less intrusive',
+          ],
+        },
+        {
+          title: 'Testing & Iteration',
+          description: 'We ran 5 rounds of usability testing with 40 participants, iterating on the design based on feedback. We also conducted A/B tests on key screens to validate our design decisions.',
+          insights: [
+            'Users completed transfers 60% faster',
+            'Security concerns decreased by 40%',
+            'Positive sentiment in user feedback increased',
+            'No significant issues found in final round',
+          ],
+        },
+      ],
+      solution: 'We redesigned the app with a simplified navigation structure, prominent quick actions, and clear visual feedback throughout critical flows. The new design maintained all security requirements while feeling less obtrusive.',
+      solutionImages: [
+        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      ],
+      reflection: 'This project reinforced the importance of balancing user needs with business constraints. By focusing on the most common user tasks and streamlining those flows, we were able to significantly reduce support burden while improving user satisfaction. If I were to do this again, I would have involved customer support agents earlier in the process.',
+    },
+    'healthcare-platform': {
+      title: 'Healthcare Patient Portal',
+      subtitle: 'Creating an accessible patient portal that simplified healthcare access',
+      tags: ['Web App', 'Healthcare', 'Accessibility', 'WCAG 2.1'],
+      heroImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80',
+      overview: {
+        role: 'UX Designer',
+        timeline: '6 months',
+        team: '1 PM, 3 Engineers, 2 Designers',
+        year: '2024',
+      },
+      problem: 'Patients struggled to book appointments online, leading to high call volumes and missed appointments. The existing portal was not accessible to users with disabilities and had a dated interface.',
+      challenge: 'How might we create an accessible, easy-to-use patient portal that reduces no-shows and call center volume?',
+      outcome: {
+        metrics: [
+          { label: 'No-show rate', value: '30% reduction' },
+          { label: 'Online bookings', value: '65% increase' },
+          { label: 'WCAG compliance', value: 'AA certified' },
+          { label: 'Call center volume', value: '40% decrease' },
+        ],
+      },
+      process: [
+        {
+          title: 'Research & Discovery',
+          description: 'We interviewed 30 patients, including users with various disabilities. We also shadowed front desk staff and analyzed appointment booking patterns.',
+          insights: [
+            'Complex booking flow confused users',
+            'Poor contrast made text hard to read',
+            'No keyboard navigation support',
+            'Medical jargon created barriers',
+          ],
+        },
+        {
+          title: 'Ideation & Design',
+          description: 'We created an accessible design system and simplified the booking flow to 3 steps. All designs were reviewed by accessibility experts.',
+          insights: [
+            'WCAG 2.1 AA compliant color palette',
+            'Clear step-by-step booking process',
+            'Plain language throughout',
+            'Multiple input methods supported',
+          ],
+        },
+        {
+          title: 'Testing & Iteration',
+          description: 'We conducted extensive accessibility testing with screen readers, keyboard navigation, and users with various disabilities.',
+          insights: [
+            '100% task completion with assistive tech',
+            'Significantly faster booking times',
+            'Positive feedback from diverse user groups',
+            'Staff reported fewer confused calls',
+          ],
+        },
+      ],
+      solution: 'We created a fully accessible patient portal with simplified appointment booking, clear information hierarchy, and support for all assistive technologies.',
+      solutionImages: [
+        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
+        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+      ],
+      reflection: 'This project taught me the immense value of inclusive design. By designing for accessibility from the start, we created a better experience for everyone, not just users with disabilities.',
+    },
+    'ecommerce-checkout': {
+      title: 'E-commerce Checkout Optimization',
+      subtitle: 'Streamlining checkout to boost conversion and reduce cart abandonment',
+      tags: ['E-commerce', 'Conversion', 'A/B Testing', 'Mobile'],
+      heroImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
+      overview: {
+        role: 'UX Designer',
+        timeline: '3 months',
+        team: '1 PM, 2 Engineers, 1 Designer, 1 Data Analyst',
+        year: '2024',
+      },
+      problem: 'The e-commerce site had a 68% cart abandonment rate, significantly above industry average. Analytics showed users were dropping off at various points in the checkout process.',
+      challenge: 'How might we reduce friction in the checkout process to increase conversion rate?',
+      outcome: {
+        metrics: [
+          { label: 'Conversion rate', value: '25% increase' },
+          { label: 'Cart abandonment', value: '68% → 52%' },
+          { label: 'Average order value', value: '12% higher' },
+          { label: 'Customer satisfaction', value: '4.7/5.0' },
+        ],
+      },
+      process: [
+        {
+          title: 'Research & Discovery',
+          description: 'We analyzed funnel data, conducted user testing of the existing checkout, and surveyed customers who abandoned their carts.',
+          insights: [
+            'Users surprised by shipping costs late in process',
+            'Form fields felt overwhelming',
+            'Mobile experience particularly poor',
+            'No clear progress indication',
+          ],
+        },
+        {
+          title: 'Ideation & Design',
+          description: 'We tested multiple checkout patterns including one-page, multi-step, and accordion styles. We optimized for mobile-first.',
+          insights: [
+            'Reduced to 3 clear steps',
+            'Show all costs upfront',
+            'Smart defaults and autofill',
+            'Guest checkout option',
+          ],
+        },
+        {
+          title: 'Testing & Iteration',
+          description: 'We ran extensive A/B tests on each element of the new checkout flow, measuring impact on conversion rate.',
+          insights: [
+            'Progress indicator increased completion by 18%',
+            'Guest checkout boosted conversion by 22%',
+            'Upfront shipping costs reduced abandonment',
+            'Mobile conversion rate improved 35%',
+          ],
+        },
+      ],
+      solution: 'We implemented a streamlined 3-step checkout with clear progress indication, all costs shown upfront, and optimized mobile experience.',
+      solutionImages: [
+        'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&q=80',
+        'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80',
+      ],
+      reflection: 'The power of incremental improvements was clear in this project. No single change was a magic bullet, but together they created significant impact. Data-driven decision making was crucial.',
+    },
+  };
+
+  const data = caseStudyData[caseStudyId as keyof typeof caseStudyData] || caseStudyData['fintech-app'];
+
+  return (
+    <div className="pt-16 md:pt-20">
+      {/* Back Button */}
+      <div className="border-b border-border">
+        <Container>
+          <div className="py-6">
+            <Button variant="ghost" onClick={() => onNavigate('home')}>
+              <ArrowLeft size={18} />
+              Back to Work
+            </Button>
+          </div>
+        </Container>
+      </div>
+
+      {/* Hero Section */}
+      <Section className="pt-12 pb-0">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex flex-wrap gap-2 mb-6">
+              {data.tags.map((tag) => (
+                <Tag key={tag} variant="accent">{tag}</Tag>
+              ))}
+            </div>
+
+            <h1 className="mb-4">{data.title}</h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl">
+              {data.subtitle}
+            </p>
+
+            {/* Project Overview Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 p-8 bg-secondary/30 rounded-2xl border border-border">
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Role</p>
+                <p className="font-medium">{data.overview.role}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Timeline</p>
+                <p className="font-medium">{data.overview.timeline}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Team</p>
+                <p className="font-medium">{data.overview.team}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground mb-2">Year</p>
+                <p className="font-medium">{data.overview.year}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="rounded-2xl overflow-hidden"
+          >
+            <img
+              src={data.heroImage}
+              alt={data.title}
+              className="w-full aspect-[21/9] object-cover"
+            />
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Problem Section */}
+      <Section>
+        <Container size="narrow">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-accent font-medium mb-4">The Challenge</p>
+            <h2 className="mb-8">Problem</h2>
+            <p className="text-lg text-muted-foreground mb-6">{data.problem}</p>
+            <div className="p-6 bg-accent/5 border-l-4 border-accent rounded-lg">
+              <p className="text-lg font-medium">{data.challenge}</p>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Process Section */}
+      <Section className="bg-secondary/30">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <p className="text-accent font-medium mb-4">Approach</p>
+            <h2>Design Process</h2>
+          </motion.div>
+
+          <div className="space-y-16">
+            {data.process.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+              >
+                <div className="lg:col-span-1">
+                  <div className="sticky top-32">
+                    <span className="text-4xl font-bold text-accent/20">0{index + 1}</span>
+                    <h3 className="mt-4 mb-4">{step.title}</h3>
+                    <p className="text-muted-foreground">{step.description}</p>
+                  </div>
+                </div>
+                <div className="lg:col-span-2 bg-card p-8 rounded-2xl border border-border">
+                  <h4 className="mb-4">Key Insights</h4>
+                  <ul className="space-y-3">
+                    {step.insights.map((insight) => (
+                      <li key={insight} className="flex items-start gap-3">
+                        <CheckCircle2 size={20} className="text-accent flex-shrink-0 mt-1" />
+                        <span className="text-muted-foreground">{insight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Solution Section */}
+      <Section>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-accent font-medium mb-4">The Solution</p>
+            <h2 className="mb-8">Final Design</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl">{data.solution}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {data.solutionImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="rounded-2xl overflow-hidden"
+              >
+                <img
+                  src={image}
+                  alt={`Solution ${index + 1}`}
+                  className="w-full aspect-[4/3] object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Outcome Section */}
+      <Section className="bg-accent text-accent-foreground">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="font-medium mb-4 opacity-90">Impact</p>
+            <h2 className="mb-4">Results & Outcomes</h2>
+            <p className="text-lg opacity-90 max-w-3xl">
+              The redesigned experience delivered measurable improvements across key metrics.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {data.outcome.metrics.map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
+              >
+                <p className="text-3xl md:text-4xl font-bold mb-2">{metric.value}</p>
+                <p className="opacity-90">{metric.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Reflection Section */}
+      <Section>
+        <Container size="narrow">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-accent font-medium mb-4">Learnings</p>
+            <h2 className="mb-6">Reflection</h2>
+            <p className="text-lg text-muted-foreground">{data.reflection}</p>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Next Project CTA */}
+      <Section className="bg-secondary/30">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="mb-6">Interested in more work?</h2>
+            <Button variant="primary" size="large" onClick={() => onNavigate('home')}>
+              View All Projects
+            </Button>
+          </motion.div>
+        </Container>
+      </Section>
+    </div>
+  );
+}
