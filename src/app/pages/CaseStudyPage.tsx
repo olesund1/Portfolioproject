@@ -198,7 +198,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
       title: 'Enabling Customer-Centricity',
       subtitle: 'Leading organizational transformation toward customer-centric operations',
       tags: ['Strategy', 'CX Leadership', 'Organizational Change', 'Research', 'Team Scaling'],
-      heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
+      heroImage: 'https://images.unsplash.com/photo-1564654712-b60fc8b0b090?w=1200&q=80',
       overview: {
         role: 'Customer Experience Lead / Product Designer',
         timeline: '12 months',
@@ -229,6 +229,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Defining Customer Lifecycle',
           description: 'Mapped out the complete customer lifecycle and prioritized key journeys. Created a holistic view of all critical touchpoints and opportunities for improvement across the customer relationship.',
+          image: '/images/Customer life cycle.png',
           insights: [
             'Multiple key journeys identified beyond initial priority',
             'Clear prioritization framework emerged',
@@ -269,7 +270,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
       ],
       solution: 'Created the organization\'s first comprehensive customer journey framework covering B2C and B2B customer lifecycles. Built CX team, embedded design thinking methodologies, and facilitated cross-functional collaboration. Delivered targeted improvements to core customer-facing products with measurable impact.',
       solutionImages: [
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+        '/images/Kundresa_solceller.png',
         'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
       ],
       reflection: 'This project taught me that true transformation requires far more than creating beautiful designs or customer journey maps. Success depends on organizational alignment, strong stakeholder engagement, and building internal capability. The real win was not the first customer journey, but the team, frameworks, and mindset change that enabled ongoing customer-centric work. Leading without formal authority—through influence, evidence, and continuous communication—became the most valuable skill.',
@@ -395,16 +396,27 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
                     <p className="text-muted-foreground">{step.description}</p>
                   </div>
                 </div>
-                <div className="lg:col-span-2 bg-card p-8 rounded-2xl border border-border">
-                  <h4 className="mb-4">Key Insights</h4>
-                  <ul className="space-y-3">
-                    {step.insights.map((insight) => (
-                      <li key={insight} className="flex items-start gap-3">
-                        <CheckCircle2 size={20} className="text-accent flex-shrink-0 mt-1" />
-                        <span className="text-muted-foreground">{insight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="lg:col-span-2 space-y-6">
+                  {step.image && (
+                    <div className="rounded-2xl overflow-hidden">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="bg-card p-8 rounded-2xl border border-border">
+                    <h4 className="mb-4">Key Insights</h4>
+                    <ul className="space-y-3">
+                      {step.insights.map((insight) => (
+                        <li key={insight} className="flex items-start gap-3">
+                          <CheckCircle2 size={20} className="text-accent flex-shrink-0 mt-1" />
+                          <span className="text-muted-foreground">{insight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
