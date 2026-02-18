@@ -13,12 +13,12 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   const caseStudies = [
     {
-      id: 'fintech-app',
-      title: 'FinTech Mobile Banking Experience',
-      description: 'Redesigning the digital banking experience to reduce customer support tickets by 45% and increase user engagement.',
-      tags: ['Mobile', 'FinTech', 'User Research'],
-      imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
-      year: '2025',
+      id: 'b2p-redesign',
+      title: 'Partner Platform (B2P) Redesign',
+      description: 'Modernized the partner platform for Sweden\'s largest electricity distributor, reducing manual work by 60% and improving partner satisfaction.',
+      tags: ['Enterprise', 'B2B', 'UX Strategy'],
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+      year: '2026',
     },
     {
       id: 'healthcare-platform',
@@ -34,6 +34,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
       description: 'Streamlining the checkout flow resulted in a 25% increase in conversion rate and improved customer satisfaction.',
       tags: ['E-commerce', 'Conversion', 'A/B Testing'],
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      year: '2024',
+    },
+    {
+      id: 'customer-centricity',
+      title: 'Enabling Customer-Centricity',
+      description: 'Led organizational transformation to embed customer-centric thinking, creating first customer journey and scaling CX team for electricity distributor.',
+      tags: ['Strategy', 'CX Leadership', 'Organizational Change'],
+      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
       year: '2024',
     },
   ];
@@ -77,7 +85,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </motion.p>
             
             <h1 className="mb-6">
-              Crafting digital experiences that solve real problems
+              Crafting experiences that solve real problems
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
@@ -121,14 +129,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <Section id="work" className="bg-background">
         <Container>
           <div className="mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-accent font-medium mb-4"
-            >
-              Selected Work
-            </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {caseStudies.map((study, index) => (
               <CaseStudyCard
                 key={study.id}
@@ -148,6 +148,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => onNavigate('case-study', study.id)}
               />
             ))}
+            {caseStudies.length % 2 !== 0 && (
+              <div className="border-2 border-dashed border-border rounded-2xl flex items-center justify-center min-h-[400px] bg-card/50">
+                <p className="text-muted-foreground text-center">Coming Soon</p>
+              </div>
+            )}
           </div>
         </Container>
       </Section>
@@ -156,14 +161,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <Section className="bg-secondary/30">
         <Container>
           <div className="mb-16 max-w-2xl">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-accent font-medium mb-4"
-            >
-              How I Work
-            </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

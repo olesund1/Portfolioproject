@@ -14,65 +14,65 @@ interface CaseStudyPageProps {
 export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
   // Mock data - in a real app, this would be fetched based on caseStudyId
   const caseStudyData = {
-    'fintech-app': {
-      title: 'FinTech Mobile Banking Experience',
-      subtitle: 'Redesigning digital banking to reduce support tickets and increase engagement',
-      tags: ['Mobile', 'FinTech', 'User Research', 'iOS', 'Android'],
-      heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
+    'b2p-redesign': {
+      title: 'Partner Platform (B2P) Redesign',
+      subtitle: 'Modernizing an outdated system to reduce manual work and improve partner experience',
+      tags: ['Enterprise', 'B2B', 'UX Strategy', 'Design System', 'User Research'],
+      heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
       overview: {
         role: 'Lead UX Designer',
-        timeline: '4 months',
-        team: '1 PM, 2 Engineers, 1 Designer',
-        year: '2025',
+        timeline: '9-12 months',
+        team: '1 PM, 2-3 Engineers, 1-2 Designers',
+        year: '2026',
       },
-      problem: 'The existing mobile banking app was receiving high volumes of customer support requests, particularly around money transfers and account management. Users reported confusion with navigation and found it difficult to complete common tasks.',
-      challenge: 'How might we redesign the mobile banking experience to reduce friction in core user flows while maintaining security and regulatory compliance?',
+      problem: 'The Partner Platform serving 900,000+ active customers across Sweden\'s largest electricity distributor was technically outdated and required extensive manual work from our B2B partners. High operational costs, poor UX, and low partner satisfaction were affecting business scalability and relationships.',
+      challenge: 'How might we redesign the Partner Platform to dramatically reduce manual work, lower operational costs, and create an intuitive experience that supports partner growth?',
       outcome: {
         metrics: [
-          { label: 'Customer support tickets', value: '45% reduction' },
-          { label: 'Task completion rate', value: '32% increase' },
-          { label: 'User satisfaction score', value: '4.6/5.0' },
-          { label: 'Monthly active users', value: '28% growth' },
+          { label: 'Manual work reduction', value: '60% decrease' },
+          { label: 'Platform efficiency', value: '3.5x improvement' },
+          { label: 'Partner satisfaction', value: '4.5/5.0' },
+          { label: 'Partner adoption', value: '85% increase' },
         ],
       },
       process: [
         {
           title: 'Research & Discovery',
-          description: 'We conducted 24 user interviews and analyzed 3 months of support ticket data to identify pain points. We also performed competitive analysis of 8 banking apps and created user journey maps for key flows.',
+          description: 'I led user mapping sessions, conducted stakeholder interviews across product, operations, and support teams, and facilitated workshops to understand partner pain points. We analyzed current workflows and identified bottlenecks through contextual inquiry.',
           insights: [
-            'Users struggled to find transfer options (buried 3 levels deep)',
-            'Security features felt obtrusive rather than protective',
-            'Lack of visual feedback during transactions caused anxiety',
-            'Users wanted quick access to recent transactions',
+            'Partners spent 3+ hours daily on manual data entry tasks',
+            'System lacked real-time visibility into orders and status updates',
+            'Critical workflows were buried in unintuitive navigation',
+            'Technical barriers prevented partners from scaling their operations',
           ],
         },
         {
-          title: 'Ideation & Design',
-          description: 'Based on our research, we sketched multiple solutions and created low-fidelity prototypes. We tested 3 navigation patterns with 15 users before converging on our final approach.',
+          title: 'Strategy & Planning',
+          description: 'We conducted comprehensive impact mapping to understand business goals and user needs. I prioritized features based on strategic importance and developed a phased release plan that balanced quick wins with long-term platform improvements.',
           insights: [
-            'Simplified navigation with bottom tab bar',
-            'Quick actions on home screen for common tasks',
-            'Clear visual feedback and progress indicators',
-            'Redesigned security flow that felt less intrusive',
+            'Automation could eliminate 80% of manual data entry',
+            'Self-service capabilities needed careful information architecture',
+            'Real-time dashboards would drive decision-making efficiency',
+            'Seamless API integration was critical for partner ecosystem',
           ],
         },
         {
-          title: 'Testing & Iteration',
-          description: 'We ran 5 rounds of usability testing with 40 participants, iterating on the design based on feedback. We also conducted A/B tests on key screens to validate our design decisions.',
+          title: 'Design & Testing',
+          description: 'I created interaction prototypes and conducted iterative testing with real partners. Close collaboration with developers ensured feasibility of designs while maintaining design integrity. Multiple rounds of user testing refined the experience.',
           insights: [
-            'Users completed transfers 60% faster',
-            'Security concerns decreased by 40%',
-            'Positive sentiment in user feedback increased',
-            'No significant issues found in final round',
+            'Partners preferred dashboard-first approach over traditional navigation',
+            'Automation options needed clear feedback and control mechanisms',
+            'Guided workflows reduced decision paralysis by 70%',
+            'Early developer collaboration prevented costly redesigns',
           ],
         },
       ],
-      solution: 'We redesigned the app with a simplified navigation structure, prominent quick actions, and clear visual feedback throughout critical flows. The new design maintained all security requirements while feeling less obtrusive.',
+      solution: 'The redesigned Partner Platform featured an intuitive dashboard providing real-time insights, automated workflows eliminating manual tasks, streamlined information architecture, and seamless API integration. The new design system ensured consistency and scalability across the platform.',
       solutionImages: [
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+        'https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80',
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
       ],
-      reflection: 'This project reinforced the importance of balancing user needs with business constraints. By focusing on the most common user tasks and streamlining those flows, we were able to significantly reduce support burden while improving user satisfaction. If I were to do this again, I would have involved customer support agents earlier in the process.',
+      reflection: 'This project demonstrated the value of true full-ownership in the design process—from initial research through developer collaboration and testing. I learned how to balance competing stakeholder needs while keeping partners\' goals at the center. Early involvement of developers in design decisions prevented significant rework and created a stronger final product. The experience reinforced that sustainable design requires deep understanding of both user and business contexts.',
     },
     'healthcare-platform': {
       title: 'Healthcare Patient Portal',
@@ -194,9 +194,89 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
       ],
       reflection: 'The power of incremental improvements was clear in this project. No single change was a magic bullet, but together they created significant impact. Data-driven decision making was crucial.',
     },
+    'customer-centricity': {
+      title: 'Enabling Customer-Centricity',
+      subtitle: 'Leading organizational transformation toward customer-centric operations',
+      tags: ['Strategy', 'CX Leadership', 'Organizational Change', 'Research', 'Team Scaling'],
+      heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
+      overview: {
+        role: 'Customer Experience Lead / Product Designer',
+        timeline: '12 months',
+        team: '1 (expanded to 3 permanent designers)',
+        year: '2024',
+      },
+      problem: 'The client, one of Sweden\'s largest electricity distributors with 900,000 customers, faced fragmented customer insights, high support costs, and limited self-service options. Historically focused on operations rather than user needs, rising electricity prices and increasing customer expectations created pressure to transform.',
+      challenge: 'How might we transform the organization to become truly customer-centric and embed customer-first thinking across all teams?',
+      outcome: {
+        metrics: [
+          { label: 'Customer Effort Score (CES)', value: '4.2 → 6.35' },
+          { label: 'Support cost reduction', value: 'Significant decrease' },
+          { label: 'Team scaling', value: '1 → 3+ permanent designers' },
+          { label: 'Organizational adoption', value: 'Cross-functional alignment' },
+        ],
+      },
+      process: [
+        {
+          title: 'Understanding Client Needs',
+          description: 'Conducted discovery interviews, workshops, and presentations across teams to understand organizational gaps and build alignment on the need for customer-centric transformation. Stakeholder engagement was critical to establishing support for change.',
+          insights: [
+            'Organization lacked unified understanding of customer needs',
+            'Insights were fragmented across departments',
+            'No existing customer journey perspective',
+            'Teams needed education on customer-centric methods',
+          ],
+        },
+        {
+          title: 'Defining Customer Lifecycle',
+          description: 'Mapped out the complete customer lifecycle and prioritized key journeys. Created a holistic view of all critical touchpoints and opportunities for improvement across the customer relationship.',
+          insights: [
+            'Multiple key journeys identified beyond initial priority',
+            'Clear prioritization framework emerged',
+            'Stakeholders aligned on highest-impact areas',
+            'Framework became strategic tool for planning',
+          ],
+        },
+        {
+          title: 'Scaling the Team',
+          description: 'Demonstrated value quickly, attracting stakeholder interest. Expanded initial solo effort to 3 designers within first months, then supported recruitment of permanent team members to sustain the initiative.',
+          insights: [
+            'Early wins proved value and built credibility',
+            'Momentum attracted additional resources',
+            'Team scaling enabled broader organizational impact',
+            'Permanent hires ensured sustainability',
+          ],
+        },
+        {
+          title: 'Research & Customer Journey Production',
+          description: 'Conducted contextual interviews with internal teams and end customers. Continuously drafted and validated customer journey assumptions, mapping needs, expectations, pains, and gains against internal processes.',
+          insights: [
+            'Direct customer research revealed critical pain points',
+            'Internal process mapping enabled practical improvements',
+            'Iterative validation prevented misalignments',
+            'Customer journey became actionable for teams',
+          ],
+        },
+        {
+          title: 'Workshop Facilitation & Education',
+          description: 'Facilitated cross-functional workshops on design thinking, prioritization methods, and customer-centric approaches. Built internal capability and scaled customer-first mindset across organization.',
+          insights: [
+            'Workshops educated teams on new methods',
+            'Facilitation built cross-team alignment',
+            'Knowledge transfer ensured sustainability',
+            'Culture shift complemented structural changes',
+          ],
+        },
+      ],
+      solution: 'Created the organization\'s first comprehensive customer journey framework covering B2C and B2B customer lifecycles. Built CX team, embedded design thinking methodologies, and facilitated cross-functional collaboration. Delivered targeted improvements to core customer-facing products with measurable impact.',
+      solutionImages: [
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+      ],
+      reflection: 'This project taught me that true transformation requires far more than creating beautiful designs or customer journey maps. Success depends on organizational alignment, strong stakeholder engagement, and building internal capability. The real win was not the first customer journey, but the team, frameworks, and mindset change that enabled ongoing customer-centric work. Leading without formal authority—through influence, evidence, and continuous communication—became the most valuable skill.',
+    },
   };
 
-  const data = caseStudyData[caseStudyId as keyof typeof caseStudyData] || caseStudyData['fintech-app'];
+  const data = caseStudyData[caseStudyId as keyof typeof caseStudyData] || caseStudyData['b2p-redesign'];
 
   return (
     <div className="pt-16 md:pt-20">
