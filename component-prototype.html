@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Components Prototype for Figma</title>
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: #fafafa;
+            --foreground: #1a1a1a;
+            --card: #ffffff;
+            --secondary: #f5f5f5;
+            --muted-foreground: #666666;
+            --accent: #5a6f5b;
+            --accent-foreground: #ffffff;
+            --border: #e5e5e5;
+            --muted: #e5e5e5;
+            --radius: 6px;
+            --font-size-base: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: var(--muted-foreground);
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .component-group {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .component-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted-foreground);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .component-variants {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* BUTTON COMPONENT */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--accent-foreground);
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(90, 111, 91, 0.9);
+            box-shadow: 0 10px 25px rgba(90, 111, 91, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--foreground);
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--muted);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: var(--foreground);
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-ghost:hover {
+            color: var(--accent);
+            background-color: rgba(90, 111, 91, 0.05);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.125rem;
+        }
+
+        /* TAG COMPONENT */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .tag-default {
+            background-color: var(--secondary);
+            color: var(--foreground);
+        }
+
+        .tag-accent {
+            background-color: rgba(90, 111, 91, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(90, 111, 91, 0.2);
+        }
+
+        /* CASE STUDY CARD */
+        .case-study-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            max-width: 400px;
+        }
+
+        .case-study-card:hover {
+            border-color: rgba(90, 111, 91, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-study-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background-color: var(--muted);
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .case-study-card:hover .case-study-image img {
+            transform: scale(1.05);
+        }
+
+        .case-study-content {
+            padding: 24px 32px;
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .case-study-year {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            font-weight: 500;
+        }
+
+        .case-study-arrow {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .case-study-card:hover .case-study-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        .case-study-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .case-study-card:hover .case-study-title {
+            color: var(--accent);
+        }
+
+        .case-study-description {
+            font-size: 1rem;
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .case-study-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* CONTAINER COMPONENT */
+        .container-demo {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(90, 111, 91, 0.02);
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 12px;
+        }
+
+        .container-narrow {
+            max-width: 768px;
+        }
+
+        .container-default {
+            max-width: 1536px;
+        }
+
+        .container-wide {
+            max-width: 1792px;
+        }
+
+        /* SECTION COMPONENT */
+        .section-demo {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(90, 111, 91, 0.02);
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CHAT MESSAGE COMPONENT */
+        .chat-container {
+            background-color: var(--background);
+            border-radius: 12px;
+            padding: 16px;
+            max-width: 500px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .chat-message {
+            display: flex;
+            margin-bottom: 12px;
+            gap: 8px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message-user {
+            justify-content: flex-end;
+        }
+
+        .chat-message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .chat-message-user .chat-message-content {
+            background-color: var(--accent);
+            color: var(--accent-foreground);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message-assistant .chat-message-content {
+            background-color: var(--secondary);
+            color: var(--foreground);
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-timestamp {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        /* PAGE SUGGESTION CARD */
+        .suggestion-card {
+            padding: 16px;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            max-width: 300px;
+            font-family: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .suggestion-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transform: scale(1.02);
+        }
+
+        .suggestion-title {
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--foreground);
+            margin-bottom: 4px;
+        }
+
+        .suggestion-description {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            margin-bottom: 8px;
+        }
+
+        .suggestion-relevance {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        /* Grid layouts for variants */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Arrow icon simulation */
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>React Components Design System</h1>
+            <p>Figma component prototypes for design system integration</p>
+        </div>
+
+        <!-- TIER 1: Foundation Components -->
+        <div class="section">
+            <h2 class="section-title">Tier 1: Foundation Components</h2>
+
+            <!-- Button Component -->
+            <div class="component-group">
+                <div class="component-label">Button Component</div>
+                <div class="grid-4">
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Primary • Default</div>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Primary • Large</div>
+                        <button class="btn btn-primary btn-large">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Secondary • Default</div>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Secondary • Large</div>
+                        <button class="btn btn-secondary btn-large">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Ghost • Default</div>
+                        <button class="btn btn-ghost">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Ghost • Large</div>
+                        <button class="btn btn-ghost btn-large">Learn More</button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Primary • With Arrow</div>
+                        <button class="btn btn-primary">Learn More <span class="arrow-icon">→</span></button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Secondary • With Arrow</div>
+                        <button class="btn btn-secondary">Learn More <span class="arrow-icon">→</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tag Component -->
+            <div class="component-group">
+                <div class="component-label">Tag Component</div>
+                <div class="component-variants">
+                    <div>
+                        <div class="component-label" style="margin-bottom: 8px; font-size: 0.75rem;">Default</div>
+                        <span class="tag tag-default">Product Design</span>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 8px; font-size: 0.75rem;">Accent</div>
+                        <span class="tag tag-accent">Product Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container Component -->
+            <div class="component-group">
+                <div class="component-label">Container Component</div>
+                <div style="margin-bottom: 20px;">
+                    <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Narrow (max-w-3xl)</div>
+                    <div class="container-demo container-narrow">Content fits in narrow layout (max-width: 768px)</div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Default (max-w-6xl)</div>
+                    <div class="container-demo container-default">Content fits in default layout (max-width: 1536px)</div>
+                </div>
+                <div>
+                    <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Wide (max-w-7xl)</div>
+                    <div class="container-demo container-wide">Content fits in wide layout (max-width: 1792px)</div>
+                </div>
+            </div>
+
+            <!-- Section Component -->
+            <div class="component-group">
+                <div class="component-label">Section Component</div>
+                <div>
+                    <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Section with Vertical Spacing (py-16 md:py-24 lg:py-32)</div>
+                    <div class="section-demo">Section content with responsive padding</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIER 2: Composite Components -->
+        <div class="section">
+            <h2 class="section-title">Tier 2: Composite Components</h2>
+
+            <!-- Case Study Card -->
+            <div class="component-group">
+                <div class="component-label">Case Study Card Component</div>
+                <div class="grid-2">
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Default State</div>
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%23e5e5e5' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter' font-size='16' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EProject Image%3C/text%3E%3C/svg%3E" alt="Project">
+                            </div>
+                            <div class="case-study-content">
+                                <div class="case-study-header">
+                                    <span class="case-study-year">2024</span>
+                                    <span class="case-study-arrow">→</span>
+                                </div>
+                                <h3 class="case-study-title">Design System Overhaul</h3>
+                                <p class="case-study-description">Rebuilding the core design infrastructure to improve consistency and developer experience across all platforms.</p>
+                                <div class="case-study-tags">
+                                    <span class="tag tag-default">Design System</span>
+                                    <span class="tag tag-default">UX Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Hover State</div>
+                        <div class="case-study-card" style="border-color: rgba(90, 111, 91, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
+                            <div class="case-study-image">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%23d4dcd4' width='400' height='250'/%3E%3Ctext x='50%25' y='50%25' font-family='Inter' font-size='16' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EProject Image (Scaled)%3C/text%3E%3C/svg%3E" alt="Project" style="transform: scale(1.05);">
+                            </div>
+                            <div class="case-study-content">
+                                <div class="case-study-header">
+                                    <span class="case-study-year">2024</span>
+                                    <span class="case-study-arrow" style="opacity: 1; transform: translateX(4px);">→</span>
+                                </div>
+                                <h3 class="case-study-title" style="color: var(--accent);">Design System Overhaul</h3>
+                                <p class="case-study-description">Rebuilding the core design infrastructure to improve consistency and developer experience across all platforms.</p>
+                                <div class="case-study-tags">
+                                    <span class="tag tag-default">Design System</span>
+                                    <span class="tag tag-default">UX Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Message -->
+            <div class="component-group">
+                <div class="component-label">Chat Message Component</div>
+                <div class="grid-2">
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">User Message</div>
+                        <div class="chat-container">
+                            <div class="chat-message chat-message-user">
+                                <div>
+                                    <div class="chat-message-content">Tell me about your process</div>
+                                    <div class="chat-timestamp">2:45 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Assistant Message</div>
+                        <div class="chat-container">
+                            <div class="chat-message">
+                                <div>
+                                    <div class="chat-message-content">I follow a user-centered approach combining research, design, and testing.</div>
+                                    <div class="chat-timestamp">2:46 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Suggestion Card -->
+            <div class="component-group">
+                <div class="component-label">Page Suggestion Card Component</div>
+                <div class="grid-3">
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Default</div>
+                        <button class="suggestion-card">
+                            <div class="suggestion-title">Case Study: Design System</div>
+                            <div class="suggestion-description">Learn about our design system overhaul project</div>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">High Relevance</div>
+                        <button class="suggestion-card">
+                            <div class="suggestion-title">Design Process</div>
+                            <div class="suggestion-description">My UX research and design methodology</div>
+                            <div class="suggestion-relevance">Relevant match</div>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="component-label" style="margin-bottom: 12px; font-size: 0.75rem;">Hover State</div>
+                        <button class="suggestion-card" style="border-color: var(--accent); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transform: scale(1.02);">
+                            <div class="suggestion-title">About Me</div>
+                            <div class="suggestion-description">Background and experience</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Tokens Reference -->
+        <div class="section">
+            <h2 class="section-title">Design Tokens Reference</h2>
+            <div class="grid-3" style="margin-bottom: 20px;">
+                <div>
+                    <div class="component-label">Colors</div>
+                    <div style="margin-top: 12px;">
+                        <div style="margin-bottom: 8px;">
+                            <div style="width: 100%; height: 30px; background-color: var(--accent); border-radius: 4px; margin-bottom: 4px;"></div>
+                            <div style="font-size: 0.75rem; color: var(--muted-foreground);">Accent: #5a6f5b</div>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <div style="width: 100%; height: 30px; background-color: var(--secondary); border: 1px solid var(--border); border-radius: 4px; margin-bottom: 4px;"></div>
+                            <div style="font-size: 0.75rem; color: var(--muted-foreground);">Secondary: #f5f5f5</div>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <div style="width: 100%; height: 30px; background-color: var(--card); border: 1px solid var(--border); border-radius: 4px; margin-bottom: 4px;"></div>
+                            <div style="font-size: 0.75rem; color: var(--muted-foreground);">Card: #ffffff</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="component-label">Typography</div>
+                    <div style="margin-top: 12px;">
+                        <div style="font-size: 1.75rem; font-weight: 600; margin-bottom: 8px;">H3 Heading</div>
+                        <div style="font-size: 1rem; margin-bottom: 8px;">Base Text</div>
+                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Small Text</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="component-label">Spacing & Radius</div>
+                    <div style="margin-top: 12px;">
+                        <div style="font-size: 0.875rem; margin-bottom: 8px;">Border Radius: 6px</div>
+                        <div style="font-size: 0.875rem; margin-bottom: 8px;">Padding: 12px - 32px</div>
+                        <div style="font-size: 0.875rem;">Gap: 8px - 20px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

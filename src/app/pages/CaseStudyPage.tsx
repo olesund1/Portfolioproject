@@ -229,7 +229,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Defining Customer Lifecycle',
           description: 'Mapped out the complete customer lifecycle and prioritized key journeys. Created a holistic view of all critical touchpoints and opportunities for improvement across the customer relationship.',
-          image: '/images/Customer life cycle.png',
+          image: '/images/Customer life cycle v2.png',
           insights: [
             'Multiple key journeys identified beyond initial priority',
             'Clear prioritization framework emerged',

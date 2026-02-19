@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Briefcase, Award, BookOpen } from 'lucide-react';
 import { Container } from '../components/Container';
@@ -58,30 +58,41 @@ export function AboutPage() {
     },
   ];
 
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = headingRef.current;
+    if (!el || !descRef.current) return;
+    const lineHeight = parseFloat(getComputedStyle(el).lineHeight);
+    descRef.current.style.marginTop = `${lineHeight + 10}px`;
+  }, []);
+
   return (
     <div className="pt-16 md:pt-20">
       {/* Hero Section - Title Overlap with 2-Column Body/Image */}
       <Section className="relative bg-[#fafafa] overflow-visible flex items-center justify-center">
         <Container size="narrow">
           <div className="relative pt-16 md:pt-0">
-            {/* Title - Positioned to Overlap Image */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl sm:text-6xl md:text-[80px] lg:text-[96px] font-bold text-foreground leading-tight mb-4 md:mb-8 relative z-20"
-            >
-              Johan Olesund
-            </motion.h1>
-
             {/* 2-Column Grid - Body Text (Left) and Image (Right) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+              {/* Title - Absolutely Positioned Inside Grid */}
+              <motion.h1
+                ref={headingRef}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-0 left-0 w-full whitespace-nowrap text-[60px] font-bold text-foreground leading-tight z-20"
+              >
+                Johan Olesund
+              </motion.h1>
+
               {/* Left Column - Body Text with Boids Pattern Behind */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative"
+                className="relative z-10"
               >
                 {/* Boids Pattern Background */}
                 <img
@@ -89,7 +100,7 @@ export function AboutPage() {
                   alt=""
                   className="absolute inset-0 opacity-25 pointer-events-none -z-10"
                 />
-                <p className="text-base md:text-lg text-foreground leading-[1.6] text-justify max-w-[405px] relative z-10">
+                <p ref={descRef} className="text-base md:text-lg text-foreground leading-[1.6] text-justify max-w-[405px] relative z-10">
                   Johan is a seasoned and business-minded UX Designer. He combines a strong foundation in user research and design with a sharp understanding of business strategy, ensuring that design decisions drive measurable value for both users and organizations. With his versatile experience across UX and product strategy, he can take on diverse design roles and delivering impact across the full design lifecycle. Johan is known for his drive, quick learning, collaborative nature, and positive energy, making him a valued and trusted member of the team.
                 </p>
               </motion.div>
@@ -99,16 +110,27 @@ export function AboutPage() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative h-[350px] md:h-[400px] lg:h-[433px]"
+                className="relative h-full overflow-hidden"
               >
                 <img
                   src="/images/profil.png"
                   alt="Johan Olesund"
                   className="w-full h-full object-cover"
+                  style={{
+                    transform: "scale(1.12)",
+                    objectPosition: "calc(50% - 60px) calc(50% - 30px)",
+                    transformOrigin: "center"
+                  }}
                 />
 
                 {/* Gradient Overlay - Black */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40"
+                  style={{
+                    transform: "scale(1.12)",
+                    transformOrigin: "center"
+                  }}
+                />
               </motion.div>
             </div>
           </div>

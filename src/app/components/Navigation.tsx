@@ -14,6 +14,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: 'Work', page: 'home' },
     { name: 'About', page: 'about' },
     { name: 'Contact', page: 'contact' },
+    { name: 'Talk to me', page: 'converse' },
   ];
 
   return (
@@ -23,9 +24,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Logo */}
           <button
             onClick={() => onNavigate('home')}
-            className="text-xl font-semibold tracking-tight hover:text-accent transition-colors"
+            className="text-sm font-semibold tracking-tight hover:text-accent transition-colors"
           >
-            Your Name
+            JOHAN OLESUND
           </button>
 
           {/* Desktop Navigation */}
