@@ -52,6 +52,12 @@ Copy this template and fill in your content:
     {
       title: 'Phase 1',
       description: 'What was done and why.',
+      image: undefined,
+    },
+  ],
+  keyInsights: [
+    {
+      phase: 'Phase 1',
       insights: ['Key insight 1', 'Key insight 2'],
     },
   ],
@@ -162,24 +168,47 @@ outcome: {
 - Focus on user benefit AND business impact
 
 **process** (required, array of process objects)
-- 2-4 phases of the design process
-- Each object has: title, description, insights array
+- 2-5 phases of the design process
+- Each object has: title, description, and optional image
 ```tsx
 process: [
   {
     title: 'Research & Discovery',
     description: 'What was done and approach taken.',
-    insights: [
-      'Key finding or insight',
-      'Another important discovery',
-    ],
+    image: undefined,
   },
   // More phases...
 ]
 ```
 - **title**: Phase name (e.g., 'Research & Discovery', 'Strategy & Planning', 'Design & Testing')
 - **description**: 2-3 sentences on what was done, approach, and rationale
-- **insights**: Array of 3-4 key findings or learnings from this phase
+- **image**: Optional image to display during this phase (e.g., '/images/phase-diagram.png' or undefined)
+
+**keyInsights** (required, array of phase insight objects)
+- Consolidated insights from all process phases
+- Grouped by phase for context and clarity
+```tsx
+keyInsights: [
+  {
+    phase: 'Research & Discovery',
+    insights: [
+      'Key finding or insight',
+      'Another important discovery',
+      'Critical learning from this phase',
+    ],
+  },
+  {
+    phase: 'Strategy & Planning',
+    insights: [
+      'Strategic insight',
+      'Planning discovery',
+    ],
+  },
+  // More phases...
+]
+```
+- **phase**: Name of the process phase (must match a process title)
+- **insights**: Array of 3-5 key findings or learnings from this phase
 
 **solution** (required, string, 200-300 chars)
 - Summary of the solution delivered
@@ -231,7 +260,14 @@ const caseStudyData = {
     problem: 'Problem description',
     challenge: 'How might we...?',
     outcome: { metrics: [...] },
-    process: [...],
+    process: [
+      { title: 'Phase 1', description: '...', image: undefined },
+      { title: 'Phase 2', description: '...', image: undefined },
+    ],
+    keyInsights: [
+      { phase: 'Phase 1', insights: [...] },
+      { phase: 'Phase 2', insights: [...] },
+    ],
     solution: 'Solution description',
     solutionImages: [...],
     reflection: 'Reflection on learnings',
@@ -278,7 +314,8 @@ Add entry for chatbot to suggest the case study:
 - [ ] `problem` statement is clear and includes context
 - [ ] `challenge` is phrased as "How might we..." question
 - [ ] `outcome.metrics` has 3-5 entries with quantifiable results
-- [ ] `process` has 2-4 phases with insights
+- [ ] `process` has 2-5 phases (title, description, optional image)
+- [ ] `keyInsights` has all phases with grouped insights
 - [ ] `solution` summarizes the delivered solution
 - [ ] `solutionImages` has 2+ valid image URLs
 - [ ] `reflection` provides personal learning/insight

@@ -39,6 +39,19 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Research & Discovery',
           description: 'I led user mapping sessions, conducted stakeholder interviews across product, operations, and support teams, and facilitated workshops to understand partner pain points. We analyzed current workflows and identified bottlenecks through contextual inquiry.',
+        },
+        {
+          title: 'Strategy & Planning',
+          description: 'We conducted comprehensive impact mapping to understand business goals and user needs. I prioritized features based on strategic importance and developed a phased release plan that balanced quick wins with long-term platform improvements.',
+        },
+        {
+          title: 'Design & Testing',
+          description: 'I created interaction prototypes and conducted iterative testing with real partners. Close collaboration with developers ensured feasibility of designs while maintaining design integrity. Multiple rounds of user testing refined the experience.',
+        },
+      ],
+      keyInsights: [
+        {
+          phase: 'Research & Discovery',
           insights: [
             'Partners spent 3+ hours daily on manual data entry tasks',
             'System lacked real-time visibility into orders and status updates',
@@ -47,8 +60,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Strategy & Planning',
-          description: 'We conducted comprehensive impact mapping to understand business goals and user needs. I prioritized features based on strategic importance and developed a phased release plan that balanced quick wins with long-term platform improvements.',
+          phase: 'Strategy & Planning',
           insights: [
             'Automation could eliminate 80% of manual data entry',
             'Self-service capabilities needed careful information architecture',
@@ -57,8 +69,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Design & Testing',
-          description: 'I created interaction prototypes and conducted iterative testing with real partners. Close collaboration with developers ensured feasibility of designs while maintaining design integrity. Multiple rounds of user testing refined the experience.',
+          phase: 'Design & Testing',
           insights: [
             'Partners preferred dashboard-first approach over traditional navigation',
             'Automation options needed clear feedback and control mechanisms',
@@ -99,6 +110,19 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Research & Discovery',
           description: 'We interviewed 30 patients, including users with various disabilities. We also shadowed front desk staff and analyzed appointment booking patterns.',
+        },
+        {
+          title: 'Ideation & Design',
+          description: 'We created an accessible design system and simplified the booking flow to 3 steps. All designs were reviewed by accessibility experts.',
+        },
+        {
+          title: 'Testing & Iteration',
+          description: 'We conducted extensive accessibility testing with screen readers, keyboard navigation, and users with various disabilities.',
+        },
+      ],
+      keyInsights: [
+        {
+          phase: 'Research & Discovery',
           insights: [
             'Complex booking flow confused users',
             'Poor contrast made text hard to read',
@@ -107,8 +131,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Ideation & Design',
-          description: 'We created an accessible design system and simplified the booking flow to 3 steps. All designs were reviewed by accessibility experts.',
+          phase: 'Ideation & Design',
           insights: [
             'WCAG 2.1 AA compliant color palette',
             'Clear step-by-step booking process',
@@ -117,8 +140,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Testing & Iteration',
-          description: 'We conducted extensive accessibility testing with screen readers, keyboard navigation, and users with various disabilities.',
+          phase: 'Testing & Iteration',
           insights: [
             '100% task completion with assistive tech',
             'Significantly faster booking times',
@@ -159,6 +181,19 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Research & Discovery',
           description: 'We analyzed funnel data, conducted user testing of the existing checkout, and surveyed customers who abandoned their carts.',
+        },
+        {
+          title: 'Ideation & Design',
+          description: 'We tested multiple checkout patterns including one-page, multi-step, and accordion styles. We optimized for mobile-first.',
+        },
+        {
+          title: 'Testing & Iteration',
+          description: 'We ran extensive A/B tests on each element of the new checkout flow, measuring impact on conversion rate.',
+        },
+      ],
+      keyInsights: [
+        {
+          phase: 'Research & Discovery',
           insights: [
             'Users surprised by shipping costs late in process',
             'Form fields felt overwhelming',
@@ -167,8 +202,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Ideation & Design',
-          description: 'We tested multiple checkout patterns including one-page, multi-step, and accordion styles. We optimized for mobile-first.',
+          phase: 'Ideation & Design',
           insights: [
             'Reduced to 3 clear steps',
             'Show all costs upfront',
@@ -177,8 +211,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Testing & Iteration',
-          description: 'We ran extensive A/B tests on each element of the new checkout flow, measuring impact on conversion rate.',
+          phase: 'Testing & Iteration',
           insights: [
             'Progress indicator increased completion by 18%',
             'Guest checkout boosted conversion by 22%',
@@ -198,7 +231,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
       title: 'Enabling Customer-Centricity',
       subtitle: 'Leading organizational transformation toward customer-centric operations',
       tags: ['Strategy', 'CX Leadership', 'Organizational Change', 'Research', 'Team Scaling'],
-      heroImage: 'https://images.unsplash.com/photo-1564654712-b60fc8b0b090?w=1200&q=80',
+      heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
       overview: {
         role: 'Customer Experience Lead / Product Designer',
         timeline: '12 months',
@@ -219,6 +252,32 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
         {
           title: 'Understanding Client Needs',
           description: 'Conducted discovery interviews, workshops, and presentations across teams to understand organizational gaps and build alignment on the need for customer-centric transformation. Stakeholder engagement was critical to establishing support for change.',
+          image: undefined,
+        },
+        {
+          title: 'Defining Customer Lifecycle',
+          description: 'Mapped out the complete customer lifecycle and prioritized key journeys. Created a holistic view of all critical touchpoints and opportunities for improvement across the customer relationship.',
+          image: '/images/Customer life cycle v2.png',
+        },
+        {
+          title: 'Scaling the Team',
+          description: 'Demonstrated value quickly, attracting stakeholder interest. Expanded initial solo effort to 3 designers within first months, then supported recruitment of permanent team members to sustain the initiative.',
+          image: undefined,
+        },
+        {
+          title: 'Research & Customer Journey Production',
+          description: 'Conducted contextual interviews with internal teams and end customers. Continuously drafted and validated customer journey assumptions, mapping needs, expectations, pains, and gains against internal processes.',
+          image: undefined,
+        },
+        {
+          title: 'Workshop Facilitation & Education',
+          description: 'Facilitated cross-functional workshops on design thinking, prioritization methods, and customer-centric approaches. Built internal capability and scaled customer-first mindset across organization.',
+          image: undefined,
+        },
+      ],
+      keyInsights: [
+        {
+          phase: 'Understanding Client Needs',
           insights: [
             'Organization lacked unified understanding of customer needs',
             'Insights were fragmented across departments',
@@ -227,9 +286,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Defining Customer Lifecycle',
-          description: 'Mapped out the complete customer lifecycle and prioritized key journeys. Created a holistic view of all critical touchpoints and opportunities for improvement across the customer relationship.',
-          image: '/images/Customer life cycle v2.png',
+          phase: 'Defining Customer Lifecycle',
           insights: [
             'Multiple key journeys identified beyond initial priority',
             'Clear prioritization framework emerged',
@@ -238,8 +295,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Scaling the Team',
-          description: 'Demonstrated value quickly, attracting stakeholder interest. Expanded initial solo effort to 3 designers within first months, then supported recruitment of permanent team members to sustain the initiative.',
+          phase: 'Scaling the Team',
           insights: [
             'Early wins proved value and built credibility',
             'Momentum attracted additional resources',
@@ -248,8 +304,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Research & Customer Journey Production',
-          description: 'Conducted contextual interviews with internal teams and end customers. Continuously drafted and validated customer journey assumptions, mapping needs, expectations, pains, and gains against internal processes.',
+          phase: 'Research & Customer Journey Production',
           insights: [
             'Direct customer research revealed critical pain points',
             'Internal process mapping enabled practical improvements',
@@ -258,8 +313,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
           ],
         },
         {
-          title: 'Workshop Facilitation & Education',
-          description: 'Facilitated cross-functional workshops on design thinking, prioritization methods, and customer-centric approaches. Built internal capability and scaled customer-first mindset across organization.',
+          phase: 'Workshop Facilitation & Education',
           insights: [
             'Workshops educated teams on new methods',
             'Facilitation built cross-team alignment',
@@ -356,7 +410,6 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-accent font-medium mb-4">The Challenge</p>
             <h2 className="mb-8">Problem</h2>
             <p className="text-lg text-muted-foreground mb-6">{data.problem}</p>
             <div className="p-6 bg-accent/5 border-l-4 border-accent rounded-lg">
@@ -375,7 +428,6 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-accent font-medium mb-4">Approach</p>
             <h2>Design Process</h2>
           </motion.div>
 
@@ -396,7 +448,7 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
                     <p className="text-muted-foreground">{step.description}</p>
                   </div>
                 </div>
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-2">
                   {step.image && (
                     <div className="rounded-2xl overflow-hidden">
                       <img
@@ -406,20 +458,48 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
                       />
                     </div>
                   )}
-                  <div className="bg-card p-8 rounded-2xl border border-border">
-                    <h4 className="mb-4">Key Insights</h4>
-                    <ul className="space-y-3">
-                      {step.insights.map((insight) => (
-                        <li key={insight} className="flex items-start gap-3">
-                          <CheckCircle2 size={20} className="text-accent flex-shrink-0 mt-1" />
-                          <span className="text-muted-foreground">{insight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Key Insights Section */}
+      <Section>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2>Key Insights</h2>
+          </motion.div>
+
+          <div className="w-full overflow-x-auto overflow-y-hidden pb-4">
+            <div className="flex gap-6 flex-nowrap">
+              {data.keyInsights.map((group, index) => (
+                <motion.div
+                  key={group.phase}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex-shrink-0 min-w-[calc(100vw-2rem)] md:min-w-[calc(50vw-2rem)] lg:min-w-[calc(35vw-2rem)] xl:min-w-[calc(30vw-2rem)] bg-card p-8 rounded-2xl border border-border"
+                >
+                  <h3 className="mb-4">{group.phase}</h3>
+                  <ul className="space-y-3">
+                    {group.insights.map((insight) => (
+                      <li key={insight} className="flex items-start gap-3">
+                        <CheckCircle2 size={20} className="text-accent flex-shrink-0 mt-1" />
+                        <span className="text-muted-foreground text-sm">{insight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
@@ -433,7 +513,6 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="text-accent font-medium mb-4">The Solution</p>
             <h2 className="mb-8">Final Design</h2>
             <p className="text-lg text-muted-foreground max-w-3xl">{data.solution}</p>
           </motion.div>
@@ -468,7 +547,6 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <p className="font-medium mb-4 opacity-90">Impact</p>
             <h2 className="mb-4">Results & Outcomes</h2>
             <p className="text-lg opacity-90 max-w-3xl">
               The redesigned experience delivered measurable improvements across key metrics.
@@ -501,7 +579,6 @@ export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-accent font-medium mb-4">Learnings</p>
             <h2 className="mb-6">Reflection</h2>
             <p className="text-lg text-muted-foreground">{data.reflection}</p>
           </motion.div>
