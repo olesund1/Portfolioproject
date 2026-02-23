@@ -1,0 +1,47 @@
+{
+  "id": "healthcare-platform",
+  "title": "Healthcare Patient Portal",
+  "subtitle": "Creating an accessible patient portal that simplified healthcare access",
+  "tags": ["Web App", "Healthcare", "Accessibility", "WCAG 2.1"],
+  "heroImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+  "challenge": "Patients struggled to book appointments online, leading to high call volumes and missed appointments. The existing portal was not accessible to users with disabilities and had a dated interface. The central question: How might we create an accessible, easy-to-use patient portal that reduces no-shows and call center volume?",
+  "designProcess": {
+    "intro": "We followed an inclusive design methodology, designing for accessibility from the start rather than retrofitting it later. All designs were reviewed by accessibility experts and tested with users with various disabilities.",
+    "steps": [
+      {
+        "title": "Research & Discovery",
+        "description": "Interviewed 30 patients, including users with various disabilities. Shadowed front desk staff and analyzed appointment booking patterns. Identified key barriers: complex flow, poor contrast, no keyboard navigation, and medical jargon."
+      },
+      {
+        "title": "Ideation & Design",
+        "description": "Created an accessible design system and simplified the booking flow to 3 steps. WCAG 2.1 AA compliant color palette, plain language throughout, and multiple input methods supported diverse user needs."
+      },
+      {
+        "title": "Testing & Iteration",
+        "description": "Conducted extensive accessibility testing with screen readers, keyboard navigation, and users with various disabilities. Achieved 100% task completion rate with assistive technologies."
+      }
+    ],
+    "insights": [
+      "Inclusive design from the start created better experiences for everyone, not just users with disabilities",
+      "Plain language and clear information architecture reduced decision paralysis and confusion",
+      "Proper accessibility testing revealed that universal design principles serve all users better",
+      "Early accessibility expert involvement prevented costly redesigns and ensured compliance"
+    ]
+  },
+  "deliverables": {
+    "intro": "We created a fully accessible patient portal with simplified appointment booking, clear information hierarchy, and support for all assistive technologies. WCAG 2.1 AA compliance was embedded from the start, ensuring access for all users.",
+    "images": [
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+    ]
+  },
+  "results": {
+    "intro": "The redesigned experience delivered measurable improvements across key metrics.",
+    "kpis": [
+      { "label": "No-show rate", "value": "30% reduction" },
+      { "label": "Online bookings", "value": "65% increase" },
+      { "label": "WCAG compliance", "value": "AA certified" },
+      { "label": "Call center volume", "value": "40% decrease" }
+    ]
+  }
+}

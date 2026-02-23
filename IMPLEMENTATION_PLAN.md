@@ -77,18 +77,20 @@ interface CaseStudyData {
 
 ---
 
-## Phase 3: Data Structure & JSON Files
+## Phase 3: Data Structure & JSON Files ✅ COMPLETE
 **Goal:** Create case study JSON files and loading mechanism
 
 ### Tasks:
-- [ ] Design JSON schema for case studies
-- [ ] Create example case study JSON file: `src/data/caseStudies/ecommerce.json`
-- [ ] Implement `loadCaseStudy.ts` to:
-  - Accept case study ID
-  - Import and parse JSON
-  - Handle errors/missing files
-  - Return typed case study data
-- [ ] Test data loading with example case study
+- [x] All 5 case studies migrated from hardcoded data to JSON files
+- [x] `loadCaseStudy.ts` updated with all 5 imports
+- [x] Build verified — all files compile cleanly
+
+### JSON Files Created:
+- `src/data/caseStudies/b2p-redesign.json`
+- `src/data/caseStudies/healthcare-platform.json`
+- `src/data/caseStudies/ecommerce-checkout.json`
+- `src/data/caseStudies/customer-centricity.json`
+- `src/data/caseStudies/customer-energy-transformation.json`
 
 ### JSON File Structure:
 ```json
@@ -129,22 +131,17 @@ interface CaseStudyData {
 
 ---
 
-## Phase 4: Content Integration
+## Phase 4: Content Integration ✅ COMPLETE
 **Goal:** Wire everything together and test end-to-end
 
 ### Tasks:
-- [ ] Connect case study data to template component
-- [ ] Test `/casestudy/ecommerce` route displays correct content
-- [ ] Verify all sections render correctly with real data
-- [ ] Test "Back to Work" button navigation
-- [ ] Test "View All Projects" CTA button
-- [ ] Create one additional test case study (optional)
-- [ ] Handle edge cases (missing case study, invalid ID)
-
-### Expected Outcome:
-- Full end-to-end case study page functional
-- Navigation works as expected
-- Ready for additional case studies
+- [x] Removed 620+ lines of dead code from CaseStudyPage.tsx (665 → 45 lines)
+- [x] Added graceful "not found" fallback for unknown case study IDs
+- [x] Fixed stale fallback ID ('fintech-app' → 'b2p-redesign') in App.tsx
+- [x] Verified all 5 HomePage IDs match loadCaseStudy map keys
+- [x] Verified all JSON filenames match their internal `id` fields
+- [x] Verified full routing chain: HomePage → handleNavigate → pushState → parseUrl → CaseStudyPage → loadCaseStudy → JSON → CaseStudyTemplate
+- [x] Build passes cleanly (JS bundle reduced by ~29 kB after dead code removal)
 
 ---
 
@@ -153,24 +150,30 @@ interface CaseStudyData {
 ```
 src/
 ├── app/
-│   ├── App.tsx (updated - case study routing)
+│   ├── App.tsx                        ← URL routing (parseUrl/buildUrl/pushState)
 │   ├── components/
-│   │   └── CaseStudyTemplate.tsx (new)
+│   │   └── CaseStudyTemplate.tsx      ← NEW — Figma template component
 │   ├── pages/
-│   │   └── CaseStudyPage.tsx (updated - may be merged with template)
+│   │   └── CaseStudyPage.tsx          ← Simplified (45 lines) — loads JSON + renders template
 │   └── utils/
-│       └── loadCaseStudy.ts (new)
+│       └── loadCaseStudy.ts           ← NEW — imports JSON files, returns typed data
 └── data/
+    ├── caseStudyTypes.ts              ← NEW — TypeScript interface
     └── caseStudies/
-        ├── ecommerce.json
-        └── [other-case-study].json
+        ├── b2p-redesign.json
+        ├── healthcare-platform.json
+        ├── ecommerce-checkout.json
+        ├── customer-centricity.json
+        └── customer-energy-transformation.json
 ```
 
 ---
 
-## Notes
-- **No breaking changes** - existing pages remain functional
-- **Gradual expansion** - add new case studies by creating JSON files
-- **Simple loading** - no complex state management needed
-- **Styling** - all within existing Tailwind/design token system
+## How to Add a New Case Study
+
+1. Create `src/data/caseStudies/my-new-project.json` (copy any existing JSON as a starting point)
+2. Add import + map entry to `src/app/utils/loadCaseStudy.ts`
+3. Add a card entry to the `caseStudies` array in `src/app/pages/HomePage.tsx`
+
+No component code changes needed — the template and routing handle everything automatically.
 

@@ -1,0 +1,47 @@
+{
+  "id": "customer-energy-transformation",
+  "title": "Customer-Centric Energy Company Transformation",
+  "subtitle": "Transforming a legacy utility company into a customer-focused organization through research and organizational change",
+  "tags": ["B2B/B2C", "Customer Journey", "CX Strategy", "Team Leadership", "Design Systems"],
+  "heroImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+  "challenge": "The client, one of Sweden's largest electricity distributors serving 900,000 customers, faced fragmented customer insights, high support costs, and limited self-service capabilities. Operations-focused processes were creating friction in customer interactions, while rising electricity prices and increasing customer expectations demanded a fundamental shift toward customer-centricity.",
+  "designProcess": {
+    "intro": "We took a phased approach that balanced research depth with quick wins to build organizational momentum. Each phase built credibility that enabled the next, creating a sustainable transformation trajectory.",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "Led cross-functional research to map the complete customer lifecycle and identify pain points. Conducted contextual interviews with both internal stakeholders and end customers to establish assumed experiences, then validated findings through real customer sessions."
+      },
+      {
+        "title": "Strategy",
+        "description": "Developed comprehensive framework for customer journey mapping and built organizational capability. Scaled the design team by recruiting additional designers and established cross-functional workshops to embed design thinking across the company."
+      },
+      {
+        "title": "Delivery",
+        "description": "Produced detailed customer journey maps with integrated business process views. Prioritized improvement opportunities and implemented work packages with measurable KPIs. Early wins in the solar panel segment demonstrated clear ROI for expansion."
+      }
+    ],
+    "insights": [
+      "Customer transformation requires organizational alignment before implementation — research and strategy phases were as important as final journey maps",
+      "Cross-functional workshops proved more valuable than traditional presentations for embedding design thinking",
+      "Phased approach with measurable early wins (solar segment) built credibility for larger organizational change",
+      "Combining customer research with internal process mapping revealed opportunities inaccessible through either lens alone"
+    ]
+  },
+  "deliverables": {
+    "intro": "Delivered a comprehensive B2C/B2B customer lifecycle framework, detailed customer journeys with integrated business process views, and embedded design methodologies across the organization. The solar panel segment redesign achieved a 52% Customer Effort Score improvement, validating the approach.",
+    "images": [
+      "https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+    ]
+  },
+  "results": {
+    "intro": "The redesigned experience delivered measurable improvements across key metrics.",
+    "kpis": [
+      { "label": "Customer Effort Score", "value": "52% increase" },
+      { "label": "Team expansion", "value": "3x delivery capacity" },
+      { "label": "Organizational alignment", "value": "7 depts unified" },
+      { "label": "Self-service adoption", "value": "65% increase" }
+    ]
+  }
+}

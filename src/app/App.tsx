@@ -165,7 +165,7 @@ export default function App() {
       case 'case-study':
         return (
           <CaseStudyPage
-            caseStudyId={appState.caseStudyId || 'fintech-app'}
+            caseStudyId={appState.caseStudyId || 'b2p-redesign'}
             onNavigate={handleNavigate}
           />
         );

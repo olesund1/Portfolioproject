@@ -1,0 +1,55 @@
+{
+  "id": "customer-centricity",
+  "title": "Enabling Customer-Centricity",
+  "subtitle": "Leading organizational transformation at Sweden's largest electricity distributor to embed customer-first thinking across operations",
+  "tags": ["Strategy", "CX Leadership", "Organizational Change", "Research", "Team Scaling"],
+  "heroImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+  "challenge": "The client, one of Sweden's largest electricity distributors with 900,000 customers, operated with fragmented customer insights scattered across 7+ departments. High support costs, limited self-service capabilities, and an operations-centric culture created friction in customer interactions. Without coordinated customer-centric approaches, the company risked losing competitive advantage and customer loyalty.",
+  "designProcess": {
+    "intro": "This was a transformation project spanning organizational alignment, customer research, team scaling, and capability building. The work moved from understanding the current state through defining the customer lifecycle to embedding new ways of working across the organization.",
+    "steps": [
+      {
+        "title": "Understanding Client Needs",
+        "description": "Conducted extensive discovery interviews and stakeholder workshops across operations, support, product, and leadership teams. Mapped organizational structures, identified silos, and built consensus around the need for customer-centric transformation."
+      },
+      {
+        "title": "Defining Customer Lifecycle",
+        "description": "Created comprehensive B2C and B2B customer journey maps covering complete lifecycle from awareness through retention. Identified and prioritized key customer segments: regular customers, solar panel owners, businesses."
+      },
+      {
+        "title": "Scaling the Team",
+        "description": "Initial solo work demonstrated clear value through quick wins and evidence. This credibility attracted stakeholder investment, enabling rapid team expansion from 1 to 3 permanent designers within months."
+      },
+      {
+        "title": "Research & Journey Production",
+        "description": "Conducted contextual interviews with both internal stakeholders and real customers. Iteratively drafted and validated customer journey assumptions, mapping needs, expectations, pains, and gains."
+      },
+      {
+        "title": "Workshop Facilitation & Education",
+        "description": "Facilitated cross-functional workshops teaching design thinking, customer research methods, and prioritization frameworks. Built organizational capability by shifting mindset from output-focused to outcome-focused."
+      }
+    ],
+    "insights": [
+      "Organizational transformation requires alignment before implementation — discovery and strategy phases created more value than final deliverables alone",
+      "Team scaling through evidence and quick wins was essential — one designer couldn't deliver organizational scope, but early credibility enabled investment",
+      "Customer journey maps only created value when connected to operations — insights-to-action translation was the critical bridge",
+      "Leading without formal authority meant influence through evidence, consistent communication, and demonstrated business impact"
+    ]
+  },
+  "deliverables": {
+    "intro": "Created Sweden's leading electricity distributor's first comprehensive customer journey framework covering B2C and B2B lifecycles. Scaled CX team from 1 to 3+ permanent designers embedded across the organization. Delivered detailed customer journeys integrated with operational process maps.",
+    "images": [
+      "/images/Kundresa_solceller.png",
+      "/images/Customer life cycle v2.png"
+    ]
+  },
+  "results": {
+    "intro": "The transformation delivered measurable improvements across organizational and customer metrics.",
+    "kpis": [
+      { "label": "Customer Effort Score", "value": "4.2 → 6.35 (+52%)" },
+      { "label": "Support cost reduction", "value": "Significant decrease" },
+      { "label": "Team scaling", "value": "1 → 3+ designers" },
+      { "label": "Organizational adoption", "value": "7 depts unified" }
+    ]
+  }
+}
