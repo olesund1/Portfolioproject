@@ -1,0 +1,47 @@
+{
+  "id": "ecommerce-checkout",
+  "title": "E-commerce Checkout Optimization",
+  "subtitle": "Streamlining checkout to boost conversion and reduce cart abandonment",
+  "tags": ["E-commerce", "Conversion", "A/B Testing", "Mobile"],
+  "heroImage": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+  "challenge": "The e-commerce site had a 68% cart abandonment rate, significantly above industry average. Analytics showed users were dropping off at various points in the checkout process. Users were surprised by shipping costs revealed late, form fields felt overwhelming, mobile experience was poor, and there was no clear progress indication.",
+  "designProcess": {
+    "intro": "We followed a data-driven design methodology, combining qualitative user research with quantitative analytics to identify and solve the highest-impact friction points in the checkout flow.",
+    "steps": [
+      {
+        "title": "Research & Discovery",
+        "description": "Analyzed funnel data, conducted user testing of the existing checkout, and surveyed customers who abandoned their carts. Identified key drop-off points and user frustration patterns."
+      },
+      {
+        "title": "Ideation & Design",
+        "description": "Tested multiple checkout patterns including one-page, multi-step, and accordion styles. Optimized for mobile-first with smart defaults and autofill to reduce form friction."
+      },
+      {
+        "title": "Testing & Iteration",
+        "description": "Ran extensive A/B tests on each element of the new checkout flow. Progress indicator increased completion by 18%, guest checkout boosted conversion by 22%."
+      }
+    ],
+    "insights": [
+      "Incremental improvements compound — no single change was transformative, but together they drove 25% conversion increase",
+      "Transparent pricing upfront eliminated one of the largest abandonment reasons",
+      "Mobile-first design approach revealed that desktop optimizations often ignored mobile friction points",
+      "Data-driven testing was essential — our assumptions about what mattered differed from actual user behavior"
+    ]
+  },
+  "deliverables": {
+    "intro": "We implemented a streamlined 3-step checkout with clear progress indication, all costs shown upfront, guest checkout option, and optimized mobile experience. Smart defaults and autofill reduced form friction while maintaining necessary information collection.",
+    "images": [
+      "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&q=80",
+      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80"
+    ]
+  },
+  "results": {
+    "intro": "The redesigned experience delivered measurable improvements across key metrics.",
+    "kpis": [
+      { "label": "Conversion rate", "value": "25% increase" },
+      { "label": "Cart abandonment", "value": "68% → 52%" },
+      { "label": "Average order value", "value": "12% higher" },
+      { "label": "Customer satisfaction", "value": "4.7/5.0" }
+    ]
+  }
+}

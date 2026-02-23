@@ -39,9 +39,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       id: 'customer-centricity',
       title: 'Enabling Customer-Centricity',
-      description: 'Led organizational transformation to embed customer-centric thinking, creating first customer journey and scaling CX team for electricity distributor.',
+      description: 'Transformed a legacy electricity distributor by creating unified customer journeys, scaling CX team, and embedding customer-first thinking across operations. Achieved 52% improvement in customer satisfaction metrics.',
       tags: ['Strategy', 'CX Leadership', 'Organizational Change'],
       imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+      year: '2024',
+    },
+    {
+      id: 'customer-energy-transformation',
+      title: 'Customer-Centric Energy Company Transformation',
+      description: 'Transformed a legacy utility company into a customer-focused organization, improving Customer Effort Score by 52% and scaling organizational capability.',
+      tags: ['Strategy', 'CX Leadership', 'Customer Journey'],
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80',
       year: '2024',
     },
   ];

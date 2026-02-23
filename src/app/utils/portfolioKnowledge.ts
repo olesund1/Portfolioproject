@@ -70,9 +70,15 @@ export const portfolioKnowledge = {
     caseStudyId: 'ecommerce-checkout',
   },
   'case-study-customer-centricity': {
-    keywords: ['customer-centricity', 'customer experience', 'cx', 'journey mapping', 'organizational change', 'customer journey', 'strategy', 'leadership', 'team building'],
+    keywords: ['customer-centricity', 'customer experience', 'cx', 'journey mapping', 'organizational change', 'customer journey', 'strategy', 'leadership', 'team building', 'electricity', 'energy', 'utility', 'organizational transformation', 'customer effort score', 'ces', 'design thinking', 'team scaling', 'stakeholder alignment', 'customer research', 'operations', 'digital transformation', 'solar', 'satisfaction improvement'],
     title: 'Enabling Customer-Centricity',
-    description: 'Customer experience transformation and organizational change case study',
+    description: 'Led organizational transformation at Sweden\'s largest electricity distributor to embed customer-first thinking across operations. Created unified customer journey framework and scaled CX team, achieving 52% customer satisfaction improvement.',
     caseStudyId: 'customer-centricity',
+  },
+  'case-study-energy-transformation': {
+    keywords: ['energy', 'electricity', 'utility', 'customer-centric', 'customer effort score', 'ces', 'organizational transformation', 'customer journey', 'energy company', 'solar', 'renewable'],
+    title: 'Customer-Centric Energy Company Transformation',
+    description: 'Transforming a utility company into a customer-focused organization with measurable impact',
+    caseStudyId: 'customer-energy-transformation',
   },
 };

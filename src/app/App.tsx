@@ -23,22 +23,58 @@ interface AppState {
   caseStudyId?: string;
 }
 
+/** Parse the current browser URL into an AppState */
+function parseUrl(pathname: string = window.location.pathname): AppState {
+  const path = pathname.replace(/\/+$/, '') || '/';
+
+  if (path === '/' || path === '') return { currentPage: 'home' };
+  if (path === '/about') return { currentPage: 'about' };
+  if (path === '/contact') return { currentPage: 'contact' };
+  if (path === '/converse') return { currentPage: 'converse' };
+
+  // Match /case-study/:id
+  const caseStudyMatch = path.match(/^\/case-study\/(.+)$/);
+  if (caseStudyMatch) {
+    return { currentPage: 'case-study', caseStudyId: caseStudyMatch[1] };
+  }
+
+  return { currentPage: 'home' };
+}
+
+/** Convert an AppState to a URL path */
+function buildUrl(page: string, caseStudyId?: string): string {
+  switch (page) {
+    case 'home': return '/';
+    case 'about': return '/about';
+    case 'contact': return '/contact';
+    case 'converse': return '/converse';
+    case 'case-study': return `/case-study/${caseStudyId || ''}`;
+    default: return '/';
+  }
+}
+
 export default function App() {
-  const [appState, setAppState] = useState<AppState>({
-    currentPage: 'home',
-  });
+  const [appState, setAppState] = useState<AppState>(parseUrl);
   const [chatbotMessages, setChatbotMessages] = useState<DisplayMessage[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
   const [showFloatingChat, setShowFloatingChat] = useState(false);
   const [isChatbotInitialized, setIsChatbotInitialized] = useState(false);
 
   const handleNavigate = (page: string, caseStudyId?: string) => {
-    setAppState({
-      currentPage: page as PageType,
-      caseStudyId,
-    });
+    const newState: AppState = { currentPage: page as PageType, caseStudyId };
+    setAppState(newState);
+    window.history.pushState(newState, '', buildUrl(page, caseStudyId));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Listen for browser back/forward buttons
+  useEffect(() => {
+    const onPopState = () => {
+      setAppState(parseUrl());
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
   // Initialize chatbot with welcome message
   useEffect(() => {
