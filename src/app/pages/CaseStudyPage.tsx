@@ -5,6 +5,8 @@ import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
 import { Tag } from '../components/Tag';
+import { CaseStudyTemplate } from '../components/CaseStudyTemplate';
+import { loadCaseStudy } from '../utils/loadCaseStudy';
 
 interface CaseStudyPageProps {
   caseStudyId: string;
@@ -12,7 +14,13 @@ interface CaseStudyPageProps {
 }
 
 export function CaseStudyPage({ caseStudyId, onNavigate }: CaseStudyPageProps) {
-  // Mock data - in a real app, this would be fetched based on caseStudyId
+  // If JSON data exists for this case study, use the new template
+  const jsonData = loadCaseStudy(caseStudyId);
+  if (jsonData) {
+    return <CaseStudyTemplate data={jsonData} onNavigate={onNavigate} />;
+  }
+
+  // Legacy hardcoded data for case studies not yet migrated to JSON
   const caseStudyData = {
     'b2p-redesign': {
       title: 'Partner Platform (B2P) Redesign',

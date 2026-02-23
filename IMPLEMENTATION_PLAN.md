@@ -24,22 +24,26 @@ Implement a reusable case study template layout based on Figma design at `/cases
 
 ---
 
-## Phase 2: Template Layout
+## Phase 2: Template Layout ✅ COMPLETE
 **Goal:** Build reusable `CaseStudyTemplate` component matching Figma design
 
 ### Component Sections:
-- [ ] **Header Container** - Back button with border
-- [ ] **Hero Section** - Project tags, title, subtitle, hero image
-- [ ] **Challenge Section** - Title + body content
-- [ ] **Design Process Section** - Body text + design steps (3 step cards) + key insights (bullet list)
-- [ ] **Deliverables Section** - Body text + 2-column image grid
-- [ ] **Results & Impact Section** - Dark green background, 4 KPI cards
-- [ ] **CTA Section** - "Interested in more work?" + "View All Projects" button
+- [x] **Header Container** - Back button with border-bottom separator
+- [x] **Hero Section** - Uppercase tags, title, subtitle, hero image (21:9 aspect)
+- [x] **Challenge Section** - Two-column layout: heading left (300px) + body right
+- [x] **Design Process Section** - Two-column with intro, flex-wrap step cards, key insights bullet list
+- [x] **Deliverables Section** - Two-column with intro + 2-column image grid (4:3 aspect)
+- [x] **Results & Impact Section** - bg-accent, 4-column KPI cards with glass effect
+- [x] **CTA Section** - Centered heading + primary button
 
 ### Styling:
-- [ ] Use existing Tailwind classes and design tokens from `theme.css`
-- [ ] Maintain spacing/padding consistency (48px horizontal, 96px vertical)
-- [ ] Follow project's color palette and typography
+- [x] Uses existing Container, Button components and design tokens
+- [x] Spacing matches Figma (Container = max-w-6xl ≈ 1143px, lg:px-12 = 48px)
+- [x] All colors use theme tokens (text-accent, text-muted-foreground, bg-accent, etc.)
+
+### Integration:
+- [x] CaseStudyPage.tsx updated — checks for JSON data first, falls back to legacy layout
+- [x] Build verified — compiles cleanly
 
 ### Props Interface:
 ```typescript
