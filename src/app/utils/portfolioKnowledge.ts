@@ -1,4 +1,12 @@
-export const portfolioKnowledge = {
+import { caseStudyMetadata } from '@/data/caseStudies/metadata';
+
+/**
+ * Portfolio knowledge base for the chatbot
+ * Case study entries are auto-generated from centralized metadata to prevent sync issues
+ */
+
+// Static knowledge entries (non-case-study pages)
+const staticKnowledge = {
   home: {
     keywords: [
       'work',
@@ -51,34 +59,26 @@ export const portfolioKnowledge = {
     title: 'Get in Touch',
     description: 'Send me a message or get in touch',
   },
-  'case-study-b2p': {
-    keywords: ['b2p', 'b2p redesign', 'b2p project', 'procurement', 'business to professional'],
-    title: 'B2P Redesign',
-    description: 'B2P procurement platform redesign case study',
-    caseStudyId: 'b2p-redesign',
-  },
-  'case-study-healthcare': {
-    keywords: ['healthcare', 'health platform', 'patient', 'medical', 'clinic', 'appointment'],
-    title: 'Healthcare Platform',
-    description: 'Healthcare platform design case study',
-    caseStudyId: 'healthcare-platform',
-  },
-  'case-study-ecommerce': {
-    keywords: ['ecommerce', 'e-commerce', 'shopping', 'checkout', 'cart', 'online store'],
-    title: 'E-Commerce Checkout',
-    description: 'E-Commerce checkout flow optimization case study',
-    caseStudyId: 'ecommerce-checkout',
-  },
-  'case-study-customer-centricity': {
-    keywords: ['customer-centricity', 'customer experience', 'cx', 'journey mapping', 'organizational change', 'customer journey', 'strategy', 'leadership', 'team building', 'electricity', 'energy', 'utility', 'organizational transformation', 'customer effort score', 'ces', 'design thinking', 'team scaling', 'stakeholder alignment', 'customer research', 'operations', 'digital transformation', 'solar', 'satisfaction improvement'],
-    title: 'Enabling Customer-Centricity',
-    description: 'Led organizational transformation at Sweden\'s largest electricity distributor to embed customer-first thinking across operations. Created unified customer journey framework and scaled CX team, achieving 52% customer satisfaction improvement.',
-    caseStudyId: 'customer-centricity',
-  },
-  'case-study-energy-transformation': {
-    keywords: ['energy', 'electricity', 'utility', 'customer-centric', 'customer effort score', 'ces', 'organizational transformation', 'customer journey', 'energy company', 'solar', 'renewable'],
-    title: 'Customer-Centric Energy Company Transformation',
-    description: 'Transforming a utility company into a customer-focused organization with measurable impact',
-    caseStudyId: 'customer-energy-transformation',
-  },
+};
+
+/**
+ * Auto-generate case study knowledge entries from metadata
+ * This ensures the chatbot keywords stay synchronized with actual case study data
+ */
+const caseStudyKnowledge = caseStudyMetadata.reduce(
+  (acc, caseStudy) => ({
+    ...acc,
+    [`case-study-${caseStudy.id}`]: {
+      keywords: caseStudy.keywords,
+      title: caseStudy.title,
+      description: caseStudy.shortDescription,
+      caseStudyId: caseStudy.id,
+    },
+  }),
+  {} as Record<string, any>
+);
+
+export const portfolioKnowledge = {
+  ...staticKnowledge,
+  ...caseStudyKnowledge,
 };

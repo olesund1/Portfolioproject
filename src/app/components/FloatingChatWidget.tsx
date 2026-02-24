@@ -1,7 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, X, MessageCircle } from 'lucide-react';
+import { X, MessageCircle } from 'lucide-react';
 import { ChatMessage } from './ChatMessage';
+import { ChatInputArea } from './chat/ChatInputArea';
+import { TypingIndicator } from './chat/TypingIndicator';
+import { ChatMessagesContainer } from './chat/ChatMessagesContainer';
 
 interface DisplayMessage {
   id: string;
@@ -27,24 +30,6 @@ export function FloatingChatWidget({
 }: FloatingChatWidgetProps) {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesContainerRef = useRef<HTMLDivElement>(null);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  // Auto-scroll within container
-  useEffect(() => {
-    if (messagesContainerRef.current && messagesEndRef.current) {
-      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
-    }
-  }, [messages, isLoading]);
-
-  // Auto-resize textarea
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-      textareaRef.current.style.height = Math.min(textareaRef.current.scrollHeight, 100) + 'px';
-    }
-  }, [inputValue]);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -59,13 +44,6 @@ export function FloatingChatWidget({
       console.error('Error generating AI response:', error);
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
     }
   };
 
@@ -100,74 +78,28 @@ export function FloatingChatWidget({
             </div>
 
             {/* Messages Area */}
-            <div
-              ref={messagesContainerRef}
-              className="flex-1 overflow-y-auto p-4 space-y-4"
-            >
-              <AnimatePresence>
-                {messages.map((message) => (
-                  <ChatMessage
-                    key={message.id}
-                    role={message.role}
-                    content={message.content}
-                    onSuggestionClick={handleSuggestionClick}
-                  />
-                ))}
-              </AnimatePresence>
-
-              {/* Typing Indicator */}
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="flex items-center gap-2"
-                >
-                  <div className="bg-secondary text-foreground rounded-2xl rounded-bl-none p-3 flex gap-1">
-                    <motion.div
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
-                      className="w-2 h-2 bg-foreground rounded-full"
-                    />
-                    <motion.div
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
-                      className="w-2 h-2 bg-foreground rounded-full"
-                    />
-                    <motion.div
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
-                      className="w-2 h-2 bg-foreground rounded-full"
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              <div ref={messagesEndRef} />
-            </div>
+            <ChatMessagesContainer scrollTrigger={[messages, isLoading]} variant="compact">
+              {messages.map((message) => (
+                <ChatMessage
+                  key={message.id}
+                  role={message.role}
+                  content={message.content}
+                  onSuggestionClick={handleSuggestionClick}
+                />
+              ))}
+              {isLoading && <TypingIndicator variant="compact" />}
+            </ChatMessagesContainer>
 
             {/* Input Area */}
-            <div className="border-t border-border p-3 bg-secondary/50">
-              <div className="flex gap-2 items-end">
-                <textarea
-                  ref={textareaRef}
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type message..."
-                  rows={1}
-                  disabled={isLoading}
-                  className="flex-1 px-3 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none disabled:opacity-50 text-sm"
-                />
-                <button
-                  onClick={handleSendMessage}
-                  disabled={!inputValue.trim() || isLoading}
-                  className="flex-shrink-0 px-3 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  aria-label="Send message"
-                >
-                  <Send size={18} />
-                </button>
-              </div>
-            </div>
+            <ChatInputArea
+              value={inputValue}
+              onChange={setInputValue}
+              onSend={handleSendMessage}
+              isLoading={isLoading}
+              placeholder="Type message..."
+              maxHeight={100}
+              variant="compact"
+            />
           </div>
         </motion.div>
       ) : (

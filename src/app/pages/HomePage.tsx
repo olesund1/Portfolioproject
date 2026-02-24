@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Target, Users, Lightbulb } from 'lucide-react';
+import { getAllCaseStudies } from '@/data/caseStudies/metadata';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
@@ -11,48 +12,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const caseStudies = [
-    {
-      id: 'b2p-redesign',
-      title: 'Partner Platform (B2P) Redesign',
-      description: 'Modernized the partner platform for Sweden\'s largest electricity distributor, reducing manual work by 60% and improving partner satisfaction.',
-      tags: ['Enterprise', 'B2B', 'UX Strategy'],
-      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-      year: '2026',
-    },
-    {
-      id: 'healthcare-platform',
-      title: 'Healthcare Patient Portal',
-      description: 'Creating an accessible patient portal that simplified appointment booking and reduced no-shows by 30%.',
-      tags: ['Web App', 'Healthcare', 'Accessibility'],
-      imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
-      year: '2024',
-    },
-    {
-      id: 'ecommerce-checkout',
-      title: 'E-commerce Checkout Optimization',
-      description: 'Streamlining the checkout flow resulted in a 25% increase in conversion rate and improved customer satisfaction.',
-      tags: ['E-commerce', 'Conversion', 'A/B Testing'],
-      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-      year: '2024',
-    },
-    {
-      id: 'customer-centricity',
-      title: 'Enabling Customer-Centricity',
-      description: 'Transformed a legacy electricity distributor by creating unified customer journeys, scaling CX team, and embedding customer-first thinking across operations. Achieved 52% improvement in customer satisfaction metrics.',
-      tags: ['Strategy', 'CX Leadership', 'Organizational Change'],
-      imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-      year: '2024',
-    },
-    {
-      id: 'customer-energy-transformation',
-      title: 'Customer-Centric Energy Company Transformation',
-      description: 'Transformed a legacy utility company into a customer-focused organization, improving Customer Effort Score by 52% and scaling organizational capability.',
-      tags: ['Strategy', 'CX Leadership', 'Customer Journey'],
-      imageUrl: 'https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80',
-      year: '2024',
-    },
-  ];
+  const caseStudies = getAllCaseStudies();
 
   const processSteps = [
     {
