@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
 import { Container } from './Container';
 import { Button } from './Button';
+import { ImageCarouselModal } from './ImageCarouselModal';
 import type { CaseStudyData } from '@/data/caseStudyTypes';
 
 interface CaseStudyTemplateProps {
@@ -11,6 +12,12 @@ interface CaseStudyTemplateProps {
 }
 
 export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) {
+  const [modal, setModal] = React.useState<{
+    images: string[];
+    index: number;
+    caption?: string;
+  } | null>(null);
+
   return (
     <div className="pt-16 md:pt-20">
       {/* Back Button */}
@@ -140,7 +147,11 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.05 }}
-                      className="rounded-xl overflow-hidden"
+                      whileHover={{ scale: 1.03 }}
+                      className="rounded-xl overflow-hidden cursor-pointer"
+                      onClick={() =>
+                        setModal({ images: data.designProcess.images!, index: i })
+                      }
                     >
                       <img
                         src={image}
@@ -195,7 +206,11 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="rounded-2xl overflow-hidden"
+                    whileHover={{ scale: 1.03 }}
+                    className="rounded-2xl overflow-hidden cursor-pointer"
+                    onClick={() =>
+                      setModal({ images: data.deliverables.images, index: i })
+                    }
                   >
                     <img
                       src={image}
@@ -261,6 +276,14 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
           View All Projects
         </Button>
       </motion.div>
+
+      <ImageCarouselModal
+        images={modal?.images ?? []}
+        initialIndex={modal?.index ?? 0}
+        caption={modal?.caption}
+        open={modal !== null}
+        onClose={() => setModal(null)}
+      />
     </div>
   );
 }
