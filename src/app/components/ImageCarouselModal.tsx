@@ -112,6 +112,39 @@ export function ImageCarouselModal({
     return () => window.removeEventListener('keydown', onKey);
   }, [open, emblaApi]);
 
+  // Horizontal trackpad scroll → next/prev slide
+  useEffect(() => {
+    if (!open || !emblaApi) return;
+    const viewport = emblaApi.rootNode();
+    if (!viewport) return;
+
+    let accX = 0;
+    let scrollLocked = false;
+    const THRESHOLD = 50;
+
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // not horizontal
+      e.preventDefault();
+      if (scrollLocked) { accX = 0; return; }
+      accX += e.deltaX;
+      if (accX > THRESHOLD) {
+        emblaApi.scrollNext();
+        accX = 0;
+        scrollLocked = true;
+        setTimeout(() => { scrollLocked = false; }, 600);
+      }
+      if (accX < -THRESHOLD) {
+        emblaApi.scrollPrev();
+        accX = 0;
+        scrollLocked = true;
+        setTimeout(() => { scrollLocked = false; }, 600);
+      }
+    };
+
+    viewport.addEventListener('wheel', onWheel, { passive: false });
+    return () => viewport.removeEventListener('wheel', onWheel);
+  }, [open, emblaApi]);
+
   if (images.length === 0) return null;
 
   return (
@@ -122,6 +155,7 @@ export function ImageCarouselModal({
 
         {/* Full-screen content panel */}
         <DialogPrimitive.Content
+          onClick={onClose}
           className={cn(
             'fixed inset-0 z-50 flex flex-col items-center justify-center',
             'data-[state=open]:animate-in data-[state=closed]:animate-out',
@@ -140,12 +174,13 @@ export function ImageCarouselModal({
 
           {/* Caption */}
           {caption && (
-            <p className="mb-4 text-sm text-white/60 tracking-wide">{caption}</p>
+            <p onClick={e => e.stopPropagation()} className="mb-4 text-sm text-white/60 tracking-wide">{caption}</p>
           )}
 
           {/* Embla carousel viewport */}
           <div
             ref={emblaRef}
+            onClick={e => e.stopPropagation()}
             className="w-full overflow-hidden"
           >
             {/* Embla inner scroll container */}
@@ -184,7 +219,7 @@ export function ImageCarouselModal({
           </div>
 
           {/* Dot indicators */}
-          <div className="mt-6 flex gap-2 items-center">
+          <div onClick={e => e.stopPropagation()} className="mt-6 flex gap-2 items-center">
             {images.map((_, i) => (
               <button
                 key={i}
