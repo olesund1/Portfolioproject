@@ -101,7 +101,7 @@ export function AboutPage() {
                   className="absolute inset-0 opacity-25 pointer-events-none -z-10"
                 />
                 <p ref={descRef} className="text-base md:text-lg text-foreground leading-[1.6] text-justify max-w-[405px] relative z-10">
-                  Johan is a seasoned and business-minded UX Designer. He combines a strong foundation in user research and design with a sharp understanding of business strategy, ensuring that design decisions drive measurable value for both users and organizations. With his versatile experience across UX and product strategy, he can take on diverse design roles and delivering impact across the full design lifecycle. Johan is known for his drive, quick learning, collaborative nature, and positive energy, making him a valued and trusted member of the team.
+                  Johan is a seasoned and business-minded service and UX Designer. He combines a strong foundation in user research and design with a sharp understanding of business strategy, ensuring that design decisions drive measurable value for both users and organizations. With his versatile experience across UX and product strategy, he can take on diverse design roles and delivering impact across the full design lifecycle. Johan is known for his drive, quick learning, collaborative nature, and positive energy, making him a valued and trusted member of the team.
                 </p>
               </motion.div>
 

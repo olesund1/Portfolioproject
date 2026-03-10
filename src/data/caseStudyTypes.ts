@@ -17,6 +17,7 @@ export interface CaseStudyData {
       description: string;
     }[];
     insights: string[];
+    images?: string[];
   };
   deliverables: {
     intro: string;

@@ -55,7 +55,7 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
     description:
       'Transformed a legacy electricity distributor by creating unified customer journeys, scaling CX team, and embedding customer-first thinking across operations. Achieved 52% improvement in customer satisfaction metrics.',
     tags: ['Strategy', 'CX Leadership', 'Organizational Change'],
-    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    imageUrl: '/images/vattenfall/customer-life-cycle-v2.png',
     year: '2024',
     keywords: [
       'customer-centricity',
@@ -106,6 +106,29 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
       'renewable',
     ],
     shortDescription: 'Transforming a utility company into a customer-focused organization with measurable impact',
+  },
+  {
+    id: 'nordic-choice-hotels',
+    title: 'Revitalising Hotel Customer End-To-End Experience in the Post-pandemic Landscape',
+    description:
+      'Mapping the baseline customer journey for a leading Nordic hospitality group to align the organization and drive customer-centric development.',
+    tags: ['Service Design', 'Customer Journey Mapping', 'UX Research'],
+    imageUrl: '/images/nordic-choice/header-image.jpeg',
+    year: '2023',
+    keywords: [
+      'service design',
+      'customer journey',
+      'hospitality',
+      'nordic choice',
+      'ux research',
+      'stakeholder facilitation',
+      'post-pandemic',
+      'hotel',
+      'hotels',
+      'journey mapping',
+      'service safari',
+    ],
+    shortDescription: 'End-to-end customer journey mapping for a 200+ hotel Nordic hospitality group.',
   },
 ];
 

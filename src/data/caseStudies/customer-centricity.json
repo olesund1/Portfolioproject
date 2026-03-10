@@ -3,7 +3,7 @@
   "title": "Enabling Customer-Centricity",
   "subtitle": "Leading organizational transformation at Sweden's largest electricity distributor to embed customer-first thinking across operations",
   "tags": ["Strategy", "CX Leadership", "Organizational Change", "Research", "Team Scaling"],
-  "heroImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+  "heroImage": "/images/vattenfall/customer-life-cycle-v2.png",
   "challenge": "The client, one of Sweden's largest electricity distributors with 900,000 customers, operated with fragmented customer insights scattered across 7+ departments. High support costs, limited self-service capabilities, and an operations-centric culture created friction in customer interactions. Without coordinated customer-centric approaches, the company risked losing competitive advantage and customer loyalty.",
   "designProcess": {
     "intro": "This was a transformation project spanning organizational alignment, customer research, team scaling, and capability building. The work moved from understanding the current state through defining the customer lifecycle to embedding new ways of working across the organization.",
@@ -39,8 +39,8 @@
   "deliverables": {
     "intro": "Created Sweden's leading electricity distributor's first comprehensive customer journey framework covering B2C and B2B lifecycles. Scaled CX team from 1 to 3+ permanent designers embedded across the organization. Delivered detailed customer journeys integrated with operational process maps.",
     "images": [
-      "/images/Kundresa_solceller.png",
-      "/images/Customer life cycle v2.png"
+      "/images/vattenfall/customer-life-cycle-v2.png",
+      "/images/vattenfall/kundresa-solceller.png"
     ]
   },
   "results": {

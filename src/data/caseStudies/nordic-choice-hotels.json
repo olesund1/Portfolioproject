@@ -1,0 +1,66 @@
+{
+  "id": "nordic-choice-hotels",
+  "title": "Revitalising Hotel Customer End-To-End Experience in the Post-pandemic Landscape",
+  "subtitle": "Mapping the baseline customer journey for a leading Nordic hospitality group to align the organization and drive customer-centric development.",
+  "tags": ["Service Design", "Customer Journey Mapping", "UX Research", "Stakeholder Facilitation"],
+  "heroImage": "/images/nordic-choice/header-image.jpeg",
+  "challenge": "The client — a leading hospitality group operating 200+ hotels across the Nordic region — intended to increase customer satisfaction and loyalty by optimizing their customer journey and improving their digital services. With multiple brands, numerous hotels, and fragmented ownership of the guest experience, there was a lack of oversight and control. Being in a transformational phase, the client needed to align the organization and take a holistic approach when designing future customer experiences. The goal was to map the standard baseline customer journey to kickstart this work and establish practices around working with customer journeys.",
+  "designProcess": {
+    "intro": "Netlight approached this challenge with a team of service designers who worked closely with internal stakeholders and kept the client engaged throughout all steps. Johan simultaneously tapped into existing organizational knowledge and built a first-hand understanding of the guest experience.",
+    "steps": [
+      {
+        "title": "Research & Discovery",
+        "description": "Read and compiled existing research and data about users, then conducted interviews with stakeholders, frontline employees, and customer service teams. This built a dual understanding of both organizational needs and the current-state customer journey."
+      },
+      {
+        "title": "Service Safari Studies",
+        "description": "Performed several service safari studies — experiencing the entire customer journey firsthand by exploring different hotels and their offerings during stays. This brought the customer perspective to the forefront of the work."
+      },
+      {
+        "title": "Workshop Facilitation & Synthesis",
+        "description": "Facilitated workshops to validate findings, align stakeholders, and co-create the customer journey map. Compiled all findings into two comprehensive deliverables: a printable wall version and a living digital version."
+      }
+    ],
+    "insights": [
+      "Fragmented ownership across brands made it critical to establish a shared, visual baseline that all teams could rally around",
+      "Service safaris revealed gaps between how the organization perceived the guest experience and how it was actually lived",
+      "A dual deliverable — physical wall map and digital template — was key to driving both immediate engagement and long-term adoption"
+    ],
+    "images": [
+      "/images/nordic-choice/process-safari-0.png",
+      "/images/nordic-choice/process-safari-1.jpg",
+      "/images/nordic-choice/process-safari-2.jpg",
+      "/images/nordic-choice/process-safari-3.jpg",
+      "/images/nordic-choice/process-safari-4.jpg",
+      "/images/nordic-choice/process-safari-5.jpg",
+      "/images/nordic-choice/process-synthesis.jpg"
+    ]
+  },
+  "deliverables": {
+    "intro": "Two comprehensive customer journey maps were delivered. One large-format printable version designed to be 'put on the wall' to spark conversation and empathy, and one digital version functioning as a living template for the client to continue developing as services evolve.",
+    "images": [
+      "/images/nordic-choice/deliverable-1.png"
+    ]
+  },
+  "results": {
+    "intro": "The project acted as a kickstarter for the client's customer experience transformation — aligning the organization and equipping key teams with the tools and language to drive customer-centric development.",
+    "kpis": [
+      {
+        "label": "Organizational Alignment",
+        "value": "Increased"
+      },
+      {
+        "label": "Journey Maps Delivered",
+        "value": "2"
+      },
+      {
+        "label": "Hotels in Scope",
+        "value": "200+"
+      },
+      {
+        "label": "Stakeholder Quote",
+        "value": "\"A kickstarter for working more professionally with digital guest experiences\" — Nils Korsvoll, VP Customer Journeys"
+      }
+    ]
+  }
+}

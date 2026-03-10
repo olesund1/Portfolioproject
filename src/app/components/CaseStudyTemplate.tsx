@@ -130,6 +130,28 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                 ))}
               </div>
 
+              {/* Process Image Gallery */}
+              {data.designProcess.images && data.designProcess.images.length > 0 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {data.designProcess.images.map((image, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.05 }}
+                      className="rounded-xl overflow-hidden"
+                    >
+                      <img
+                        src={image}
+                        alt={`Process photo ${i + 1}`}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+
               {/* Key Insights */}
               <div className="flex flex-col gap-6">
                 <h4 className="text-xl font-bold uppercase text-muted-foreground tracking-wider">

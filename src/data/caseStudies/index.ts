@@ -16,6 +16,7 @@ import healthcarePlatform from './healthcare-platform.json';
 import ecommerceCheckout from './ecommerce-checkout.json';
 import customerCentricity from './customer-centricity.json';
 import customerEnergyTransformation from './customer-energy-transformation.json';
+import nordicChoiceHotels from './nordic-choice-hotels.json';
 
 /**
  * Map of case study IDs to their full data
@@ -26,6 +27,7 @@ const caseStudyMap: Record<string, CaseStudyData> = {
   'ecommerce-checkout': ecommerceCheckout as CaseStudyData,
   'customer-centricity': customerCentricity as CaseStudyData,
   'customer-energy-transformation': customerEnergyTransformation as CaseStudyData,
+  'nordic-choice-hotels': nordicChoiceHotels as CaseStudyData,
 };
 
 /**
