@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Target, Users, Lightbulb } from 'lucide-react';
-import { getAllCaseStudies } from '@/data/caseStudies/metadata';
+import { getAllCaseStudies } from '@/data/caseStudies';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
