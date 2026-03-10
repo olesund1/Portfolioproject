@@ -45,6 +45,17 @@ src/
 │   └── utils/
 │       ├── mockAI.ts           # Chatbot response generation logic
 │       └── portfolioKnowledge.ts # Knowledge base for chatbot answers
+├── data/
+│   ├── caseStudyTypes.ts          # CaseStudyData interface (full JSON structure)
+│   └── caseStudies/
+│       ├── metadata.ts            # CaseStudyMetadata array + lookup helpers
+│       ├── index.ts               # Central registry: merges heroImage into getAllCaseStudies()
+│       ├── b2p-redesign.json
+│       ├── healthcare-platform.json
+│       ├── ecommerce-checkout.json
+│       ├── customer-centricity.json
+│       ├── customer-energy-transformation.json
+│       └── nordic-choice-hotels.json
 ```
 
 ## Key Architecture Patterns
@@ -96,7 +107,11 @@ The app uses client-side routing without React Router - navigation state is mana
 The chatbot's responses are generated from `src/app/utils/portfolioKnowledge.ts`. This file contains the portfolio's information that the chatbot uses to answer questions. Update this file when adding new case studies or changing portfolio content.
 
 ### Case Study Data
-Case study metadata (title, description, tags, image URL, year) is currently hardcoded in `HomePage.tsx`. When extending the app, consider extracting this to a data file for easier management.
+Case study data lives in `src/data/caseStudies/`. There are two data shapes:
+- **`CaseStudyMetadata`** (`metadata.ts`) — lightweight listing data (title, description, tags, year, imageUrl). Used by HomePage and the chatbot knowledge base.
+- **`CaseStudyData`** (`caseStudyTypes.ts`) — full detail data matching the JSON file structure (heroImage, challenge, process steps, deliverables, KPIs). Used by CaseStudyPage.
+
+**`index.ts` is the single import point** for consumers. Its `getAllCaseStudies()` derives `imageUrl` from each JSON's `heroImage` field, making the JSON files the single source of truth for images. Always import from `@/data/caseStudies` (the index), not directly from `metadata.ts`.
 
 ### Animations and Motion
 Framer Motion is imported as `motion` from 'motion/react'. Use this for page transitions and interactive animations. The About page features a boids pattern animation for the hero section.
