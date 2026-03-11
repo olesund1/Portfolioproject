@@ -63,29 +63,6 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
     shortDescription: 'Led organizational transformation at Sweden\'s largest electricity distributor to embed customer-first thinking across operations. Created unified customer journey framework and scaled CX team, achieving 52% customer satisfaction improvement.',
   },
   {
-    id: 'customer-energy-transformation',
-    title: 'Customer-Centric Energy Company Transformation',
-    description:
-      'Transformed a legacy utility company into a customer-focused organization, improving Customer Effort Score by 52% and scaling organizational capability.',
-    tags: ['Strategy', 'CX Leadership', 'Customer Journey'],
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80',
-    year: '2024',
-    keywords: [
-      'energy',
-      'electricity',
-      'utility',
-      'customer-centric',
-      'customer effort score',
-      'ces',
-      'organizational transformation',
-      'customer journey',
-      'energy company',
-      'solar',
-      'renewable',
-    ],
-    shortDescription: 'Transforming a utility company into a customer-focused organization with measurable impact',
-  },
-  {
     id: 'nordic-choice-hotels',
     title: 'Revitalising Hotel Customer End-To-End Experience in the Post-pandemic Landscape',
     description:
