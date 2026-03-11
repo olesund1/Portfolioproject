@@ -17,11 +17,11 @@ export interface CaseStudyData {
       description: string;
     }[];
     insights: string[];
-    images?: string[];
+    images?: { src: string; alt: string }[];
   };
   deliverables: {
     intro: string;
-    images: string[];
+    images: { src: string; alt: string }[];
   };
   results: {
     intro: string;

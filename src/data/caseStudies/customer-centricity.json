@@ -31,8 +31,8 @@
   "deliverables": {
     "intro": "I delivered a comprehensive B2C/B2B customer lifecycle framework, detailed customer journeys with integrated business process views, and embedded design methodologies across the organization. Besides growing the team from two to seven designers, a standout deliverable was the solar panel customer experience work package which achieved a 52% Customer Effort Score improvement, validating my approach.",
     "images": [
-      "/images/vattenfall/customer-life-cycle-v2.png",
-      "/images/vattenfall/kundresa-solceller.png"
+      { "src": "/images/vattenfall/customer-life-cycle-v2.png", "alt": "B2C/B2B customer lifecycle framework — full end-to-end view" },
+      { "src": "/images/vattenfall/kundresa-solceller.png", "alt": "Solar panel customer journey map showing experience improvements" }
     ]
   },
   "results": {

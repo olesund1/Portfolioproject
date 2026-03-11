@@ -27,19 +27,19 @@
       "A dual deliverable — physical wall map and digital template — was key to driving both immediate engagement and long-term adoption"
     ],
     "images": [
-      "/images/nordic-choice/process-safari-0.png",
-      "/images/nordic-choice/process-safari-1.jpg",
-      "/images/nordic-choice/process-safari-2.jpg",
-      "/images/nordic-choice/process-safari-3.jpg",
-      "/images/nordic-choice/process-safari-4.jpg",
-      "/images/nordic-choice/process-safari-5.jpg",
-      "/images/nordic-choice/process-synthesis.jpg"
+      { "src": "/images/nordic-choice/process-safari-0.png", "alt": "Service safari — first impressions arriving at the hotel" },
+      { "src": "/images/nordic-choice/process-safari-1.jpg", "alt": "Service safari — check-in process observation" },
+      { "src": "/images/nordic-choice/process-safari-2.jpg", "alt": "Service safari — room experience walkthrough" },
+      { "src": "/images/nordic-choice/process-safari-3.jpg", "alt": "Service safari — dining and F&B touchpoints" },
+      { "src": "/images/nordic-choice/process-safari-4.jpg", "alt": "Service safari — guest services and staff interaction" },
+      { "src": "/images/nordic-choice/process-safari-5.jpg", "alt": "Service safari — checkout and departure experience" },
+      { "src": "/images/nordic-choice/process-synthesis.jpg", "alt": "Synthesis session — affinity mapping and insight clustering from safari data" }
     ]
   },
   "deliverables": {
     "intro": "Two comprehensive customer journey maps were delivered. One large-format printable version designed to be 'put on the wall' to spark conversation and empathy, and one digital version functioning as a living template for the client to continue developing as services evolve.",
     "images": [
-      "/images/nordic-choice/deliverable-1.png"
+      { "src": "/images/nordic-choice/deliverable-1.png", "alt": "Full customer journey map — printable wall version covering the complete guest experience from discovery to post-stay" }
     ]
   },
   "results": {

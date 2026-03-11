@@ -13,7 +13,7 @@ interface CaseStudyTemplateProps {
 
 export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) {
   const [modal, setModal] = React.useState<{
-    images: string[];
+    images: { src: string; alt: string }[];
     index: number;
     caption?: string;
   } | null>(null);
@@ -154,8 +154,8 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                       }
                     >
                       <img
-                        src={image}
-                        alt={`Process photo ${i + 1}`}
+                        src={image.src}
+                        alt={image.alt}
                         className="w-full aspect-[4/3] object-cover"
                       />
                     </motion.div>
@@ -213,8 +213,8 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                     }
                   >
                     <img
-                      src={image}
-                      alt={`Deliverable ${i + 1}`}
+                      src={image.src}
+                      alt={image.alt}
                       className="w-full aspect-[4/3] object-cover"
                     />
                   </motion.div>
@@ -249,12 +249,12 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/10 border border-white/20 rounded-xl p-6 h-[170px] flex flex-col gap-2"
+                  className="bg-white/10 border border-white/20 rounded-xl p-6 min-h-[140px] flex flex-col gap-2"
                 >
                   <p className="text-base font-bold opacity-90">
                     {kpi.label}
                   </p>
-                  <p className="text-3xl md:text-4xl font-bold leading-tight">
+                  <p className="text-lg md:text-xl font-bold leading-snug">
                     {kpi.value}
                   </p>
                 </motion.div>
@@ -278,7 +278,8 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
       </motion.div>
 
       <ImageCarouselModal
-        images={modal?.images ?? []}
+        images={modal?.images.map(img => img.src) ?? []}
+        imageLabels={modal?.images.map(img => img.alt)}
         initialIndex={modal?.index ?? 0}
         caption={modal?.caption}
         open={modal !== null}

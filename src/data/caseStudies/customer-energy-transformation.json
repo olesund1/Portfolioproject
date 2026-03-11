@@ -31,8 +31,8 @@
   "deliverables": {
     "intro": "Delivered a comprehensive B2C/B2B customer lifecycle framework, detailed customer journeys with integrated business process views, and embedded design methodologies across the organization. The solar panel segment redesign achieved a 52% Customer Effort Score improvement, validating the approach.",
     "images": [
-      "https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+      { "src": "https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80", "alt": "Customer lifecycle framework showing B2C and B2B journey stages" },
+      { "src": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80", "alt": "Cross-functional workshop session mapping customer touchpoints" }
     ]
   },
   "results": {
