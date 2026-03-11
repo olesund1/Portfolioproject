@@ -3,7 +3,7 @@
   "title": "Enabling Customer-Centricity",
   "subtitle": "Leading organizational transformation at Sweden's largest electricity distributor to embed customer-first thinking across operations",
   "tags": ["CX Strategy", "Customer journeys", "Organizational Change", "Research", "Team growth"],
-  "heroImage": "/images/vattenfall/hero-CX.jpeg",
+  "heroImage": "/images/vattenfall/CX/hero-CX.jpeg",
   "challenge": "The client, one of Sweden’s largest electricity distributors with 900,000 customers. High support costs and limited self-service capabilities created friction in customer interactions, reinforced by operations-focused processes and culture. This hurt organizational efficiency, caused unnecessary cost, and harmed overall brand experience. With rising electricity prices and increasing customer expectations, a fundamental shift toward a more coordinated, customer-centric approach was crucial.",
   "designProcess": {
     "intro": "This was a transformation project spanning organizational alignment, customer research, team scaling, and capability building. My work moved from understanding the current state through defining the customer lifecycle to embedding new ways of working across the organization.",
@@ -31,8 +31,8 @@
   "deliverables": {
     "intro": "I delivered a comprehensive B2C/B2B customer lifecycle framework, detailed customer journeys with integrated business process views, and embedded design methodologies across the organization. Besides growing the team from two to seven designers, a standout deliverable was the solar panel customer experience work package which achieved a 52% Customer Effort Score improvement, validating my approach.",
     "images": [
-      { "src": "/images/vattenfall/customer-life-cycle-v2.png", "alt": "B2C/B2B customer lifecycle framework — full end-to-end view" },
-      { "src": "/images/vattenfall/kundresa-solceller.png", "alt": "Solar panel customer journey map showing experience improvements" }
+      { "src": "/images/vattenfall/CX/customer-life-cycle-v2.png", "alt": "B2C/B2B customer lifecycle framework — full end-to-end view" },
+      { "src": "/images/vattenfall/CX/kundresa-solceller.png", "alt": "Solar panel customer journey map showing experience improvements" }
     ]
   },
   "results": {

@@ -41,7 +41,7 @@ export function ConversePage({
         id: '0',
         role: 'assistant',
         content:
-          "Hi! I'm Juan Bot, a UX/UI designer. Ask me anything about my work, experience, or processes, and I'll suggest relevant pages to explore.",
+          "Hi! I'm Juan Bot, your guide to explore Johan's portfolio. Ask me anything about Johan's work, experience, or processes, and I'll suggest relevant pages to explore.",
       };
       onInitialize([welcomeMessage], [
         {
@@ -86,7 +86,7 @@ export function ConversePage({
               transition={{ delay: 0.1 }}
               className="text-center space-y-4"
             >
-              <h1 className="text-4xl md:text-5xl font-bold">Let's talk!</h1>
+              <h1 className="text-4xl md:text-5xl font-bold">Welcome to Juan Bot!</h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Ask me questions about my work, process, or experience. I'll suggest relevant pages
                 to explore.

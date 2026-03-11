@@ -83,7 +83,7 @@ export default function App() {
         id: '0',
         role: 'assistant',
         content:
-          "Hi! I'm Juan Bot, a UX/UI designer. Ask me anything about my work, experience, or processes, and I'll suggest relevant pages to explore.",
+        "Hi! I'm Juan Bot, your guide to explore Johan's portfolio. Ask me anything about Johan's work, experience, or processes, and I'll suggest relevant pages to explore.",
       };
       setChatbotMessages([welcomeMessage]);
       setConversationHistory([

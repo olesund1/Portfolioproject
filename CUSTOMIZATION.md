@@ -104,7 +104,7 @@ body {
 
 // Lines 55-66: Update hero text
 <p className="text-accent font-medium mb-6">
-  UX Designer & Product Strategist  {/* Your title */}
+  Service & UX Designer  {/* Your title */}
 </p>
 
 <h1 className="mb-6">

@@ -21,9 +21,9 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
     title: 'Partner Platform (B2P) Redesign',
     description:
       "Modernized the partner platform for Sweden's largest electricity distributor, reducing manual work by 60% and improving partner satisfaction.",
-    tags: ['Enterprise', 'B2B', 'UX Strategy'],
+    tags: ['Enterprise', 'B2P', 'UX Strategy'],
     imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-    year: '2026',
+    year: '2025',
     keywords: ['b2p', 'b2p redesign', 'b2p project', 'procurement', 'business to professional', 'enterprise', 'platform'],
     shortDescription: 'B2P procurement platform redesign case study',
   },

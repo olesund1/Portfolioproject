@@ -49,16 +49,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-accent font-medium mb-6"
             >
-              UX Designer & Product Strategist
+              Service & UX Designer
             </motion.p>
             
             <h1 className="mb-6">
-              Crafting experiences that solve real problems
+              Deeper understanding. Better experiences.
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              I partner with teams to design meaningful products through research, 
-              strategy, and user-centered thinking.
+              I partner with clients to design meaningful experiences through research, strategy, and user-centered thinking.
             </p>
             
             <div className="flex flex-wrap gap-4">

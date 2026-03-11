@@ -96,7 +96,7 @@ export function AboutPage() {
               >
                 {/* Boids Pattern Background */}
                 <img
-                  src="/images/boids-flock.png"
+                  src="/images/misc/boids-flock.png"
                   alt=""
                   className="absolute inset-0 opacity-25 pointer-events-none -z-10"
                 />
@@ -113,7 +113,7 @@ export function AboutPage() {
                 className="relative h-full overflow-hidden"
               >
                 <img
-                  src="/images/profil.png"
+                  src="/images/misc/profil.png"
                   alt="Johan Olesund"
                   className="w-full h-full object-cover"
                   style={{
