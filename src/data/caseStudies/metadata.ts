@@ -28,28 +28,6 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
     shortDescription: 'B2P procurement platform redesign case study',
   },
   {
-    id: 'healthcare-platform',
-    title: 'Healthcare Patient Portal',
-    description:
-      'Creating an accessible patient portal that simplified appointment booking and reduced no-shows by 30%.',
-    tags: ['Web App', 'Healthcare', 'Accessibility'],
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
-    year: '2024',
-    keywords: ['healthcare', 'health platform', 'patient', 'medical', 'clinic', 'appointment', 'health', 'web app'],
-    shortDescription: 'Healthcare platform design case study',
-  },
-  {
-    id: 'ecommerce-checkout',
-    title: 'E-commerce Checkout Optimization',
-    description:
-      'Streamlining the checkout flow resulted in a 25% increase in conversion rate and improved customer satisfaction.',
-    tags: ['E-commerce', 'Conversion', 'A/B Testing'],
-    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-    year: '2024',
-    keywords: ['ecommerce', 'e-commerce', 'shopping', 'checkout', 'cart', 'online store', 'conversion', 'optimization'],
-    shortDescription: 'E-Commerce checkout flow optimization case study',
-  },
-  {
     id: 'customer-centricity',
     title: 'Enabling Customer-Centricity',
     description:

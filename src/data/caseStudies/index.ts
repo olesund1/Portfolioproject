@@ -30,8 +30,6 @@ export function getAllCaseStudies(): ReturnType<typeof getMetadataStudies> {
 
 // Import case study JSON files
 import b2pRedesign from './b2p-redesign.json';
-import healthcarePlatform from './healthcare-platform.json';
-import ecommerceCheckout from './ecommerce-checkout.json';
 import customerCentricity from './customer-centricity.json';
 import customerEnergyTransformation from './customer-energy-transformation.json';
 import nordicChoiceHotels from './nordic-choice-hotels.json';
@@ -41,8 +39,6 @@ import nordicChoiceHotels from './nordic-choice-hotels.json';
  */
 const caseStudyMap: Record<string, CaseStudyData> = {
   'b2p-redesign': b2pRedesign as CaseStudyData,
-  'healthcare-platform': healthcarePlatform as CaseStudyData,
-  'ecommerce-checkout': ecommerceCheckout as CaseStudyData,
   'customer-centricity': customerCentricity as CaseStudyData,
   'customer-energy-transformation': customerEnergyTransformation as CaseStudyData,
   'nordic-choice-hotels': nordicChoiceHotels as CaseStudyData,

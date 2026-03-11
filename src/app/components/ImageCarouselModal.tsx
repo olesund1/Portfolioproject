@@ -196,7 +196,7 @@ export function ImageCarouselModal({
                     src={src}
                     alt={`${alt} ${i + 1}`}
                     className="block rounded-[2rem]"
-                    style={{ height: 'clamp(240px, 70vh, 620px)', width: 'auto', maxWidth: '88vw' }}
+                    style={{ maxHeight: '88vh', maxWidth: '88vw', width: 'auto', height: 'auto' }}
                   />
                   {/* Image text overlay */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
