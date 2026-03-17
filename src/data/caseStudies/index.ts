@@ -5,6 +5,7 @@
  */
 
 import type { CaseStudyData } from '@/data/caseStudyTypes';
+import { getCMSStore } from '@/app/utils/cmsStorage';
 
 // Import metadata — getAllCaseStudies is aliased so we can wrap it below
 import {
@@ -18,10 +19,18 @@ export { caseStudyMetadata, getCaseStudyById, getAllCaseStudyIds };
 
 /**
  * Returns all case studies with imageUrl derived from each JSON's heroImage.
- * The JSON heroImage is the single source of truth — metadata.imageUrl is only
- * used as a fallback if a JSON entry is missing.
+ * Checks localStorage CMS store first; falls back to static JSON.
  */
 export function getAllCaseStudies(): ReturnType<typeof getMetadataStudies> {
+  const store = getCMSStore();
+  if (store) {
+    return store.order
+      .filter((id) => store.metadata[id])
+      .map((id) => ({
+        ...store.metadata[id],
+        imageUrl: store.data[id]?.heroImage ?? store.metadata[id].imageUrl,
+      }));
+  }
   return getMetadataStudies().map((meta) => ({
     ...meta,
     imageUrl: caseStudyMap[meta.id]?.heroImage ?? meta.imageUrl,
@@ -43,8 +52,11 @@ const caseStudyMap: Record<string, CaseStudyData> = {
 };
 
 /**
- * Load a specific case study's full data by ID
+ * Load a specific case study's full data by ID.
+ * Checks localStorage CMS store first; falls back to static JSON.
  */
 export function loadCaseStudy(id: string): CaseStudyData | null {
+  const store = getCMSStore();
+  if (store?.data[id]) return store.data[id];
   return caseStudyMap[id] ?? null;
 }

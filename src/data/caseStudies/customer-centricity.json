@@ -2,7 +2,11 @@
   "id": "customer-centricity",
   "title": "Enabling Customer-Centricity",
   "subtitle": "Leading organizational transformation at Sweden's largest electricity distributor to embed customer-first thinking across operations",
-  "tags": ["CX Strategy", "Customer journeys", "Organizational Change", "Research", "Team growth"],
+  "tags": [
+    "CX Strategy",
+    "Customer journeys",
+    "Organizational Change"
+  ],
   "heroImage": "/images/vattenfall/CX/hero-CX.jpeg",
   "challenge": "The client, one of Sweden’s largest electricity distributors with 900,000 customers. High support costs and limited self-service capabilities created friction in customer interactions, reinforced by operations-focused processes and culture. This hurt organizational efficiency, caused unnecessary cost, and harmed overall brand experience. With rising electricity prices and increasing customer expectations, a fundamental shift toward a more coordinated, customer-centric approach was crucial.",
   "designProcess": {
@@ -31,17 +35,35 @@
   "deliverables": {
     "intro": "I delivered a comprehensive B2C/B2B customer lifecycle framework, detailed customer journeys with integrated business process views, and embedded design methodologies across the organization. Besides growing the team from two to seven designers, a standout deliverable was the solar panel customer experience work package which achieved a 52% Customer Effort Score improvement, validating my approach.",
     "images": [
-      { "src": "/images/vattenfall/CX/customer-life-cycle-v2.png", "alt": "B2C/B2B customer lifecycle framework — full end-to-end view" },
-      { "src": "/images/vattenfall/CX/kundresa-solceller.png", "alt": "Solar panel customer journey map showing experience improvements" }
+      {
+        "src": "/images/vattenfall/CX/customer-life-cycle-v2.png",
+        "alt": "B2C/B2B customer lifecycle framework — full end-to-end view"
+      },
+      {
+        "src": "/images/vattenfall/CX/kundresa-solceller.png",
+        "alt": "Solar panel customer journey map showing experience improvements"
+      }
     ]
   },
   "results": {
     "intro": "The transformation delivered measurable improvements across organizational and customer metrics.",
     "kpis": [
-      { "label": "Customer Effort Score", "value": "4.2 → 6.35 (+52%)" },
-      { "label": "Support cost reduction", "value": "Significant decrease" },
-      { "label": "Team scaling", "value": "1 → 6+ designers" },
-      { "label": "Organizational adoption", "value": "Customer-centric team KPIs promoted to company wide KPIs" }
+      {
+        "label": "Customer Effort Score",
+        "value": "4.2 → 6.35 (+52%)"
+      },
+      {
+        "label": "Support cost reduction",
+        "value": "Significant decrease"
+      },
+      {
+        "label": "Team scaling",
+        "value": "1 → 6+ designers"
+      },
+      {
+        "label": "Organizational adoption",
+        "value": "Customer-centric team KPIs promoted to company wide KPIs"
+      }
     ]
   }
 }

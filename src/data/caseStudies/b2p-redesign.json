@@ -2,9 +2,14 @@
   "id": "b2p-redesign",
   "title": "Partner Platform (B2P) Redesign",
   "subtitle": "Modernizing an outdated system to reduce manual work and improve partner experience",
-  "tags": ["Enterprise", "B2B", "UX Strategy", "Design System", "User Research"],
+  "tags": [
+    "Enterprise",
+    "B2P",
+    "UX Strategy",
+    "Design System",
+    "User Research"
+  ],
   "heroImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
-  "challenge": "The Partner Platform serving 900,000+ active customers across Sweden's largest electricity distributor was technically outdated and required extensive manual work from our B2B partners. High operational costs, poor UX, and low partner satisfaction were affecting business scalability and relationships. The central question: How might we redesign the Partner Platform to dramatically reduce manual work, lower operational costs, and create an intuitive experience that supports partner growth?",
   "designProcess": {
     "intro": "I led the end-to-end design process — from initial research through developer collaboration and testing. Close involvement of developers ensured feasibility while maintaining design integrity across the platform.",
     "steps": [
@@ -26,22 +31,46 @@
       "Real-time visibility and intuitive dashboards transformed partner decision-making capability",
       "Phased approach with quick wins enabled organizational momentum and partnership trust",
       "Developer collaboration from the start prevented costly redesigns and improved feasibility"
+    ],
+    "images": [
+      {
+        "src": "/images/vattenfall/Product/UXR-ME.png",
+        "alt": "Overview of research analysis"
+      }
     ]
   },
   "deliverables": {
     "intro": "The redesigned Partner Platform featured an intuitive dashboard providing real-time insights, automated workflows eliminating manual tasks, streamlined information architecture, and seamless API integration. The new design system ensured consistency and scalability across the platform.",
     "images": [
-      { "src": "https://images.unsplash.com/photo-1460925895917-adf4e565db4d?w=800&q=80", "alt": "Dashboard analytics view showing real-time partner data" },
-      { "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80", "alt": "Partner platform interface with automated workflow management" }
+      {
+        "src": "/images/vattenfall/Product/mockup-ME.png",
+        "alt": "Improved form selection flow."
+      },
+      {
+        "src": "/images/vattenfall/Product/design-system-ME.png",
+        "alt": "Expanded design system - built with product portfolio in mind."
+      }
     ]
   },
   "results": {
     "intro": "The redesigned experience delivered measurable improvements across key metrics.",
     "kpis": [
-      { "label": "Manual work reduction", "value": "60% decrease" },
-      { "label": "Platform efficiency", "value": "3.5x improvement" },
-      { "label": "Partner satisfaction", "value": "4.5/5.0" },
-      { "label": "Partner adoption", "value": "85% increase" }
+      {
+        "label": "Manual work reduction",
+        "value": "60% decrease"
+      },
+      {
+        "label": "Platform efficiency",
+        "value": "3.5x improvement"
+      },
+      {
+        "label": "Partner satisfaction",
+        "value": "4.5/5.0"
+      },
+      {
+        "label": "Partner adoption",
+        "value": "85% increase"
+      }
     ]
   }
 }
