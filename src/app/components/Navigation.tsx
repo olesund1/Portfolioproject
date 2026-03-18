@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Lock } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/app/components/ui/dialog';
-import { Input } from '@/app/components/ui/input';
-import {
-  checkAdminPassword,
-  setAdminSession,
-  isAdminAuthenticated,
-} from '@/app/utils/adminAuth';
+import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   currentPage: string;
@@ -22,30 +9,6 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showPasswordDialog, setShowPasswordDialog] = useState(false);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-
-  const handleAdminClick = () => {
-    if (isAdminAuthenticated()) {
-      onNavigate('admin');
-      return;
-    }
-    setPasswordInput('');
-    setPasswordError('');
-    setShowPasswordDialog(true);
-  };
-
-  const handlePasswordSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (checkAdminPassword(passwordInput)) {
-      setAdminSession();
-      setShowPasswordDialog(false);
-      onNavigate('admin');
-    } else {
-      setPasswordError('Incorrect password.');
-    }
-  };
 
   const navItems = [
     { name: 'Work', page: 'home' },
@@ -79,15 +42,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item.name}
               </button>
             ))}
-            <button
-              onClick={handleAdminClick}
-              className={`flex items-center gap-1 text-xs transition-colors hover:text-muted-foreground ${
-                currentPage === 'admin' ? 'text-muted-foreground' : 'text-muted-foreground/40'
-              }`}
-              aria-label="Admin"
-            >
-              <Lock size={12} />
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,34 +83,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Admin password dialog */}
-      <Dialog open={showPasswordDialog} onOpenChange={setShowPasswordDialog}>
-        <DialogContent className="sm:max-w-xs">
-          <DialogHeader>
-            <DialogTitle>Admin Access</DialogTitle>
-            <DialogDescription>Enter the admin password to continue.</DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handlePasswordSubmit} className="space-y-3 mt-2">
-            <Input
-              type="password"
-              placeholder="Password"
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              autoFocus
-            />
-            {passwordError && (
-              <p className="text-destructive text-xs">{passwordError}</p>
-            )}
-            <button
-              type="submit"
-              className="w-full text-sm px-4 py-2 rounded-lg bg-foreground text-background hover:opacity-90 transition-opacity font-medium"
-            >
-              Enter
-            </button>
-          </form>
-        </DialogContent>
-      </Dialog>
     </nav>
   );
 }

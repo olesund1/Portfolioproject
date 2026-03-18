@@ -7,10 +7,9 @@ import { CaseStudyPage } from './pages/CaseStudyPage';
 import { ContactPage } from './pages/ContactPage';
 import { ConversePage } from './pages/ConversePage';
 import { FloatingChatWidget } from './components/FloatingChatWidget';
-import { AdminPage } from './pages/AdminPage';
 import { generateAIResponse, ConversationMessage } from './utils/mockAI';
 
-type PageType = 'home' | 'about' | 'case-study' | 'contact' | 'converse' | 'admin';
+type PageType = 'home' | 'about' | 'case-study' | 'contact' | 'converse';
 
 interface DisplayMessage {
   id: string;
@@ -32,7 +31,6 @@ function parseUrl(pathname: string = window.location.pathname): AppState {
   if (path === '/about') return { currentPage: 'about' };
   if (path === '/contact') return { currentPage: 'contact' };
   if (path === '/converse') return { currentPage: 'converse' };
-  if (path === '/admin') return { currentPage: 'admin' };
 
   // Match /case-study/:id
   const caseStudyMatch = path.match(/^\/case-study\/(.+)$/);
@@ -51,7 +49,6 @@ function buildUrl(page: string, caseStudyId?: string): string {
     case 'contact': return '/contact';
     case 'converse': return '/converse';
     case 'case-study': return `/case-study/${caseStudyId || ''}`;
-    case 'admin': return '/admin';
     default: return '/';
   }
 }
@@ -174,8 +171,6 @@ export default function App() {
         );
       case 'contact':
         return <ContactPage />;
-      case 'admin':
-        return <AdminPage onNavigate={handleNavigate} />;
       case 'converse':
         return (
           <ConversePage
@@ -198,8 +193,8 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} />
       <main>{renderPage()}</main>
-      {appState.currentPage !== 'admin' && <Footer />}
-      {appState.currentPage !== 'converse' && appState.currentPage !== 'admin' && (
+      <Footer />
+      {appState.currentPage !== 'converse' && (
         <FloatingChatWidget
           messages={chatbotMessages}
           isOpen={showFloatingChat}
