@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Target, Users, Lightbulb } from 'lucide-react';
 import { getAllCaseStudies } from '@/data/caseStudies';
@@ -11,26 +10,26 @@ interface HomePageProps {
   onNavigate: (page: string, caseStudyId?: string) => void;
 }
 
+const processSteps = [
+  {
+    icon: Target,
+    title: 'Discover',
+    description: 'Deep dive into user needs through research, interviews, and data analysis.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Define',
+    description: 'Synthesize insights to identify core problems and opportunities.',
+  },
+  {
+    icon: Users,
+    title: 'Design & Test',
+    description: 'Iterate rapidly with prototypes and validate with real users.',
+  },
+];
+
 export function HomePage({ onNavigate }: HomePageProps) {
   const caseStudies = getAllCaseStudies();
-
-  const processSteps = [
-    {
-      icon: Target,
-      title: 'Discover',
-      description: 'Deep dive into user needs through research, interviews, and data analysis.',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Define',
-      description: 'Synthesize insights to identify core problems and opportunities.',
-    },
-    {
-      icon: Users,
-      title: 'Design & Test',
-      description: 'Iterate rapidly with prototypes and validate with real users.',
-    },
-  ];
 
   return (
     <div className="pt-16 md:pt-20">

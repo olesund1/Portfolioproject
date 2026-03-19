@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
@@ -7,7 +7,8 @@ import { PageSuggestionCard } from '../components/PageSuggestionCard';
 import { ChatInputArea } from '../components/chat/ChatInputArea';
 import { TypingIndicator } from '../components/chat/TypingIndicator';
 import { ChatMessagesContainer } from '../components/chat/ChatMessagesContainer';
-import { generateAIResponse, ConversationMessage, PageSuggestion } from '../utils/mockAI';
+import { ConversationMessage } from '../utils/mockAI';
+import { DisplayMessage, WELCOME_MESSAGE_CONTENT } from '../types';
 
 interface ConversePageProps {
   onNavigate: (page: string, caseStudyId?: string) => void;
@@ -15,13 +16,6 @@ interface ConversePageProps {
   conversationHistory: ConversationMessage[];
   onSendMessage: (message: string) => Promise<void>;
   onInitialize: (messages: DisplayMessage[], history: ConversationMessage[]) => void;
-}
-
-interface DisplayMessage {
-  id: string;
-  role: 'user' | 'assistant';
-  content: string;
-  suggestions?: PageSuggestion[];
 }
 
 export function ConversePage({
@@ -40,8 +34,7 @@ export function ConversePage({
       const welcomeMessage: DisplayMessage = {
         id: '0',
         role: 'assistant',
-        content:
-          "Hi! I'm Juan Bot, your guide to explore Johan's portfolio. Ask me anything about Johan's work, experience, or processes, and I'll suggest relevant pages to explore.",
+        content: WELCOME_MESSAGE_CONTENT,
       };
       onInitialize([welcomeMessage], [
         {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -8,15 +8,9 @@ import { ContactPage } from './pages/ContactPage';
 import { ConversePage } from './pages/ConversePage';
 import { FloatingChatWidget } from './components/FloatingChatWidget';
 import { generateAIResponse, ConversationMessage } from './utils/mockAI';
+import { DisplayMessage, WELCOME_MESSAGE_CONTENT } from './types';
 
 type PageType = 'home' | 'about' | 'case-study' | 'contact' | 'converse';
-
-interface DisplayMessage {
-  id: string;
-  role: 'user' | 'assistant';
-  content: string;
-  suggestions?: any[];
-}
 
 interface AppState {
   currentPage: PageType;
@@ -82,8 +76,7 @@ export default function App() {
       const welcomeMessage: DisplayMessage = {
         id: '0',
         role: 'assistant',
-        content:
-        "Hi! I'm Juan Bot, your guide to explore Johan's portfolio. Ask me anything about Johan's work, experience, or processes, and I'll suggest relevant pages to explore.",
+        content: WELCOME_MESSAGE_CONTENT,
       };
       setChatbotMessages([welcomeMessage]);
       setConversationHistory([
@@ -150,11 +143,6 @@ export default function App() {
       console.error('Error generating AI response:', error);
     }
   };
-
-  // Scroll to top when page changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [appState.currentPage]);
 
   const renderPage = () => {
     switch (appState.currentPage) {

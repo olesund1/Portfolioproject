@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, MessageCircle } from 'lucide-react';
 import { ChatMessage } from './ChatMessage';
 import { ChatInputArea } from './chat/ChatInputArea';
 import { TypingIndicator } from './chat/TypingIndicator';
 import { ChatMessagesContainer } from './chat/ChatMessagesContainer';
-
-interface DisplayMessage {
-  id: string;
-  role: 'user' | 'assistant';
-  content: string;
-  suggestions?: any[];
-}
+import type { DisplayMessage } from '../types';
 
 interface FloatingChatWidgetProps {
   messages: DisplayMessage[];

@@ -1,63 +1,63 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Briefcase, Award, BookOpen } from 'lucide-react';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Tag } from '../components/Tag';
 
+const skills = [
+  {
+    category: 'Research & Strategy',
+    items: ['User Research', 'Usability Testing', 'Journey Mapping', 'Competitive Analysis', 'Stakeholder Interviews'],
+  },
+  {
+    category: 'Design',
+    items: ['Wireframing', 'Prototyping', 'Design Systems', 'Information Architecture', 'Interaction Design'],
+  },
+  {
+    category: 'Collaboration',
+    items: ['Workshop Facilitation', 'Design Critiques', 'Cross-functional Teams', 'Agile/Scrum', 'Design Thinking'],
+  },
+];
+
+const tools = [
+  'Figma',
+  'FigJam',
+  'Miro',
+  'Adobe Creative Suite',
+  'Principle',
+  'Maze',
+  'UserTesting',
+  'Hotjar',
+  'Google Analytics',
+  'Jira',
+];
+
+const experience = [
+  {
+    icon: Briefcase,
+    title: 'Senior UX Designer',
+    company: 'Tech Company',
+    period: '2022 - Present',
+    description: 'Leading design initiatives for enterprise SaaS products, managing a team of 3 designers.',
+  },
+  {
+    icon: Award,
+    title: 'UX Designer',
+    company: 'Digital Agency',
+    period: '2019 - 2022',
+    description: 'Delivered successful projects for clients in FinTech, Healthcare, and E-commerce sectors.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Education',
+    company: 'University Name',
+    period: '2015 - 2019',
+    description: 'B.A. in Interaction Design, Minor in Psychology',
+  },
+];
+
 export function AboutPage() {
-  const skills = [
-    {
-      category: 'Research & Strategy',
-      items: ['User Research', 'Usability Testing', 'Journey Mapping', 'Competitive Analysis', 'Stakeholder Interviews'],
-    },
-    {
-      category: 'Design',
-      items: ['Wireframing', 'Prototyping', 'Design Systems', 'Information Architecture', 'Interaction Design'],
-    },
-    {
-      category: 'Collaboration',
-      items: ['Workshop Facilitation', 'Design Critiques', 'Cross-functional Teams', 'Agile/Scrum', 'Design Thinking'],
-    },
-  ];
-
-  const tools = [
-    'Figma',
-    'FigJam',
-    'Miro',
-    'Adobe Creative Suite',
-    'Principle',
-    'Maze',
-    'UserTesting',
-    'Hotjar',
-    'Google Analytics',
-    'Jira',
-  ];
-
-  const experience = [
-    {
-      icon: Briefcase,
-      title: 'Senior UX Designer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading design initiatives for enterprise SaaS products, managing a team of 3 designers.',
-    },
-    {
-      icon: Award,
-      title: 'UX Designer',
-      company: 'Digital Agency',
-      period: '2019 - 2022',
-      description: 'Delivered successful projects for clients in FinTech, Healthcare, and E-commerce sectors.',
-    },
-    {
-      icon: BookOpen,
-      title: 'Education',
-      company: 'University Name',
-      period: '2015 - 2019',
-      description: 'B.A. in Interaction Design, Minor in Psychology',
-    },
-  ];
-
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
 
