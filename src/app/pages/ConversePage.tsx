@@ -67,7 +67,7 @@ export function ConversePage({
   };
 
   return (
-    <div className="pt-16 md:pt-20 pb-24">
+    <div className="pt-16 md:pt-10 pb-24">
       <Section className="min-h-[85vh] flex flex-col">
         <Container size="narrow">
           <div className="flex flex-col h-full space-y-8">

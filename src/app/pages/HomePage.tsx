@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowDown, Target, Users, Lightbulb } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { getAllCaseStudies } from '@/data/caseStudies';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
@@ -9,24 +9,6 @@ import { CaseStudyCard } from '../components/CaseStudyCard';
 interface HomePageProps {
   onNavigate: (page: string, caseStudyId?: string) => void;
 }
-
-const processSteps = [
-  {
-    icon: Target,
-    title: 'Discover',
-    description: 'Deep dive into user needs through research, interviews, and data analysis.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Define',
-    description: 'Synthesize insights to identify core problems and opportunities.',
-  },
-  {
-    icon: Users,
-    title: 'Design & Test',
-    description: 'Iterate rapidly with prototypes and validate with real users.',
-  },
-];
 
 export function HomePage({ onNavigate }: HomePageProps) {
   const caseStudies = getAllCaseStudies();
@@ -123,52 +105,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </Container>
       </Section>
 
-      {/* Process Section */}
-      <Section className="bg-secondary/30">
-        <Container>
-          <div className="mb-16 max-w-2xl">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="mb-6"
-            >
-              My Design Process
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-muted-foreground"
-            >
-              Every project is unique, but I follow a flexible framework that keeps 
-              users at the center while delivering measurable business results.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative p-8 bg-card rounded-2xl border border-border"
-              >
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <step.icon size={28} className="text-accent" />
-                </div>
-                <h3 className="mb-4">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* CTA Section */}
       <Section>
         <Container>
@@ -178,10 +114,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="mb-6">Let's create something meaningful together</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              I'm currently available for select freelance projects and full-time opportunities.
-            </p>
+            <h2 className="mb-6">Want to know more?</h2>
             <Button 
               variant="primary" 
               size="large" 

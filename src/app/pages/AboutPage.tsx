@@ -1,59 +1,37 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Briefcase, Award, BookOpen } from 'lucide-react';
+import { Briefcase, BookOpen } from 'lucide-react';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
-import { Tag } from '../components/Tag';
-
-const skills = [
-  {
-    category: 'Research & Strategy',
-    items: ['User Research', 'Usability Testing', 'Journey Mapping', 'Competitive Analysis', 'Stakeholder Interviews'],
-  },
-  {
-    category: 'Design',
-    items: ['Wireframing', 'Prototyping', 'Design Systems', 'Information Architecture', 'Interaction Design'],
-  },
-  {
-    category: 'Collaboration',
-    items: ['Workshop Facilitation', 'Design Critiques', 'Cross-functional Teams', 'Agile/Scrum', 'Design Thinking'],
-  },
-];
-
-const tools = [
-  'Figma',
-  'FigJam',
-  'Miro',
-  'Adobe Creative Suite',
-  'Principle',
-  'Maze',
-  'UserTesting',
-  'Hotjar',
-  'Google Analytics',
-  'Jira',
-];
 
 const experience = [
   {
     icon: Briefcase,
-    title: 'Senior UX Designer',
-    company: 'Tech Company',
+    title: 'Service & UX Designer',
+    company: 'Netlight Consulting',
     period: '2022 - Present',
-    description: 'Leading design initiatives for enterprise SaaS products, managing a team of 3 designers.',
+    description: 'I am an engaged consultant, driving internal areas within Netlight focusing on evolution and upskilling in service design and AI. I coach other colleagues and activily work with sales.',
   },
   {
-    icon: Award,
+    icon: Briefcase,
+    title: 'Service and UX Designer',
+    company: 'Knowit',
+    period: '2021 - 2022',
+    description: 'Worked with clients from the public sector, automotive sector, and logistics sector.',
+  },
+  {
+    icon: Briefcase,
     title: 'UX Designer',
-    company: 'Digital Agency',
-    period: '2019 - 2022',
-    description: 'Delivered successful projects for clients in FinTech, Healthcare, and E-commerce sectors.',
+    company: 'Agriopt',
+    period: '2020 - 2021',
+    description: 'Led user experience work for agtech startup, on focusing on user adoption and ease of use in early product stages.',
   },
   {
     icon: BookOpen,
     title: 'Education',
-    company: 'University Name',
-    period: '2015 - 2019',
-    description: 'B.A. in Interaction Design, Minor in Psychology',
+    company: 'Linköpings universitet',
+    period: '2015 - 2020',
+    description: 'M.S., Design and product development',
   },
 ];
 
@@ -69,7 +47,7 @@ export function AboutPage() {
   }, []);
 
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="pt-16 md:pt-10">
       {/* Hero Section - Title Overlap with 2-Column Body/Image */}
       <Section className="relative bg-[#fafafa] overflow-visible flex items-center justify-center">
         <Container size="narrow">
@@ -177,69 +155,6 @@ export function AboutPage() {
         </Container>
       </Section>
 
-      {/* Skills Section */}
-      <Section>
-        <Container size="narrow">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <p className="text-accent font-medium mb-4">Capabilities</p>
-            <h2>Skills & Expertise</h2>
-          </motion.div>
-
-          <div className="space-y-12">
-            {skills.map((skillGroup, index) => (
-              <motion.div
-                key={skillGroup.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <h3 className="mb-4">{skillGroup.category}</h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillGroup.items.map((skill) => (
-                    <Tag key={skill} variant="default">{skill}</Tag>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Tools Section */}
-      <Section className="bg-secondary/30">
-        <Container size="narrow">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <p className="text-accent font-medium mb-4">Toolkit</p>
-            <h2 className="mb-4">Tools I Use</h2>
-            <p className="text-lg text-muted-foreground">
-              I'm comfortable with a wide range of design and research tools, always picking 
-              the right one for the job.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap gap-3"
-          >
-            {tools.map((tool) => (
-              <Tag key={tool} variant="accent">{tool}</Tag>
-            ))}
-          </motion.div>
-        </Container>
-      </Section>
     </div>
   );
 }

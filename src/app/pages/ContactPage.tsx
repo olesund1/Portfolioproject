@@ -27,28 +27,26 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-16 md:pt-20">
-      <Section className="min-h-[85vh] flex items-center">
+    <div className="pt-16 md:pt-10">
+      <Section className="min-h-[85vh] flex items-center py-6 md:py-10">
         <Container>
-          <div className="space-y-12">
-            {/* Title */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              Get in Touch
-            </motion.h2>
-
-            {/* Content Grid - Form and Body Text */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left Column - Content */}
+          {/* Content Grid - Form and Body Text */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left Column - Heading + Content */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
+                <div className="flex flex-col gap-6">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
+                  Get in Touch
+                </motion.h2>
                 <p className="text-lg text-muted-foreground">
                   I'm currently employed by{' '}
                   <a
@@ -64,6 +62,7 @@ export function ContactPage() {
                   <br />
                   Inquiries can be private as well. Thank you!
                 </p>
+                </div>
               </motion.div>
 
               {/* Right Column - Form */}
@@ -72,7 +71,7 @@ export function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <form onSubmit={handleSubmit} className="space-y-6 p-8 bg-card rounded-2xl border border-border">
+                <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-card rounded-2xl border border-border">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Name *
@@ -128,7 +127,7 @@ export function ContactPage() {
                       id="message"
                       name="message"
                       required
-                      rows={6}
+                      rows={4}
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
@@ -141,7 +140,6 @@ export function ContactPage() {
                   </Button>
                 </form>
               </motion.div>
-            </div>
           </div>
         </Container>
       </Section>
