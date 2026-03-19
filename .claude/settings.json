@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "claude-project-setup@ai-tooling-marketplace": true
+  }
+}

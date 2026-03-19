@@ -85,6 +85,32 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
     ],
     shortDescription: 'End-to-end customer journey mapping for a 200+ hotel Nordic hospitality group.',
   },
+  {
+    id: 'finland-benefit-pmt',
+    title: 'Product-Market Fit Research: Finnish Employer Benefit Platform',
+    description:
+      'Validated product-market fit for a newly acquired Finnish employer benefit SaaS platform, identifying two high-priority segments and providing the strategic foundation for post-acquisition positioning.',
+    tags: ['User Research', 'PMF', 'SaaS', 'Finland', 'Strategy'],
+    imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+    year: '2024',
+    keywords: [
+      'pmf',
+      'product-market fit',
+      'finland',
+      'employer benefit',
+      'saas',
+      'user research',
+      'hr',
+      'b2b',
+      'strategy',
+      'acquisition',
+      'survey',
+      'interviews',
+      'segment',
+      'positioning',
+    ],
+    shortDescription: 'PMF research for a newly acquired Finnish employer benefit SaaS platform.',
+  },
 ];
 
 /**

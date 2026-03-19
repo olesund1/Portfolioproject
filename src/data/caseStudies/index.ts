@@ -30,6 +30,7 @@ export function getAllCaseStudies(): ReturnType<typeof getMetadataStudies> {
 import b2pRedesign from './b2p-redesign.json';
 import customerCentricity from './customer-centricity.json';
 import nordicChoiceHotels from './nordic-choice-hotels.json';
+import finlandBenefitPmt from './finland-benefit-pmt.json';
 
 /**
  * Map of case study IDs to their full data
@@ -38,6 +39,7 @@ const caseStudyMap: Record<string, CaseStudyData> = {
   'b2p-redesign': b2pRedesign as CaseStudyData,
   'customer-centricity': customerCentricity as CaseStudyData,
   'nordic-choice-hotels': nordicChoiceHotels as CaseStudyData,
+  'finland-benefit-pmt': finlandBenefitPmt as CaseStudyData,
 };
 
 /**
