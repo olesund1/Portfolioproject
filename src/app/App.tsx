@@ -17,9 +17,12 @@ interface AppState {
   caseStudyId?: string;
 }
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, ''); // e.g. '/Portfolioproject' or ''
+
 /** Parse the current browser URL into an AppState */
 function parseUrl(pathname: string = window.location.pathname): AppState {
-  const path = pathname.replace(/\/+$/, '') || '/';
+  const stripped = pathname.startsWith(BASE) ? pathname.slice(BASE.length) : pathname;
+  const path = stripped.replace(/\/+$/, '') || '/';
 
   if (path === '/' || path === '') return { currentPage: 'home' };
   if (path === '/about') return { currentPage: 'about' };
@@ -37,14 +40,17 @@ function parseUrl(pathname: string = window.location.pathname): AppState {
 
 /** Convert an AppState to a URL path */
 function buildUrl(page: string, caseStudyId?: string): string {
-  switch (page) {
-    case 'home': return '/';
-    case 'about': return '/about';
-    case 'contact': return '/contact';
-    case 'converse': return '/converse';
-    case 'case-study': return `/case-study/${caseStudyId || ''}`;
-    default: return '/';
-  }
+  const suffix = (() => {
+    switch (page) {
+      case 'home': return '/';
+      case 'about': return '/about';
+      case 'contact': return '/contact';
+      case 'converse': return '/converse';
+      case 'case-study': return `/case-study/${caseStudyId || ''}`;
+      default: return '/';
+    }
+  })();
+  return suffix === '/' ? `${BASE}/` : `${BASE}${suffix}`;
 }
 
 export default function App() {
