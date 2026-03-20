@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // Encode the intended path as a query param and redirect to index.html.
+      // index.html will restore the real URL before React mounts.
+      const path = window.location.pathname + window.location.search;
+      window.location.replace(
+        window.location.origin + '/Portfolioproject/?p=' + encodeURIComponent(path)
+      );
+    </script>
+  </head>
+</html>
