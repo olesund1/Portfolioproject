@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#e5e5e5] bg-[#fafafa]">
+    <footer className="border-t border-border bg-background">
       <div className="mx-auto px-6 md:px-8 lg:px-12 max-w-7xl pt-16 md:pt-16 pb-12 md:pb-12">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           {/* Left side */}
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#e5e5e5] my-8 md:my-12"></div>
+        <div className="border-t border-border my-8 md:my-12"></div>
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-muted-foreground">

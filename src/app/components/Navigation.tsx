@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 interface NavigationProps {
   currentPage: string;
   onNavigate: (page: string) => void;
+  isDarkMode: boolean;
+  onToggleDark: () => void;
 }
 
-export function Navigation({ currentPage, onNavigate }: NavigationProps) {
+export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -42,16 +44,32 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={onToggleDark}
+              aria-label="Toggle dark mode"
+              className="p-1.5 text-muted-foreground hover:text-accent transition-colors"
+            >
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button + Dark Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={onToggleDark}
+              aria-label="Toggle dark mode"
+              className="p-2 text-muted-foreground hover:text-accent transition-colors"
+            >
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 

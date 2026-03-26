@@ -59,6 +59,11 @@ export default function App() {
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
   const [showFloatingChat, setShowFloatingChat] = useState(false);
   const [isChatbotInitialized, setIsChatbotInitialized] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored) return stored === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
 
   const handleNavigate = (page: string, caseStudyId?: string) => {
     const newState: AppState = { currentPage: page as PageType, caseStudyId };
@@ -66,6 +71,13 @@ export default function App() {
     window.history.pushState(newState, '', buildUrl(page, caseStudyId));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
   // Listen for browser back/forward buttons
   useEffect(() => {
@@ -185,7 +197,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} />
+      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} />
       <main>{renderPage()}</main>
       <Footer />
       {appState.currentPage !== 'converse' && (

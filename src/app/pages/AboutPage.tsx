@@ -49,7 +49,7 @@ export function AboutPage() {
   return (
     <div className="pt-16 md:pt-10">
       {/* Hero Section - Title Overlap with 2-Column Body/Image */}
-      <Section className="relative bg-[#fafafa] overflow-visible flex items-center justify-center">
+      <Section className="relative bg-background overflow-visible flex items-center justify-center">
         <Container size="narrow">
           <div className="relative pt-16 md:pt-0">
             {/* 2-Column Grid - Body Text (Left) and Image (Right) */}
@@ -76,7 +76,7 @@ export function AboutPage() {
                 <img
                   src="/images/misc/boids-flock.png"
                   alt=""
-                  className="absolute inset-0 opacity-25 pointer-events-none -z-10"
+                  className="absolute inset-0 opacity-25 pointer-events-none -z-10 dark:hidden"
                 />
                 <p ref={descRef} className="text-base md:text-lg text-foreground leading-[1.6] text-justify max-w-[405px] relative z-10">
                   Johan is a seasoned and business-minded service and UX Designer. He combines a strong foundation in user research and design with a sharp understanding of business strategy, ensuring that design decisions drive measurable value for both users and organizations. With his versatile experience across UX and product strategy, he can take on diverse design roles and delivering impact across the full design lifecycle. Johan is known for his drive, quick learning, collaborative nature, and positive energy, making him a valued and trusted member of the team.
