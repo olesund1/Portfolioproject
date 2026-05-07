@@ -10,13 +10,13 @@
     "User Research"
   ],
   "heroImage": "/images/electrician.jpg",
-  "challenge": "The Partner Platform (B2P) had grown organically over years into a fragmented, outdated system. Partners spent 3+ hours daily on manual data entry, and the lack of self-service capabilities forced support teams to handle routine requests. The system's complexity led to high error rates, partner frustration, and significant operational cost — requiring a full redesign that balanced partner needs with internal feasibility.",
+  "challenge": "The Partner Platform (B2P) had grown organically over years into a fragmented, outdated system. The users, electricians, were daily spending unneccesary time on manual data entry, and the lack of self-service capabilities forced support teams to handle routine requests. The system's complexity led to high error rates, user frustration, and significant operational cost — requiring a full redesign that balanced user needs with internal feasibility.",
   "designProcess": {
     "intro": "I led the end-to-end design process — from initial research through developer collaboration and testing. Close involvement of developers ensured feasibility while maintaining design integrity across the platform.",
     "steps": [
       {
         "title": "Research & Discovery",
-        "description": "Led user mapping sessions, conducted stakeholder interviews across product, operations, and support teams, and facilitated workshops to understand partner pain points. Analyzed current workflows and identified bottlenecks through contextual inquiry."
+        "description": "Led user mapping sessions, conducted stakeholder interviews across product, operations, and support teams, and facilitated workshops to understand user pain points. Analyzed current workflows and identified bottlenecks through contextual inquiry."
       },
       {
         "title": "Strategy & Planning",
@@ -24,14 +24,14 @@
       },
       {
         "title": "Design & Testing",
-        "description": "Created interaction prototypes and conducted iterative testing with real partners. Close collaboration with developers ensured feasibility of designs while maintaining design integrity. Multiple rounds of user testing refined the experience."
+        "description": "Created interaction prototypes and conducted iterative testing with real users. Close collaboration with developers ensured feasibility of designs while maintaining design integrity. Multiple rounds of user testing refined the experience."
       }
     ],
     "insights": [
-      "Partners spent 3+ hours daily on manual data entry, representing massive efficiency opportunity",
-      "Real-time visibility and intuitive dashboards transformed partner decision-making capability",
-      "Phased approach with quick wins enabled organizational momentum and partnership trust",
-      "Developer collaboration from the start prevented costly redesigns and improved feasibility"
+      "Users spent excessive hours on daily manual data entry, applying multiple cases for the same customer, representing massive efficiency opportunity",
+      "Users need clear guidance as there are many niche cases that look similar to correctly perform their tasks",
+      "Not auto-filling data when possible and executing multiple errands in one submission were key pain points for users",
+      "Users needed manage several accounts to perform their tasks - causing frustration among users as well as support teams"
     ],
     "images": [
       {
@@ -41,7 +41,7 @@
     ]
   },
   "deliverables": {
-    "intro": "The redesigned Partner Platform featured an intuitive dashboard providing real-time insights, automated workflows eliminating manual tasks, streamlined information architecture, and seamless API integration. The new design system ensured consistency and scalability across the platform.",
+    "intro": "The redesigned Partner Platform featured new company accounts types, enabling users to only need one personal account to manage all their company's cases. An intuitive dashboard providing quick guidance to most common cases and functionalities. The new case selection flow ensures that users are guided through the process of choosing the correct case and submitting the correct information. The new design system ensured consistency and scalability across the product portfolio.",
     "images": [
       {
         "src": "/images/vattenfall/Product/mockup-ME.png",
@@ -58,19 +58,19 @@
     "kpis": [
       {
         "label": "Manual work reduction",
-        "value": "60% decrease"
+        "value": "Data pending. (early feedbacks show significant improvement)"
       },
       {
-        "label": "Platform efficiency",
-        "value": "3.5x improvement"
+        "label": "Case revisitations",
+        "value": "-23.4% (as of March 2026)"
       },
       {
-        "label": "Partner satisfaction",
-        "value": "4.5/5.0"
+        "label": "Number of accounts",
+        "value": "-43.2% (as of March 2026)"
       },
       {
-        "label": "Partner adoption",
-        "value": "85% increase"
+        "label": "Average # of cases per customer",
+        "value": "~ -75% (as of March 2026)"
       }
     ]
   }
