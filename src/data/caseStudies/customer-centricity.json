@@ -51,18 +51,18 @@
       {
         "label": "Customer Effort Score",
         "value": "4.2 → 6.35 (+52%)"
-      },
-      {
-        "label": "Support cost reduction",
-        "value": "Significant decrease"
-      },
-      {
-        "label": "Team scaling",
-        "value": "1 → 6+ designers"
-      },
+      },      
       {
         "label": "Organizational adoption",
         "value": "Customer-centric team KPIs promoted to company wide KPIs"
+      },
+      {
+        "label": "Team scaling",
+        "value": "2 → 7 designers (and growing)"
+      },
+      {
+        "label": "Launched team merging",
+        "value": "The CX and product team were merged to improve collaboration"
       }
     ]
   }
