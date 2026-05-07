@@ -224,6 +224,7 @@ export default function App() {
       <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} />
       <main>{renderPage()}</main>
       <Footer />
+      {/* Hidden: floating chat widget
       {appState.currentPage !== 'converse' && (
         <FloatingChatWidget
           messages={chatbotMessages}
@@ -233,6 +234,7 @@ export default function App() {
           onNavigate={handleNavigate}
         />
       )}
+      */}
     </div>
   );
 }

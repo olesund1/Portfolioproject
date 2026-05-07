@@ -16,7 +16,7 @@ export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark }
     { name: 'Work', page: 'home' },
     { name: 'About', page: 'about' },
     { name: 'Contact', page: 'contact' },
-    { name: 'Talk to me', page: 'converse' },
+    // { name: 'Talk to me', page: 'converse' },
   ];
 
   return (
