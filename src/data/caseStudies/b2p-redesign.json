@@ -9,7 +9,7 @@
     "Design System",
     "User Research"
   ],
-  "heroImage": "/images/electrician.jpg",
+  "heroImage": "/images/vattenfall/Product/electrician.jpg",
   "challenge": "The Partner Platform (B2P) had grown organically over years into a fragmented, outdated system. The users, electricians, were daily spending unneccesary time on manual data entry, and the lack of self-service capabilities forced support teams to handle routine requests. The system's complexity led to high error rates, user frustration, and significant operational cost — requiring a full redesign that balanced user needs with internal feasibility.",
   "designProcess": {
     "intro": "I led the end-to-end design process — from initial research through developer collaboration and testing. Close involvement of developers ensured feasibility while maintaining design integrity across the platform.",
