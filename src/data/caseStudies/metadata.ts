@@ -13,6 +13,7 @@ export interface CaseStudyMetadata {
   year: string;
   keywords: string[];
   shortDescription: string;
+  ongoing?: boolean;
 }
 
 export const caseStudyMetadata: CaseStudyMetadata[] = [
@@ -92,7 +93,7 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
       'Validated product-market fit for a newly acquired Finnish employer benefit SaaS platform, identifying two high-priority segments and providing the strategic foundation for post-acquisition positioning.',
     tags: ['User Research', 'PMF', 'SaaS', 'Finland', 'Strategy'],
     imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
-    year: '2024',
+    year: '2026',
     keywords: [
       'pmf',
       'product-market fit',
@@ -110,6 +111,7 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
       'positioning',
     ],
     shortDescription: 'PMF research for a newly acquired Finnish employer benefit SaaS platform.',
+    ongoing: true,
   },
 ];
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -15,6 +15,7 @@ type PageType = 'home' | 'about' | 'case-study' | 'contact' | 'converse';
 interface AppState {
   currentPage: PageType;
   caseStudyId?: string;
+  scrollY?: number;
 }
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, ''); // e.g. '/Portfolioproject' or ''
@@ -65,7 +66,13 @@ export default function App() {
     return false;
   });
 
+  const pendingScrollY = useRef<number | null>(null);
+
   const handleNavigate = (page: string, caseStudyId?: string) => {
+    window.history.replaceState(
+      { ...window.history.state, scrollY: window.scrollY },
+      ''
+    );
     const newState: AppState = { currentPage: page as PageType, caseStudyId };
     setAppState(newState);
     window.history.pushState(newState, '', buildUrl(page, caseStudyId));
@@ -77,16 +84,33 @@ export default function App() {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
   // Listen for browser back/forward buttons
   useEffect(() => {
-    const onPopState = () => {
+    const onPopState = (event: PopStateEvent) => {
+      const savedY = (event.state as AppState | null)?.scrollY;
+      if (savedY != null) {
+        pendingScrollY.current = savedY;
+      }
       setAppState(parseUrl());
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
+
+  useEffect(() => {
+    if (pendingScrollY.current !== null) {
+      window.scrollTo({ top: pendingScrollY.current, behavior: 'instant' });
+      pendingScrollY.current = null;
+    }
+  }, [appState]);
 
   // Initialize chatbot with welcome message
   useEffect(() => {

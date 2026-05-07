@@ -11,6 +11,7 @@ interface CaseStudyCardProps {
   year: string;
   onClick: () => void;
   index: number;
+  ongoing?: boolean;
 }
 
 export function CaseStudyCard({
@@ -21,6 +22,7 @@ export function CaseStudyCard({
   year,
   onClick,
   index,
+  ongoing,
 }: CaseStudyCardProps) {
   return (
     <motion.div
@@ -28,20 +30,28 @@ export function CaseStudyCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onClick={onClick}
-      className="group cursor-pointer"
+      onClick={ongoing ? undefined : onClick}
+      className={ongoing ? 'cursor-not-allowed' : 'group cursor-pointer'}
     >
-      <div className="overflow-hidden rounded-2xl bg-card border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-xl">
+      <div className={`overflow-hidden rounded-2xl bg-card border border-border transition-all duration-300${!ongoing ? ' hover:border-accent/30 hover:shadow-xl' : ''}`}>
         {/* Image Container */}
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           <motion.img
             src={imageUrl}
             alt={title}
-            className="w-full h-full object-cover"
-            whileHover={{ scale: 1.05 }}
+            className={`w-full h-full object-cover${ongoing ? ' blur-sm' : ''}`}
+            whileHover={ongoing ? {} : { scale: 1.05 }}
             transition={{ duration: 0.6 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {ongoing ? (
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <span className="text-white text-sm font-semibold tracking-widest uppercase">
+                Ongoing project
+              </span>
+            </div>
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          )}
         </div>
 
         {/* Content */}
@@ -58,14 +68,16 @@ export function CaseStudyCard({
             {title}
           </h3>
 
-          <p className="text-muted-foreground mb-4 line-clamp-2">
-            {description}
-          </p>
+          <div className={ongoing ? 'blur-sm select-none pointer-events-none' : ''}>
+            <p className="text-muted-foreground mb-4 line-clamp-2">
+              {description}
+            </p>
 
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </div>
           </div>
         </div>
       </div>
