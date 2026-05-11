@@ -24,27 +24,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-accent font-medium mb-6"
-            >
-              Service & UX Designer
-            </motion.p>
-            
             <h1 className="mb-6">
-              Deeper understanding. Better experiences.
+              Hi, I'm Johan — I design experiences that make sense for the people using them.
             </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              I partner with clients to design meaningful experiences through research, strategy, and user-centered thinking.
+
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+              Service & UX designer based in Stockholm. I work at the intersection of research, strategy, and the messy reality of how organisations actually function — and I'm at my best in the ambiguous, where user needs meet complex systems.
             </p>
-            
+
             <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="primary" 
-                size="large" 
+              <Button
+                variant="primary"
+                size="large"
                 showArrow
                 onClick={() => {
                   document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
@@ -52,8 +43,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               >
                 View Selected Work
               </Button>
-              <Button 
-                variant="secondary" 
+              <Button
+                variant="secondary"
                 size="large"
                 onClick={() => onNavigate('about')}
               >
@@ -114,10 +105,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="mb-6">Want to know more?</h2>
-            <Button 
-              variant="primary" 
-              size="large" 
+            <h2 className="mb-6">Let's work together.</h2>
+            <Button
+              variant="primary"
+              size="large"
               showArrow
               onClick={() => onNavigate('contact')}
             >
