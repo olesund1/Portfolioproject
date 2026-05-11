@@ -6,11 +6,11 @@
   "heroImage": "/images/nordic-choice/header-image.jpeg",
   "challenge": "The client — a leading hospitality group operating 200+ hotels across the Nordic region — intended to increase customer satisfaction and loyalty by optimizing their customer journey and improving their digital services. With multiple brands, numerous hotels, and fragmented ownership of the guest experience, there was a lack of oversight and control. Being in a transformational phase, the client needed to align the organization and take a holistic approach when designing future customer experiences. The goal was to map the standard baseline customer journey to kickstart this work and establish practices around working with customer journeys.",
   "designProcess": {
-    "intro": "Netlight approached this challenge with a team of service designers who worked closely with internal stakeholders and kept the client engaged throughout all steps. Johan simultaneously tapped into existing organizational knowledge and built a first-hand understanding of the guest experience.",
+    "intro": "I approached this challenge with a team of service designers who worked closely with internal stakeholders and kept the client engaged throughout all steps. Johan simultaneously tapped into existing organizational knowledge and built a first-hand understanding of the guest experience.",
     "steps": [
       {
         "title": "Research & Discovery",
-        "description": "Read and compiled existing research and data about users, then conducted interviews with stakeholders, frontline employees, and customer service teams. This built a dual understanding of both organizational needs and the current-state customer journey."
+        "description": "Read and compiled existing research and data about users, conducted interviews with stakeholders, frontline employees, and customer service teams. This built a dual understanding of both organizational needs and the current-state customer journey."
       },
       {
         "title": "Service Safari Studies",
@@ -56,11 +56,12 @@
       {
         "label": "Hotels in Scope",
         "value": "200+"
-      },
-      {
-        "label": "Stakeholder Quote",
-        "value": "\"A kickstarter for working more professionally with digital guest experiences\" — Nils Korsvoll, VP Customer Journeys"
       }
     ]
+  },
+  "quote": {
+    "text": "A kickstarter for working more professionally with digital guest experiences",
+    "author": "Nils Korsvoll",
+    "title": "VP Customer Journeys"
   }
 }

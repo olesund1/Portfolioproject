@@ -30,4 +30,9 @@ export interface CaseStudyData {
       value: string;
     }[];
   };
+  quote?: {
+    text: string;
+    author: string;
+    title: string;
+  };
 }
