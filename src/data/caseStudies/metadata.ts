@@ -18,8 +18,34 @@ export interface CaseStudyMetadata {
 
 export const caseStudyMetadata: CaseStudyMetadata[] = [
   {
+    id: 'finland-benefit-pmt',
+    title: 'Product-Market Fit Research: Finnish Employer Benefit Platform',
+    description:
+      'Validated product-market fit for a newly acquired Finnish employer benefit SaaS platform, identifying two high-priority segments and providing the strategic foundation for post-acquisition positioning.',
+    tags: ['User Research', 'PMF', 'SaaS', 'Finland', 'Strategy'],
+    imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+    year: '2026',
+    keywords: [
+      'pmf',
+      'product-market fit',
+      'finland',
+      'employer benefit',
+      'saas',
+      'user research',
+      'hr',
+      'b2b',
+      'strategy',
+      'acquisition',
+      'survey',
+      'interviews',
+      'segment',
+      'positioning',
+    ],
+    shortDescription: 'PMF research for a newly acquired Finnish employer benefit SaaS platform.',
+  },
+  {
     id: 'b2p-redesign',
-    title: 'Partner Platform (B2P) Redesign',
+    title: 'Cutting Manual Work Through Partner Platform Redesign',
     description:
       "Modernized the partner platform for Sweden's largest electricity distributor, reducing manual work by 60% and improving partner satisfaction.",
     tags: ['Enterprise', 'B2P', 'UX Strategy'],
@@ -30,7 +56,7 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
   },
   {
     id: 'customer-centricity',
-    title: 'Enabling Customer-Centricity',
+    title: 'Transforming a Legacy Utility Into a CX Leader',
     description:
       'Transformed a legacy electricity distributor by creating unified customer journeys, scaling CX team, and embedding customer-first thinking across operations. Achieved 52% improvement in customer satisfaction metrics.',
     tags: ['Strategy', 'CX Leadership', 'Organizational Change'],
@@ -65,7 +91,7 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
   },
   {
     id: 'nordic-choice-hotels',
-    title: 'Revitalising Hotel Customer End-To-End Experience in the Post-pandemic Landscape',
+    title: 'Aligning a Hotel Group Around the Guest Journey',
     description:
       'Mapping the baseline customer journey for a leading Nordic hospitality group to align the organization and drive customer-centric development.',
     tags: ['Service Design', 'Customer Journey Mapping', 'UX Research'],
@@ -85,33 +111,6 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
       'service safari',
     ],
     shortDescription: 'End-to-end customer journey mapping for a 200+ hotel Nordic hospitality group.',
-  },
-  {
-    id: 'finland-benefit-pmt',
-    title: 'Product-Market Fit Research: Finnish Employer Benefit Platform',
-    description:
-      'Validated product-market fit for a newly acquired Finnish employer benefit SaaS platform, identifying two high-priority segments and providing the strategic foundation for post-acquisition positioning.',
-    tags: ['User Research', 'PMF', 'SaaS', 'Finland', 'Strategy'],
-    imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
-    year: '2026',
-    keywords: [
-      'pmf',
-      'product-market fit',
-      'finland',
-      'employer benefit',
-      'saas',
-      'user research',
-      'hr',
-      'b2b',
-      'strategy',
-      'acquisition',
-      'survey',
-      'interviews',
-      'segment',
-      'positioning',
-    ],
-    shortDescription: 'PMF research for a newly acquired Finnish employer benefit SaaS platform.',
-    ongoing: true,
   },
 ];
 
