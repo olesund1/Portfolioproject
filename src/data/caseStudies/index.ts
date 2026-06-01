@@ -16,16 +16,6 @@ import {
 export type { CaseStudyMetadata } from './metadata';
 export { caseStudyMetadata, getCaseStudyById, getAllCaseStudyIds };
 
-/**
- * Returns all case studies with imageUrl derived from each JSON's heroImage.
- */
-export function getAllCaseStudies(): ReturnType<typeof getMetadataStudies> {
-  return getMetadataStudies().map((meta) => ({
-    ...meta,
-    imageUrl: caseStudyMap[meta.id]?.heroImage ?? meta.imageUrl,
-  }));
-}
-
 // Import case study JSON files
 import b2pRedesign from './b2p-redesign.json';
 import customerCentricity from './customer-centricity.json';
@@ -41,6 +31,19 @@ const caseStudyMap: Record<string, CaseStudyData> = {
   'nordic-choice-hotels': nordicChoiceHotels as CaseStudyData,
   'finland-benefit-pmt': finlandBenefitPmt as CaseStudyData,
 };
+
+// Computed once at module load — data is fully static, caseStudyMap must be defined first
+const _allCaseStudies = getMetadataStudies().map((meta) => ({
+  ...meta,
+  imageUrl: caseStudyMap[meta.id]?.heroImage ?? meta.imageUrl,
+}));
+
+/**
+ * Returns all case studies with imageUrl derived from each JSON's heroImage.
+ */
+export function getAllCaseStudies(): ReturnType<typeof getMetadataStudies> {
+  return _allCaseStudies;
+}
 
 /**
  * Load a specific case study's full data by ID.

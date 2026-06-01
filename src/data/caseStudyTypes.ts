@@ -29,6 +29,7 @@ export interface CaseStudyData {
       label: string;
       value: string;
     }[];
+    hideResults?: boolean;
   };
   quote?: {
     text: string;

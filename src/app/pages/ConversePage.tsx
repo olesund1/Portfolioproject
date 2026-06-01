@@ -62,10 +62,6 @@ export function ConversePage({
     }
   };
 
-  const handleSuggestionClick = (page: string, caseStudyId?: string) => {
-    onNavigate(page, caseStudyId);
-  };
-
   return (
     <div className="pt-16 md:pt-10 pb-24">
       <Section className="min-h-[85vh] flex flex-col">
@@ -104,7 +100,7 @@ export function ConversePage({
                     <ChatMessage
                       role={message.role}
                       content={message.content}
-                      onSuggestionClick={handleSuggestionClick}
+                      onSuggestionClick={onNavigate}
                     />
 
                     {/* Suggestions Grid */}
@@ -120,9 +116,7 @@ export function ConversePage({
                             key={`${message.id}-${suggestionIndex}`}
                             suggestion={suggestion}
                             index={suggestionIndex}
-                            onClick={() =>
-                              handleSuggestionClick(suggestion.page, suggestion.caseStudyId)
-                            }
+                            onClick={() => onNavigate(suggestion.page, suggestion.caseStudyId)}
                           />
                         ))}
                       </motion.div>

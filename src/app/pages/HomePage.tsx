@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { getAllCaseStudies } from '@/data/caseStudies';
@@ -11,7 +12,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const caseStudies = getAllCaseStudies();
+  const caseStudies = useMemo(() => getAllCaseStudies(), []);
 
   return (
     <div className="pt-16 md:pt-20">

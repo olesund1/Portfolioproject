@@ -230,49 +230,74 @@ export function CaseStudyTemplate({ data, onNavigate }: CaseStudyTemplateProps) 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-accent text-accent-foreground"
+        className={`bg-accent text-accent-foreground${data.results.hideResults ? ' relative overflow-hidden' : ''}`}
       >
-        <Container>
-          {data.quote ? (
-            <div className="py-20 flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
-              <p className="text-2xl md:text-3xl font-semibold italic leading-snug">
-                &ldquo;{data.quote.text}&rdquo;
-              </p>
-              <p className="text-base font-semibold opacity-70">
-                &mdash; {data.quote.author}, {data.quote.title}
+        {data.results.hideResults ? (
+          <>
+            <div className="blur-sm select-none pointer-events-none">
+              <Container>
+                <div className="py-16">
+                  <div className="flex flex-col gap-4 mb-12">
+                    <h2>Results &amp; Impact</h2>
+                    <p className="text-lg opacity-90">{data.results.intro}</p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {data.results.kpis.map((kpi) => (
+                      <div
+                        key={kpi.label}
+                        className="bg-white/10 border border-white/20 rounded-xl p-6 min-h-[140px] flex flex-col gap-2"
+                      >
+                        <p className="text-base font-bold opacity-90">{kpi.label}</p>
+                        <p className="text-lg md:text-xl font-bold leading-snug">{kpi.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Container>
+            </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center">
+              <h2 className="text-accent-foreground">Results &amp; Impact</h2>
+              <p className="text-accent-foreground/80 font-semibold text-lg tracking-wide">
+                Key metrics are currently being collected
               </p>
             </div>
-          ) : (
-            <div className="py-16">
-              <div className="flex flex-col gap-4 mb-12">
-                <h2>Results &amp; Impact</h2>
-                <p className="text-lg opacity-90">
-                  {data.results.intro}
+          </>
+        ) : (
+          <Container>
+            {data.quote ? (
+              <div className="py-20 flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
+                <p className="text-2xl md:text-3xl font-semibold italic leading-snug">
+                  &ldquo;{data.quote.text}&rdquo;
+                </p>
+                <p className="text-base font-semibold opacity-70">
+                  &mdash; {data.quote.author}, {data.quote.title}
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {data.results.kpis.map((kpi, index) => (
-                  <motion.div
-                    key={kpi.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-white/10 border border-white/20 rounded-xl p-6 min-h-[140px] flex flex-col gap-2"
-                  >
-                    <p className="text-base font-bold opacity-90">
-                      {kpi.label}
-                    </p>
-                    <p className="text-lg md:text-xl font-bold leading-snug">
-                      {kpi.value}
-                    </p>
-                  </motion.div>
-                ))}
+            ) : (
+              <div className="py-16">
+                <div className="flex flex-col gap-4 mb-12">
+                  <h2>Results &amp; Impact</h2>
+                  <p className="text-lg opacity-90">{data.results.intro}</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {data.results.kpis.map((kpi, index) => (
+                    <motion.div
+                      key={kpi.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white/10 border border-white/20 rounded-xl p-6 min-h-[140px] flex flex-col gap-2"
+                    >
+                      <p className="text-base font-bold opacity-90">{kpi.label}</p>
+                      <p className="text-lg md:text-xl font-bold leading-snug">{kpi.value}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </Container>
+            )}
+          </Container>
+        )}
       </motion.div>
 
       {/* CTA — Interested in more work? */}

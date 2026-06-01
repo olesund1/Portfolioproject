@@ -1,9 +1,8 @@
-import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Container } from '../components/Container';
 import { Button } from '../components/Button';
 import { CaseStudyTemplate } from '../components/CaseStudyTemplate';
-import { loadCaseStudy } from '../utils/loadCaseStudy';
+import { loadCaseStudy } from '@/data/caseStudies';
 
 interface CaseStudyPageProps {
   caseStudyId: string;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -6,7 +6,6 @@ import { AboutPage } from './pages/AboutPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { ContactPage } from './pages/ContactPage';
 import { ConversePage } from './pages/ConversePage';
-import { FloatingChatWidget } from './components/FloatingChatWidget';
 import { generateAIResponse, ConversationMessage } from './utils/mockAI';
 import { DisplayMessage, WELCOME_MESSAGE_CONTENT } from './types';
 
@@ -58,7 +57,6 @@ export default function App() {
   const [appState, setAppState] = useState<AppState>(parseUrl);
   const [chatbotMessages, setChatbotMessages] = useState<DisplayMessage[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
-  const [showFloatingChat, setShowFloatingChat] = useState(false);
   const [isChatbotInitialized, setIsChatbotInitialized] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const stored = localStorage.getItem('theme');
@@ -68,7 +66,7 @@ export default function App() {
 
   const pendingScrollY = useRef<number | null>(null);
 
-  const handleNavigate = (page: string, caseStudyId?: string) => {
+  const handleNavigate = useCallback((page: string, caseStudyId?: string) => {
     window.history.replaceState(
       { ...window.history.state, scrollY: window.scrollY },
       ''
@@ -77,7 +75,7 @@ export default function App() {
     setAppState(newState);
     window.history.pushState(newState, '', buildUrl(page, caseStudyId));
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
@@ -90,7 +88,7 @@ export default function App() {
     }
   }, []);
 
-  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
+  const toggleDarkMode = useCallback(() => setIsDarkMode(prev => !prev), []);
 
   // Listen for browser back/forward buttons
   useEffect(() => {
@@ -132,14 +130,7 @@ export default function App() {
     }
   }, [isChatbotInitialized]);
 
-  // Show floating chat widget when navigating away from converse page
-  useEffect(() => {
-    if (appState.currentPage !== 'converse' && conversationHistory.length > 1) {
-      setShowFloatingChat(true);
-    }
-  }, [appState.currentPage, conversationHistory.length]);
-
-  const handleChatbotMessage = async (userInput: string) => {
+  const handleChatbotMessage = useCallback(async (userInput: string) => {
     // Add user message
     const userMessage: DisplayMessage = {
       id: Date.now().toString(),
@@ -184,7 +175,12 @@ export default function App() {
     } catch (error) {
       console.error('Error generating AI response:', error);
     }
-  };
+  }, [chatbotMessages, conversationHistory]);
+
+  const handleInitialize = useCallback((msgs: DisplayMessage[], history: ConversationMessage[]) => {
+    setChatbotMessages(msgs);
+    setConversationHistory(history);
+  }, []);
 
   const renderPage = () => {
     switch (appState.currentPage) {
@@ -208,10 +204,7 @@ export default function App() {
             messages={chatbotMessages}
             conversationHistory={conversationHistory}
             onSendMessage={handleChatbotMessage}
-            onInitialize={(msgs, history) => {
-              setChatbotMessages(msgs);
-              setConversationHistory(history);
-            }}
+            onInitialize={handleInitialize}
           />
         );
       default:
@@ -224,17 +217,6 @@ export default function App() {
       <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} />
       <main>{renderPage()}</main>
       <Footer />
-      {/* Hidden: floating chat widget
-      {appState.currentPage !== 'converse' && (
-        <FloatingChatWidget
-          messages={chatbotMessages}
-          isOpen={showFloatingChat}
-          onToggle={() => setShowFloatingChat(!showFloatingChat)}
-          onSendMessage={handleChatbotMessage}
-          onNavigate={handleNavigate}
-        />
-      )}
-      */}
     </div>
   );
 }
