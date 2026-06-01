@@ -81,36 +81,10 @@ export function HomePage({ onNavigate, isBrutalist = false }: HomePageProps) {
                 isBrutalist={isBrutalist}
               />
             ))}
-            {caseStudies.length % 2 !== 0 && (
-              <div className="border-2 border-dashed border-border rounded-2xl flex items-center justify-center min-h-[400px] bg-card/50">
-                <p className="text-muted-foreground text-center">Coming Soon</p>
-              </div>
-            )}
           </div>
         </Container>
       </Section>
 
-      {/* CTA Section */}
-      <Section>
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="mb-6">Let's work together.</h2>
-            <Button
-              variant="primary"
-              size="large"
-              showArrow
-              onClick={() => onNavigate('contact')}
-            >
-              Get in Touch
-            </Button>
-          </motion.div>
-        </Container>
-      </Section>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 import { Tag } from './Tag';
 
 interface CaseStudyCardProps {
@@ -12,7 +11,7 @@ interface CaseStudyCardProps {
   onClick: () => void;
   index: number;
   ongoing?: boolean;
-  isBrutalist?: boolean;
+  isBrutalist?: boolean; // retained for API compatibility; unused visually
 }
 
 export function CaseStudyCard({
@@ -24,7 +23,6 @@ export function CaseStudyCard({
   onClick,
   index,
   ongoing,
-  isBrutalist = false,
 }: CaseStudyCardProps) {
   return (
     <motion.div
@@ -35,15 +33,13 @@ export function CaseStudyCard({
       onClick={ongoing ? undefined : onClick}
       className={ongoing ? 'cursor-not-allowed' : 'group cursor-pointer'}
     >
-      <div className={`overflow-hidden rounded-2xl bg-card border border-border transition-all duration-300${!ongoing ? (isBrutalist ? ' hover:border-foreground' : ' hover:border-accent/30 hover:shadow-xl') : ''}`}>
+      <div className={`overflow-hidden rounded-xl bg-card border border-border transition-colors duration-200${!ongoing ? ' hover:border-foreground' : ''}`}>
         {/* Image Container */}
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-          <motion.img
+          <img
             src={imageUrl}
             alt={title}
             className={`w-full h-full object-cover${ongoing ? ' blur-sm' : ''}`}
-            whileHover={ongoing || isBrutalist ? {} : { scale: 1.05 }}
-            transition={{ duration: 0.6 }}
           />
           {ongoing ? (
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -51,8 +47,6 @@ export function CaseStudyCard({
                 Ongoing project
               </span>
             </div>
-          ) : !isBrutalist ? (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           ) : null}
         </div>
 
@@ -60,13 +54,9 @@ export function CaseStudyCard({
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-3">
             <p className="text-sm text-muted-foreground font-medium">{year}</p>
-            <ArrowRight 
-              size={20} 
-              className="text-accent opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" 
-            />
           </div>
 
-          <h3 className="text-2xl font-semibold mb-3 group-hover:text-accent transition-colors">
+          <h3 className="text-2xl font-semibold mb-3">
             {title}
           </h3>
 

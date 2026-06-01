@@ -71,7 +71,7 @@ export function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-card rounded-2xl border border-border">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Name *
