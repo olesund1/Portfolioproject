@@ -7,9 +7,11 @@ interface NavigationProps {
   onNavigate: (page: string) => void;
   isDarkMode: boolean;
   onToggleDark: () => void;
+  isBrutalist: boolean;
+  onToggleBrutalist: () => void;
 }
 
-export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark }: NavigationProps) {
+export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark, isBrutalist, onToggleBrutalist }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -44,6 +46,7 @@ export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark }
                 {item.name}
               </button>
             ))}
+            {/* Brutalist toggle — hidden for now, logic intact in App.tsx */}
             <button
               onClick={onToggleDark}
               aria-label="Toggle dark mode"
@@ -55,6 +58,7 @@ export function Navigation({ currentPage, onNavigate, isDarkMode, onToggleDark }
 
           {/* Mobile Menu Button + Dark Toggle */}
           <div className="md:hidden flex items-center gap-2">
+            {/* Brutalist toggle — hidden for now, logic intact in App.tsx */}
             <button
               onClick={onToggleDark}
               aria-label="Toggle dark mode"

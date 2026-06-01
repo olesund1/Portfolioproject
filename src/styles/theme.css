@@ -123,6 +123,43 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ─── Brutalist theme overrides ────────────────────────────────────────────
+   Applied when <html class="brutalist"> is set.
+   CSS custom properties cascade down, so --radius: 0px affects all
+   rounded-sm/md/lg/xl utilities automatically via their calc() expressions.
+   rounded-2xl and rounded-full are hardcoded Tailwind values — overridden below.
+   ─────────────────────────────────────────────────────────────────────────── */
+.brutalist {
+  --radius: 0px;
+  --border: #c8c8c8;
+}
+
+/* Square out all pill/full-rounded elements (tags, chat button, avatars) */
+.brutalist .rounded-full,
+.brutalist .rounded-2xl,
+.brutalist .rounded-3xl {
+  border-radius: 0 !important;
+}
+
+/* Remove frosted-glass nav — replace with solid opaque background */
+.brutalist nav {
+  background-color: var(--background) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Strip hover elevation shadows — structure, not softness */
+.brutalist *:hover {
+  box-shadow: none !important;
+}
+
+/* Bolder headings in brutalist mode */
+.brutalist h1,
+.brutalist h2,
+.brutalist h3 {
+  font-weight: 700;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

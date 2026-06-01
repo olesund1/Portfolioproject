@@ -64,6 +64,10 @@ export default function App() {
     return false;
   });
 
+  const [isBrutalist, setIsBrutalist] = useState(() => {
+    return localStorage.getItem('design-theme') === 'brutalist';
+  });
+
   const pendingScrollY = useRef<number | null>(null);
 
   const handleNavigate = useCallback((page: string, caseStudyId?: string) => {
@@ -83,12 +87,18 @@ export default function App() {
   }, [isDarkMode]);
 
   useEffect(() => {
+    document.documentElement.classList.toggle('brutalist', isBrutalist);
+    localStorage.setItem('design-theme', isBrutalist ? 'brutalist' : 'default');
+  }, [isBrutalist]);
+
+  useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
   }, []);
 
   const toggleDarkMode = useCallback(() => setIsDarkMode(prev => !prev), []);
+  const toggleBrutalist = useCallback(() => setIsBrutalist(prev => !prev), []);
 
   // Listen for browser back/forward buttons
   useEffect(() => {
@@ -185,7 +195,7 @@ export default function App() {
   const renderPage = () => {
     switch (appState.currentPage) {
       case 'home':
-        return <HomePage onNavigate={handleNavigate} />;
+        return <HomePage onNavigate={handleNavigate} isBrutalist={isBrutalist} />;
       case 'about':
         return <AboutPage />;
       case 'case-study':
@@ -214,7 +224,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} />
+      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} isBrutalist={isBrutalist} onToggleBrutalist={toggleBrutalist} />
       <main>{renderPage()}</main>
       <Footer />
     </div>

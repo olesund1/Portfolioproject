@@ -12,6 +12,7 @@ interface CaseStudyCardProps {
   onClick: () => void;
   index: number;
   ongoing?: boolean;
+  isBrutalist?: boolean;
 }
 
 export function CaseStudyCard({
@@ -23,6 +24,7 @@ export function CaseStudyCard({
   onClick,
   index,
   ongoing,
+  isBrutalist = false,
 }: CaseStudyCardProps) {
   return (
     <motion.div
@@ -33,14 +35,14 @@ export function CaseStudyCard({
       onClick={ongoing ? undefined : onClick}
       className={ongoing ? 'cursor-not-allowed' : 'group cursor-pointer'}
     >
-      <div className={`overflow-hidden rounded-2xl bg-card border border-border transition-all duration-300${!ongoing ? ' hover:border-accent/30 hover:shadow-xl' : ''}`}>
+      <div className={`overflow-hidden rounded-2xl bg-card border border-border transition-all duration-300${!ongoing ? (isBrutalist ? ' hover:border-foreground' : ' hover:border-accent/30 hover:shadow-xl') : ''}`}>
         {/* Image Container */}
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           <motion.img
             src={imageUrl}
             alt={title}
             className={`w-full h-full object-cover${ongoing ? ' blur-sm' : ''}`}
-            whileHover={ongoing ? {} : { scale: 1.05 }}
+            whileHover={ongoing || isBrutalist ? {} : { scale: 1.05 }}
             transition={{ duration: 0.6 }}
           />
           {ongoing ? (
@@ -49,9 +51,9 @@ export function CaseStudyCard({
                 Ongoing project
               </span>
             </div>
-          ) : (
+          ) : !isBrutalist ? (
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          )}
+          ) : null}
         </div>
 
         {/* Content */}

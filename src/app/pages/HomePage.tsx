@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowDown } from 'lucide-react';
 import { getAllCaseStudies } from '@/data/caseStudies';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
@@ -9,9 +8,10 @@ import { CaseStudyCard } from '../components/CaseStudyCard';
 
 interface HomePageProps {
   onNavigate: (page: string, caseStudyId?: string) => void;
+  isBrutalist?: boolean;
 }
 
-export function HomePage({ onNavigate }: HomePageProps) {
+export function HomePage({ onNavigate, isBrutalist = false }: HomePageProps) {
   const caseStudies = useMemo(() => getAllCaseStudies(), []);
 
   return (
@@ -54,14 +54,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block"
-          >
-            <ArrowDown size={24} className="text-muted-foreground animate-bounce" />
-          </motion.div>
         </Container>
       </Section>
 
@@ -86,6 +78,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 {...study}
                 index={index}
                 onClick={() => onNavigate('case-study', study.id)}
+                isBrutalist={isBrutalist}
               />
             ))}
             {caseStudies.length % 2 !== 0 && (
