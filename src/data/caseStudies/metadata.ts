@@ -19,6 +19,7 @@ export interface CaseStudyMetadata {
 export const caseStudyMetadata: CaseStudyMetadata[] = [
   {
     id: 'finland-benefit-pmt',
+    ongoing: true,
     title: 'Swedish Market Research: Employee Benefit Platform',
     description:
       'Led end-to-end market research exploring Swedish employer appetite for a multi-benefit platform — delivering actionable insights to guide go-to-market strategy and segment prioritization.',
