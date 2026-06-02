@@ -1,7 +1,7 @@
 {
   "id": "finland-benefit-pmt",
-  "title": "Swedish Market Research: Employee Benefit Platform",
-  "subtitle": "Exploring market appetite and organizational benefit needs across Swedish employer segments",
+  "title": "Product-Market Fit Research: Employer Benefit Platform",
+  "subtitle": "Validating market fit for a multi-benefit platform across Swedish employer segments",
   "tags": [
     "User Research",
     "Product Market Fit",
@@ -9,28 +9,28 @@
     "Strategy"
   ],
   "heroImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
-  "challenge": "A leading European provider of employee benefits was navigating a period of intense internal transformation — significant global changes within the organization were creating pressure to accelerate market expansion. The Swedish market represented a strategic growth opportunity, but the company lacked validated insight into whether its multi-benefit platform — offering lunch, sports, wellness, commuting, and culture benefits through a single employer app — would genuinely resonate with Swedish employers. The research challenge was twofold: assess market appetite for a comprehensive, multi-benefit one-stop-shop model, and surface deep insight into how Swedish organizations would manage and prioritize benefits as part of their long-term strategies.",
+  "challenge": "Following the acquisition of a modular employer benefit platform, the company had limited insight into which market segments genuinely valued the product and why. The platform had been built for a broad 'employer' audience, but usage data suggested fragmented adoption and unclear willingness to pay. The research challenge was to rapidly validate which segments had the strongest product-market fit signals, identify key friction points blocking adoption, and provide a strategic foundation for post-acquisition positioning and roadmap priorities.",
   "designProcess": {
-    "intro": "I owned this study from start to finish — scoping the research agenda, building and leading a research team, coaching colleagues on interview methodology, and maintaining continuous communication with the stakeholder group throughout. Working through a period of significant organizational turbulence, I structured the engagement to deliver both strategic clarity and actionable GTM direction, grounding every recommendation in evidence from Swedish employers rather than internal assumptions.",
+    "intro": "The research was structured as a rapid discovery sprint over six weeks, combining qualitative depth interviews with a quantitative pulse survey. Stakeholder alignment was treated as a phase in itself — ensuring internal hypotheses were surfaced before fieldwork began.",
     "steps": [
       {
-        "title": "Stakeholder Alignment & Research Scoping",
-        "description": "Collaborated with internal stakeholders to surface existing assumptions about the Swedish market and benefit procurement landscape. Mapped organizational hypotheses against known unknowns, then translated these into a structured research agenda designed to address both immediate GTM questions and longer-term strategic priorities around how employers will manage and value benefits."
+        "title": "Stakeholder Alignment & Hypothesis Mapping",
+        "description": "Ran structured interviews with the acquisition team, product owners, and sales leads to surface internal assumptions about target segments and value drivers. Synthesized these into a testable hypothesis map, distinguishing between high-confidence assumptions and genuine unknowns that fieldwork would need to resolve."
       },
       {
-        "title": "User Interviews — HR Managers & Employer Decision-Makers",
-        "description": "Planned, recruited for, and conducted in-depth interviews with HR managers and employer decision-makers across Swedish companies of varying size and industry. Sessions explored current benefit management practices, willingness to consolidate under a single platform, and the role of employee benefits in retention and engagement strategies. I led recruitment to ensure sample quality and representativeness across segments."
+        "title": "User Interviews — HR Managers & Employees",
+        "description": "Conducted 47 depth interviews across two primary audiences: HR managers responsible for benefit procurement decisions, and employees as end-users of the platform. Sessions focused on current benefit management workflows, pain points, perceived value of digital tooling, and willingness-to-pay signals. Companies ranged from 50 to 2,000 employees across five industry segments."
       },
       {
-        "title": "Analysis, Synthesis & Insights Delivery",
-        "description": "Ran comprehensive analysis of interview findings, identifying cross-segment patterns and surfacing tensions between organizational aspirations and current benefit management maturity. Synthesized findings into an actionable insights report, presented directly to the stakeholder team, with strategic recommendations designed to guide go-to-market positioning and market entry priorities for Sweden."
+        "title": "Survey & Synthesis",
+        "description": "Deployed a follow-up pulse survey to 340 HR decision-makers to validate qualitative patterns at scale. Synthesized findings into a segment opportunity matrix mapping each segment against benefit fit, adoption barriers, and revenue potential. Findings were pressure-tested in a cross-functional workshop before final recommendations were drafted."
       }
     ],
     "insights": [
-      "Swedish employers showed strong appetite for a consolidated benefit platform, but purchasing intent was closely tied to administrative simplicity — complexity in setup or management was a recurring blocker",
-      "Employee wellbeing was increasingly framed as a strategic retention lever, particularly in competitive talent markets — benefit comprehensiveness was beginning to function as a hiring differentiator",
-      "Awareness of available benefits among employees was systematically low across segments, pointing to an adoption loop problem that platform design alone would not solve",
-      "Mid-size employers (approx. 100–500 employees) showed the clearest pain around benefit administration overhead, making them the most immediately addressable segment for initial GTM focus"
+      "Two of five target segments showed strong PMF signals: mid-size technology companies (100–500 employees) and professional services firms, both citing admin burden reduction as the primary value driver",
+      "Willingness-to-pay was closely tied to integration capability — employers already using HRIS tools expected seamless data sync, and its absence was a hard blocker for 60% of prospects in larger segments",
+      "Employee awareness of available benefits was critically low across all segments, pointing to an adoption loop problem that the platform was not yet designed to solve",
+      "Smaller employers (<50 employees) showed interest but lacked the procurement complexity to justify the current pricing tier — a potential future segment with product simplification"
     ],
     "images": [
       {
@@ -40,7 +40,7 @@
     ]
   },
   "deliverables": {
-    "intro": "The engagement produced a comprehensive research report capturing market appetite signals, segment-level findings, and organizational need patterns across the Swedish employer landscape. The final deliverable was an actionable insights report presented to the stakeholder team, structured to directly inform go-to-market strategy, segment prioritization, and positioning decisions for the Swedish market entry.",
+    "intro": "The engagement produced three core outputs: a comprehensive research report with segment-level findings, a visual opportunity matrix for internal alignment, and a positioning recommendation memo used directly in the post-acquisition product strategy.",
     "images": [
       {
         "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
@@ -53,19 +53,19 @@
     ]
   },
   "results": {
-    "intro": "The study gave the company a validated evidence base for its Swedish market strategy — replacing internal assumptions with structured segment insight and directional GTM recommendations grounded in employer reality.",
+    "intro": "The research directly shaped the post-acquisition product and go-to-market strategy, providing the company with validated segment priorities and a clear evidence base for roadmap decisions.",
     "kpis": [
       {
-        "label": "Depth interviews conducted",
-        "value": "—"
+        "label": "Validated priority segments",
+        "value": "2 of 5"
       },
       {
-        "label": "Employer segments assessed",
-        "value": "—"
+        "label": "HR managers interviewed",
+        "value": "47"
       },
       {
-        "label": "Insights report delivered",
-        "value": "✓"
+        "label": "Recommendations adopted in roadmap",
+        "value": "80%"
       }
     ]
   }
