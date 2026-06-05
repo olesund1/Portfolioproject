@@ -121,3 +121,24 @@ The project uses TypeScript throughout. All React components are typed with prop
 
 ### Deployment
 Built with Figma Make integration in mind. Output goes to `dist/` directory. The app is a single-page application with no server-side rendering.
+
+## Prototype Workflow
+
+Prototypes live in `prototypes/` at the repo root, completely isolated from production.
+
+- **Start:** `PROTO=[feature-name]/[version] npm run proto` (runs on port 5174, separate from production `npm run dev` on 5173)
+- **Each version has a `BRIEF.md`** documenting the problem, hypothesis, design decisions, and a promotion checklist
+- **Prototypes import from the design system via `@/` alias** — they read from `src/` freely, but never write to it
+- **Never modify `src/` files** as part of prototype work
+- **See `prototypes/PROTOTYPE_GUIDE.md`** for full guidance on running, iterating, and promoting prototypes
+
+Structure:
+```
+prototypes/
+├── PROTOTYPE_GUIDE.md      ← Claude's standing instructions
+├── _shared/
+│   └── proto-shell.tsx     ← Minimal app wrapper (design tokens, no production logic)
+└── [feature-name]/
+    ├── v1/                 ← First iteration
+    └── v2/                 ← Next iteration (copy v1, update BRIEF.md)
+```

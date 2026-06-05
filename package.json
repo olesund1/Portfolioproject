@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "proto": "vite --config vite.config.proto.ts",
+    "proto:build": "vite build --config vite.config.proto.ts"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

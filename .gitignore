@@ -5,6 +5,10 @@ node_modules/
 dist/
 dist-ssr/
 
+# Prototype build output (never deployed to production)
+prototypes/**/dist/
+prototypes/**/.vite/
+
 # Environment variables (never commit secrets)
 .env
 .env.local
