@@ -1,71 +1,71 @@
 {
   "id": "finland-benefit-pmt",
-  "title": "Product-Market Fit Research: Employer Benefit Platform",
-  "subtitle": "Validating market fit for a multi-benefit platform across Swedish employer segments",
+  "title": "Swedish Market Study: Employee Benefit Platform",
+  "subtitle": "Exploring employer appetite for a multi-benefit one-stop-shop — and what it means for long-term benefit strategy",
   "tags": [
     "User Research",
-    "Product Market Fit",
+    "Market Research",
     "SaaS",
-    "Strategy"
+    "GTM Strategy"
   ],
   "heroImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
-  "challenge": "Following the acquisition of a modular employer benefit platform, the company had limited insight into which market segments genuinely valued the product and why. The platform had been built for a broad 'employer' audience, but usage data suggested fragmented adoption and unclear willingness to pay. The research challenge was to rapidly validate which segments had the strongest product-market fit signals, identify key friction points blocking adoption, and provide a strategic foundation for post-acquisition positioning and roadmap priorities.",
+  "challenge": "During a period of significant global organizational change, the company set out to explore the Swedish market with a fresh lens. The core question: was there genuine employer appetite for a comprehensive, multi-benefit one-stop-shop platform — and if so, where, and why? Beyond assessing current demand, the study needed to surface deeper insights into how companies were thinking about benefits as a long-term strategic priority. The research would need to anticipate how employer needs and benefit management practices were likely to evolve, giving the organization a foundation to act on — not just react to.",
   "designProcess": {
-    "intro": "The research was structured as a rapid discovery sprint over six weeks, combining qualitative depth interviews with a quantitative pulse survey. Stakeholder alignment was treated as a phase in itself — ensuring internal hypotheses were surfaced before fieldwork began.",
+    "intro": "Johan owned the study from end to end — planning the research approach, leading the team, managing stakeholder communications throughout, and delivering the final insights report. The work ran in parallel with ongoing organizational change, which meant maintaining clarity of purpose while navigating a fluid internal environment.",
     "steps": [
       {
-        "title": "Stakeholder Alignment & Hypothesis Mapping",
-        "description": "Ran structured interviews with the acquisition team, product owners, and sales leads to surface internal assumptions about target segments and value drivers. Synthesized these into a testable hypothesis map, distinguishing between high-confidence assumptions and genuine unknowns that fieldwork would need to resolve."
+        "title": "Study Design & Stakeholder Alignment",
+        "description": "Defined the research scope and objectives in close collaboration with the stakeholder team. Surfaced internal assumptions about the Swedish market, benefit trends, and target employer segments. Coached colleagues on research methodology and established a shared framework for what success looked like before fieldwork began."
       },
       {
-        "title": "User Interviews — HR Managers & Employees",
-        "description": "Conducted 47 depth interviews across two primary audiences: HR managers responsible for benefit procurement decisions, and employees as end-users of the platform. Sessions focused on current benefit management workflows, pain points, perceived value of digital tooling, and willingness-to-pay signals. Companies ranged from 50 to 2,000 employees across five industry segments."
+        "title": "Recruitment & User Interviews",
+        "description": "Oversaw the full recruitment process, designing criteria to ensure a diverse and representative sample of Swedish employers. Organized and conducted in-depth interviews with HR decision-makers and benefit managers across a range of company sizes and industries. Ongoing stakeholder communication kept the team informed and enabled real-time adjustment of research focus as patterns emerged."
       },
       {
-        "title": "Survey & Synthesis",
-        "description": "Deployed a follow-up pulse survey to 340 HR decision-makers to validate qualitative patterns at scale. Synthesized findings into a segment opportunity matrix mapping each segment against benefit fit, adoption barriers, and revenue potential. Findings were pressure-tested in a cross-functional workshop before final recommendations were drafted."
+        "title": "Analysis & Insight Delivery",
+        "description": "Ran a comprehensive analysis of interview findings, identifying patterns in appetite, hesitation, and unmet needs across employer segments. Synthesized the research into an actionable insights report that went beyond describing current attitudes — framing implications for how companies are likely to prioritize and manage benefits in the future, and translating this directly into GTM strategy recommendations."
       }
     ],
     "insights": [
-      "Two of five target segments showed strong PMF signals: mid-size technology companies (100–500 employees) and professional services firms, both citing admin burden reduction as the primary value driver",
-      "Willingness-to-pay was closely tied to integration capability — employers already using HRIS tools expected seamless data sync, and its absence was a hard blocker for 60% of prospects in larger segments",
-      "Employee awareness of available benefits was critically low across all segments, pointing to an adoption loop problem that the platform was not yet designed to solve",
-      "Smaller employers (<50 employees) showed interest but lacked the procurement complexity to justify the current pricing tier — a potential future segment with product simplification"
+      "Employer appetite for platform consolidation was real but conditional — interest rose sharply when the platform was framed as reducing administrative complexity rather than adding a new tool",
+      "Benefit strategy was rarely proactive: most HR managers were reacting to employee requests rather than building benefit packages with long-term intent, creating an opening for a more strategic platform narrative",
+      "Trust and data sensitivity were recurring concerns, particularly among mid-sized employers evaluating a single platform for multiple benefit types — integration reassurances were needed earlier in the sales conversation",
+      "Future-facing needs pointed toward flexibility and personalization: employers anticipated increasing pressure to tailor benefits to diverse workforce segments, a gap the current market was not adequately addressing"
     ],
     "images": [
       {
         "src": "https://images.unsplash.com/photo-1553484771-047a44eee27a?w=800&q=80",
-        "alt": "Research synthesis workshop with affinity mapping"
+        "alt": "Research synthesis session mapping employer appetite across segments"
       }
     ]
   },
   "deliverables": {
-    "intro": "The engagement produced three core outputs: a comprehensive research report with segment-level findings, a visual opportunity matrix for internal alignment, and a positioning recommendation memo used directly in the post-acquisition product strategy.",
+    "intro": "The primary output was a comprehensive insights report delivered to the stakeholder team — structured to be both analytically rigorous and immediately actionable. The report covered segment-level findings on platform appetite, an assessment of adoption barriers, and forward-looking perspectives on how benefit management strategies were likely to evolve. Findings fed directly into go-to-market strategy discussions and helped the organization prioritize which employer segments to approach first.",
     "images": [
       {
         "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-        "alt": "Segment opportunity matrix showing PMF strength across employer verticals"
+        "alt": "Segment opportunity mapping from the insights report"
       },
       {
         "src": "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80",
-        "alt": "Positioning recommendation framework derived from research synthesis"
+        "alt": "GTM strategy recommendations derived from employer interviews"
       }
     ]
   },
   "results": {
-    "intro": "The research directly shaped the post-acquisition product and go-to-market strategy, providing the company with validated segment priorities and a clear evidence base for roadmap decisions.",
+    "intro": "The study gave the organization something it hadn't had before entering the Swedish market: a grounded, evidence-based view of where employer appetite was real, where it wasn't, and what conditions would need to be true for the platform to succeed. Findings were delivered as actionable recommendations and used directly to inform go-to-market positioning.",
     "kpis": [
       {
-        "label": "Validated priority segments",
-        "value": "2 of 5"
+        "label": "Research scope",
+        "value": "End-to-end ownership — from study design to final delivery"
       },
       {
-        "label": "HR managers interviewed",
-        "value": "47"
+        "label": "Primary output",
+        "value": "Actionable insights report guiding GTM strategy"
       },
       {
-        "label": "Recommendations adopted in roadmap",
-        "value": "80%"
+        "label": "Strategic impact",
+        "value": "Findings adopted into market entry and segment prioritization decisions"
       }
     ]
   }

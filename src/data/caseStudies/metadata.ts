@@ -19,10 +19,9 @@ export interface CaseStudyMetadata {
 export const caseStudyMetadata: CaseStudyMetadata[] = [
   {
     id: 'finland-benefit-pmt',
-    /* ongoing: true, */
-    title: 'Swedish Market Research: Employee Benefit Platform',
+    title: 'Swedish Market Study: Employee Benefit Platform',
     description:
-      'Led end-to-end market research exploring Swedish employer appetite for a multi-benefit platform — delivering actionable insights to guide go-to-market strategy and segment prioritization.',
+      'Led end-to-end market research exploring Swedish employer appetite for a comprehensive multi-benefit platform — delivering an actionable insights report to guide go-to-market strategy and long-term benefit positioning.',
     tags: ['User Research', 'Market Research', 'SaaS', 'GTM Strategy'],
     imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
     year: '2026',
@@ -40,8 +39,11 @@ export const caseStudyMetadata: CaseStudyMetadata[] = [
       'segment',
       'positioning',
       'wellness',
+      'one-stop-shop',
+      'benefit platform',
+      'epassi',
     ],
-    shortDescription: 'Market research exploring Swedish employer appetite for a multi-benefit platform.',
+    shortDescription: 'End-to-end market study exploring Swedish employer appetite for a multi-benefit one-stop-shop platform.',
   },
   {
     id: 'b2p-redesign',
