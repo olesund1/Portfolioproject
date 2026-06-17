@@ -58,11 +58,6 @@ export default function App() {
   const [chatbotMessages, setChatbotMessages] = useState<DisplayMessage[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
   const [isChatbotInitialized, setIsChatbotInitialized] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const stored = localStorage.getItem('theme');
-    if (stored) return stored === 'dark';
-    return false;
-  });
 
   const [isBrutalist, setIsBrutalist] = useState(() => {
     return localStorage.getItem('design-theme') === 'brutalist';
@@ -82,11 +77,6 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
-
-  useEffect(() => {
     document.documentElement.classList.toggle('brutalist', isBrutalist);
     localStorage.setItem('design-theme', isBrutalist ? 'brutalist' : 'default');
   }, [isBrutalist]);
@@ -97,7 +87,6 @@ export default function App() {
     }
   }, []);
 
-  const toggleDarkMode = useCallback(() => setIsDarkMode(prev => !prev), []);
   const toggleBrutalist = useCallback(() => setIsBrutalist(prev => !prev), []);
 
   // Listen for browser back/forward buttons
@@ -224,7 +213,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isDarkMode={isDarkMode} onToggleDark={toggleDarkMode} isBrutalist={isBrutalist} onToggleBrutalist={toggleBrutalist} />
+      <Navigation currentPage={appState.currentPage} onNavigate={handleNavigate} isBrutalist={isBrutalist} onToggleBrutalist={toggleBrutalist} />
       <main>{renderPage()}</main>
       <Footer />
     </div>
