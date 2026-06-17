@@ -6,7 +6,6 @@ import { AboutPage } from './pages/AboutPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { ContactPage } from './pages/ContactPage';
 import { ConversePage } from './pages/ConversePage';
-import { PasswordGatePage } from './pages/PasswordGatePage';
 import { generateAIResponse, ConversationMessage } from './utils/mockAI';
 import { DisplayMessage, WELCOME_MESSAGE_CONTENT } from './types';
 
@@ -55,15 +54,6 @@ function buildUrl(page: string, caseStudyId?: string): string {
 }
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return sessionStorage.getItem('portfolioAuth') === 'true';
-  });
-
-  const handleAuthenticate = useCallback(() => {
-    sessionStorage.setItem('portfolioAuth', 'true');
-    setIsAuthenticated(true);
-  }, []);
-
   const [appState, setAppState] = useState<AppState>(parseUrl);
   const [chatbotMessages, setChatbotMessages] = useState<DisplayMessage[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
@@ -231,10 +221,6 @@ export default function App() {
         return <HomePage onNavigate={handleNavigate} />;
     }
   };
-
-  if (!isAuthenticated) {
-    return <PasswordGatePage onAuthenticate={handleAuthenticate} />;
-  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
